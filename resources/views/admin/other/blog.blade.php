@@ -112,7 +112,7 @@ Blogs
                     <th class="text-center min-w-50px">Image</th>
                     <th class="text-center min-w-100px">Title</th>
                     <th class="text-center min-w-50px">Created At</th>
-                    <th class="text-center min-w-125px">Visibility For</th>
+                    <th class="text-center min-w-125px">Service Name</th>
                     <th class="text-center min-w-50px">Status</th>
                     <th class="text-center min-w-50px">Actions</th>
                 </tr>
@@ -139,7 +139,7 @@ Blogs
                         @if(isset($data->service)&&($data->type=='service'))
                         {{ $data->service->name }}
                         @else
-                        <span style="color: #f1416c;">General Blog</span>
+                        <span style="color: #f1416c;">This is general blog</span>
                         @endif
                     </td>
                     <td class="text-center">
