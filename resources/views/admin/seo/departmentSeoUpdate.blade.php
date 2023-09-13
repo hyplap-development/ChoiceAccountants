@@ -45,7 +45,10 @@
             <div class="card mb-5">
                 <div class="card-body">
                     <div class="row g-9 mb-7">
-                        <h4 style="color: #f1416c;">You can only upload one from either an image or a URL</h4>
+                        <div>
+                            <h4 style="color: #f1416c; display: inline;">You can only upload one from either an image or a URL</h4>
+                            <h4 style="color: #268d44; display: inline; float: right;">{{$department->name}}</h4>
+                        </div>
                         <div class="col-md-6 fv-row">
                             <label class="fs-6 fw-semibold mb-2">Open Graph Image</label>
                             <div class="d-flex flex-center flex-column py-5 mb-1">

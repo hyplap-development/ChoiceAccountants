@@ -1244,7 +1244,8 @@ class AdminController extends Controller
     public function viewSeoBlog($id)
     {
         $seoblog = Seo::where('id', $id)->first();
-        return view('admin.seo.blogSeoUpdate', compact('seoblog'));
+        $blog = Blog::where('id', $seoblog->fieldId)->first();
+        return view('admin.seo.blogSeoUpdate', compact('seoblog','blog'));
     }
 
     public function addSeoBlog(Request $request)
@@ -1434,7 +1435,8 @@ class AdminController extends Controller
     public function viewSeoDepartment($id)
     {
         $seo = Seo::where('id', $id)->first();
-        return view('admin.seo.departmentSeoUpdate', compact('seo'));
+        $department = Department::where('id', $seo->fieldId)->first();
+        return view('admin.seo.departmentSeoUpdate', compact('seo','department'));
     }
 
     public function addSeoDepartment(Request $request)
@@ -1624,7 +1626,8 @@ class AdminController extends Controller
     public function viewSeoService($id)
     {
         $seo = Seo::where('id', $id)->first();
-        return view('admin.seo.serviceSeoUpdate', compact('seo'));
+        $service = Service::where('id', $seo->fieldId)->first();
+        return view('admin.seo.serviceSeoUpdate', compact('seo','service'));
     }
 
     public function addSeoService(Request $request)
@@ -1814,7 +1817,8 @@ class AdminController extends Controller
     public function viewSeoCareeropportunity($id)
     {
         $seo = Seo::where('id', $id)->first();
-        return view('admin.seo.careerSeoUpdate', compact('seo'));
+        $careeropportunity = Careeropportunity::where('id', $seo->fieldId)->first();
+        return view('admin.seo.careerSeoUpdate', compact('seo','careeropportunity'));
     }
 
     public function addSeoCareeropportunity(Request $request)
