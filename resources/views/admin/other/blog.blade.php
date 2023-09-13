@@ -56,7 +56,7 @@ Blogs
                 <br />If you want to add a Blog, click on the button below.
             </p>
             </p>
-            <a href="{{url('blog/showAdd')}}" class="btn btn-primary">
+            <a href="{{url('blogs/showAdd')}}" class="btn btn-primary">
                 <span class="svg-icon svg-icon-3">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
@@ -85,7 +85,7 @@ Blogs
         </div>
         <div class="card-toolbar">
             <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                <a href="{{url('blog/showAdd')}}" class="btn btn-primary">
+                <a href="{{url('blogs/showAdd')}}" class="btn btn-primary">
                     <span class="svg-icon svg-icon-3">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
@@ -139,7 +139,7 @@ Blogs
                         @if(isset($data->service)&&($data->type=='service'))
                         {{ $data->service->name }}
                         @else
-                        <span style="color: #f1416c;">This is general blog</span>
+                        <span style="color: #f1416c;">This is general article</span>
                         @endif
                     </td>
                     <td class="text-center">
@@ -154,7 +154,7 @@ Blogs
                         @endif
                     </td>
                     <td class="text-center">
-                        <a href="{{url('/blog/view')}}/{{$data->id}}" class="btn btn-icon btn-active-light-primary w-30px h-30px me-3">
+                        <a href="{{url('/blogs/view')}}/{{$data->id}}" class="btn btn-icon btn-active-light-primary w-30px h-30px me-3">
                             <span class="svg-icon svg-icon-3">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect x="0" y="0" width="24" height="24" />
@@ -190,7 +190,7 @@ Blogs
                                     </span>
                                 </div>
                             </div>
-                            <form action="{{url('blog/delete')}}" id="UserDeleteForm{{$data->id}}" method="post">
+                            <form action="{{url('blogs/delete')}}" id="UserDeleteForm{{$data->id}}" method="post">
                                 @csrf
                                 <input type="hidden" value="{{$data->id}}" name="blogId">
                                 <div class="modal-body">

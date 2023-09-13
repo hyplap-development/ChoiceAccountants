@@ -203,7 +203,7 @@ FAQ's
                                     </span>
                                 </div>
                             </div>
-                            <form autocomplete="off" action="{{url('faq/update')}}" enctype="multipart/form-data" method="post">
+                            <form autocomplete="off" action="{{url('faqs/update')}}" enctype="multipart/form-data" method="post">
                                 <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                                     @csrf
                                     <input type="hidden" name="faqId" value="{{$data->id}}">
@@ -255,7 +255,7 @@ FAQ's
                                     </span>
                                 </div>
                             </div>
-                            <form action="{{url('faq/delete')}}" id="UserDeleteForm{{$data->id}}" method="post">
+                            <form action="{{url('faqs/delete')}}" id="UserDeleteForm{{$data->id}}" method="post">
                                 @csrf
                                 <input type="hidden" value="{{$data->id}}" name="faqId">
                                 <div class="modal-body">
@@ -292,7 +292,7 @@ FAQ's
                     </span>
                 </div>
             </div>
-            <form autocomplete="off" action="{{url('/faq/add')}}" enctype="multipart/form-data" method="post" id="kt_modal_add_form">
+            <form autocomplete="off" action="{{url('/faqs/add')}}" enctype="multipart/form-data" method="post" id="kt_modal_add_form">
                 <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                     @csrf
                     <div class="row g-9 mt-3">

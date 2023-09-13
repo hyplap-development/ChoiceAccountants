@@ -44,6 +44,8 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],'checkUserr'=>[
             \App\Http\Middleware\CheckUser::class,
+        ],'NavContentt'=>[
+            \App\Http\Middleware\NavContent::class,
         ]
     ];
 

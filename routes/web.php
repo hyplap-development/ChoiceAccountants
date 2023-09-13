@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -70,7 +71,7 @@ Route::group(['middleware' => 'checkUserr'], function () {
     // Blog
     Route::group(
         [
-            'prefix' => 'blog'
+            'prefix' => 'blogs'
         ],
         function () {
             Route::get('/', [AdminController::class, 'indexBlog']);
@@ -196,7 +197,7 @@ Route::group(['middleware' => 'checkUserr'], function () {
     // Faq
     Route::group(
         [
-            'prefix' => 'faq'
+            'prefix' => 'faqs'
         ],
         function () {
             Route::get('/', [AdminController::class, 'indexFaq']);
@@ -233,4 +234,15 @@ Route::group(['middleware' => 'checkUserr'], function () {
             Route::post('/delete', [AdminController::class, 'deleteService']);
         }
     );
+});
+
+Route::group(['middleware' => 'NavContentt'], function () {
+    Route::get('/', [WebController::class, 'welcome']);
+    Route::get('/privacy-policy', [webController::class, 'privacyPolicy']);
+    Route::get('/faq', [webController::class, 'faq']);
+    Route::get('/about-choice/our-clients', [webController::class, 'ourClient']);
+    Route::get('/about-choice/people', [webController::class, 'ourTeam']);
+    Route::get('/about-choice/our-story', [webController::class, 'ourStory']);
+    Route::get('/get-in-touch', [webController::class, 'contactUs']);
+    Route::get('/blog', [webController::class, 'ourBlog']);
 });

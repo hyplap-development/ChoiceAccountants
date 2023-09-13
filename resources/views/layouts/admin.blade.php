@@ -280,8 +280,8 @@
 								</div>
 							</div>
 
-							<a href="{{url('/faq')}}" class="menu-item menu-accordion {{Request::is('faq*') ? 'here show' : ''}}">
-								<span class="menu-link {{Request::is('faq*') ? 'active' : ''}}">
+							<a href="{{url('/faqs')}}" class="menu-item menu-accordion {{Request::is('faqs*') ? 'here show' : ''}}">
+								<span class="menu-link {{Request::is('faqs*') ? 'active' : ''}}">
 									<span class="menu-icon">
 										<span class="svg-icon svg-icon-2">
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -296,8 +296,8 @@
 								</span>
 							</a>
 
-							<a href="{{url('/blog')}}" class="menu-item menu-accordion {{Request::is('blog*') ? 'here show' : ''}}">
-								<span class="menu-link {{Request::is('blog*') ? 'active' : ''}}">
+							<a href="{{url('/blogs')}}" class="menu-item menu-accordion {{Request::is('blogs*') ? 'here show' : ''}}">
+								<span class="menu-link {{Request::is('blogs*') ? 'active' : ''}}">
 									<span class="menu-icon">
 										<span class="svg-icon svg-icon-2">
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

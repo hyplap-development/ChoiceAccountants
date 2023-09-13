@@ -18,7 +18,7 @@ Add Blog
         <span class="bullet bg-gray-200 w-5px h-2px"></span>
     </li>
     <li class="breadcrumb-item text-muted">
-        <a href="{{url('/blog')}}" class="text-muted text-hover-primary">Blogs</a>
+        <a href="{{url('/blogs')}}" class="text-muted text-hover-primary">Blogs</a>
     </li>
     <li class="breadcrumb-item">
         <span class="bullet bg-gray-200 w-5px h-2px"></span>
@@ -30,7 +30,7 @@ Add Blog
 @endsection
 
 @section('content')
-<form autocomplete="off" action="{{url('/blog/update')}}" enctype="multipart/form-data" method="post" id="kt_modal_add_form">
+<form autocomplete="off" action="{{url('/blogs/update')}}" enctype="multipart/form-data" method="post" id="kt_modal_add_form">
     @csrf
     <input type="hidden" name="blogId" value="{{$blog->id}}">
     <div class="row">

@@ -476,13 +476,13 @@ class AdminController extends Controller
         $blog->description1 = $request->description1;
         $blog->description2 = $request->description2;
         $blog->status = $request->status;
-        $blog->serviceId = $request->serviceId == '' ? 0 : $request->serviceId;
+        $blog->serviceId = $request->serviceId == '' ? 'Article' : $request->serviceId;
         $blog->type = $request->type;
         $blog->save();
 
         $this->storeLog('Add', 'addBlog', $blog);
         Session()->flash('alert-success', "The blog has been added successfully");
-        return redirect('/blog');
+        return redirect('/blogs');
     }
 
     public function updateBlog(Request $request)
@@ -516,16 +516,16 @@ class AdminController extends Controller
         $blog->description2 = $request->description2;
         $blog->status = $request->status;
         if ($request->type == 'general') {
-            $blog->serviceId = 0;
+            $blog->serviceId = 'Article';
         } else {
-            $blog->serviceId = $request->serviceId == '' ? 0 : $request->serviceId;
+            $blog->serviceId = $request->serviceId == '' ? 'Article' : $request->serviceId;
         }
         $blog->type = $request->type;
         $blog->update();
 
         $this->storeLog('Add', 'updateBlog', $blog);
         Session()->flash('alert-success', "The blog has been successfully updated");
-        return redirect('/blog');
+        return redirect('/blogs');
     }
 
     public function deleteBlog(Request $request)
@@ -918,7 +918,7 @@ class AdminController extends Controller
 
         $this->storeLog('Add', 'addFaq', $faq);
         Session()->flash('alert-success', "The faq has been added successfully");
-        return redirect('/faq');
+        return redirect('/faqs');
     }
 
     public function updateFaq(Request $request)

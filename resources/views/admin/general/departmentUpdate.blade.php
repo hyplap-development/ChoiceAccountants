@@ -191,13 +191,6 @@ Add Department
                                     },
                                 }
                             },
-                            image: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Select image is required"
-                                    },
-                                }
-                            },
                             description: {
                                 validators: {
                                     notEmpty: {
@@ -223,13 +216,6 @@ Add Department
                                 validators: {
                                     notEmpty: {
                                         message: "Enter home page description is required"
-                                    },
-                                }
-                            },
-                            bannerImage: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Select banner image is required"
                                     },
                                 }
                             },
