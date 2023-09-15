@@ -148,9 +148,19 @@ FAQ's
                                     <div class="text-center">
                                         <h1 class="">Answer </h1>
                                     </div>
-                                    <div class="d-flex flex-column fv-row" style="white-space:pre-line;">
+                                    <div class="d-flex flex-column fv-row mb-2" style="white-space:pre-line;">
                                         {!!$data->answer!!}
                                     </div>
+                                    <ul>
+                                        <?php
+                                        $answer = explode('.', $data->answer2);
+                                        ?>
+                                        @foreach ($answer as $ans)
+                                        @if (!$loop->last)
+                                        <li>{{ $ans }}.</li>
+                                        @endif
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +200,7 @@ FAQ's
                 </tr>
                 <!--update modal start-->
                 <div class="modal fade" id="updatemodal{{$data->id}}" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered mw-900px">
+                    <div class="modal-dialog modal-dialog-centered mw-1000px">
                         <div class="modal-content rounded">
                             <div class="modal-header">
                                 <h1 class="modal-tital w-100 text-center"> Update Question</h1>
@@ -208,24 +218,28 @@ FAQ's
                                     @csrf
                                     <input type="hidden" name="faqId" value="{{$data->id}}">
                                     <div class="row g-9 mt-3">
-                                        <div class="col-md-9 fv-row">
+                                        <div class="col-md-8 fv-row">
                                             <label class="required fs-6 fw-semibold mb-2">Question</label>
                                             <input type="text" class="form-control form-control-solid" placeholder="Enter Question" name="question" id="question{{$data->id}}" value="{{$data->question}}">
                                         </div>
-                                        <div class="col-md-3 fv-row">
+                                        <div class="col-md-2 fv-row">
                                             <label class="fs-6 fw-semibold mb-2 ">Status</label>
                                             <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" name="status">
                                                 <option value="1" {{$data->status == 1 ? 'selected' : ''}}>Active</option>
                                                 <option value="0" {{$data->status == 0 ? 'selected' : ''}}>Inactive</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-3 fv-row">
+                                        <div class="col-md-2 fv-row">
                                             <label class="required fs-6 fw-semibold mb-2">Sequence</label>
                                             <input type="number" class="form-control form-control-solid" placeholder="Enter the viewing sequence" id="sequence{{$data->id}}" value="{{$data->sequence}}" name="sequence" min="0">
                                         </div>
-                                        <div class="col-md-9 mb-5">
-                                            <label class="required fs-6 fw-semibold mb-2">Answer</label>
-                                            <textarea class="form-control form-control-solid" placeholder="Enter Answer" name="answer" id="answer{{$data->id}}" rows="5">{!!$data->answer!!}</textarea>
+                                        <div class="col-md-6 mb-5">
+                                            <label class="fs-6 fw-semibold mb-2">If Answer In Paragraph</label>
+                                            <textarea class="form-control form-control-solid" placeholder="Enter Answer" name="answer" id="answer{{$data->id}}" rows="8">{!!$data->answer!!}</textarea>
+                                        </div>
+                                        <div class="col-md-6 fv-row">
+                                            <label class="fs-6 fw-semibold mb-2">If Answer In Bullet Points</label>
+                                            <textarea class="form-control form-control-solid" placeholder="Enter Answer" id="answer2{{$data->id}}" name="answer2" rows="8">{!!$data->answer2!!}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -279,7 +293,7 @@ FAQ's
 @endif
 <!--create modal start-->
 <div class="modal fade" id="addmodal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered mw-900px">
+    <div class="modal-dialog modal-dialog-centered mw-1000px">
         <div class="modal-content rounded">
             <div class="modal-header">
                 <h1 class="modal-tital w-100 text-center"> Add FAQ </h1>
@@ -296,24 +310,28 @@ FAQ's
                 <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                     @csrf
                     <div class="row g-9 mt-3">
-                        <div class="col-md-9 fv-row">
+                        <div class="col-md-8 fv-row">
                             <label class="required fs-6 fw-semibold mb-2">Question</label>
                             <input type="text" class="form-control form-control-solid" placeholder="Enter Question" id="question" name="question">
                         </div>
-                        <div class="col-md-3 fv-row">
+                        <div class="col-md-2 fv-row">
                             <label class="fs-6 fw-semibold mb-2">Status</label>
                             <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" name="status" id="Status">
                                 <option value="1">Active</option>
                                 <option value="0">Inactive</option>
                             </select>
                         </div>
-                        <div class="col-md-3 fv-row">
+                        <div class="col-md-2 fv-row">
                             <label class="required fs-6 fw-semibold mb-2">Sequence</label>
                             <input type="number" class="form-control form-control-solid" placeholder="Enter the viewing sequence" id="sequence" name="sequence" min="0">
                         </div>
-                        <div class="col-md-9 fv-row">
-                            <label class="required fs-6 fw-semibold mb-2">Answer</label>
-                            <textarea class="form-control form-control-solid" placeholder="Enter Answer" id="answer" name="answer" rows="5"></textarea>
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-semibold mb-2">If Answer In Paragraph</label>
+                            <textarea class="form-control form-control-solid" placeholder="Enter Answer" id="answer" name="answer" rows="8"></textarea>
+                        </div>
+                        <div class="col-md-6 fv-row">
+                            <label class="fs-6 fw-semibold mb-2">If Answer In Bullet Points</label>
+                            <textarea class="form-control form-control-solid" placeholder="Enter Answer" id="answer2" name="answer2" rows="8"></textarea>
                         </div>
                     </div>
                 </div>

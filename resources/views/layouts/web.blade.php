@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="favicon.png">
+    <link rel="icon" href="/web/images/favicon.png">
     <title>
         @section('title')
         @show
@@ -13,8 +13,7 @@
 
     @section('meta')
     @show
-
-    <link rel="stylesheet" href="{{asset('/web/styles/main.css')}}">
+    <link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
 
     <style>
         @font-face {
@@ -22,7 +21,7 @@
             font-weight: 400;
             font-style: normal;
             font-display: swap;
-            src: url("fonts/PlusJakartaSans-Regular.woff2") format("woff2"), url("fonts/PlusJakartaSans-Regular.woff") format("woff")
+            src: url("/fonts/PlusJakartaSans-Regular.woff2") format("woff2"), url("/fonts/PlusJakartaSans-Regular.woff") format("woff")
         }
 
         @font-face {
@@ -30,7 +29,7 @@
             font-weight: 500;
             font-style: normal;
             font-display: swap;
-            src: url("fonts/PlusJakartaSans-Medium.woff2") format("woff2"), url("fonts/PlusJakartaSans-Medium.woff") format("woff")
+            src: url("/fonts/PlusJakartaSans-Medium.woff2") format("woff2"), url("/fonts/PlusJakartaSans-Medium.woff") format("woff")
         }
 
         @font-face {
@@ -38,7 +37,7 @@
             font-weight: 500;
             font-style: normal;
             font-display: swap;
-            src: url("fonts/Poppins-Medium.woff2") format("woff2"), url("fonts/Poppins-Medium.woff") format("woff")
+            src: url("/fonts/Poppins-Medium.woff2") format("woff2"), url("/fonts/Poppins-Medium.woff") format("woff")
         }
 
         /*# sourceMappingURL=fonts.css.map */
@@ -992,6 +991,61 @@
         }
     </style>
 
+    <style>
+        #custom-form {
+            /* max-width: 400px; */
+            margin: 0 auto;
+            /* padding: 20px; */
+            /* background-color: #fff; */
+            /* border: 1px solid #ddd; */
+            border-radius: 5px;
+            /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            /* font-weight: bold; */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: #fff;
+            color: #268d44;
+            border: none;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #privacy-policy {
+            margin-top: 10px;
+        }
+
+        /*  */
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{asset('/web/styles/main.css')}}">
+
     @section('style')
     @show
 
@@ -1003,9 +1057,10 @@
             <div class="l-navbar__sidebar">
                 <ul class="l-navbar__list js-menu-wrapper">
                     <li> <a href="{{url('/')}}" title="Home-choice accountants" class="l-navbar__list-link"> Home </a> </li>
+                    @if($departments->count() > 0)
                     <li> <button class="l-navbar__list-link l-navbar__list-link--dropdown js-dropdown"> <span>Our Services</span>
-                            <svg href="/web/images/icons/logo.png" class="l-navbar__dropdown-icon" width="10" height="5">
-                                <use xmlns:xlink="" href="/web/images/icons/logo.png"> </use>
+                            <svg href="/web/images/icons/dropdown.svg" class="l-navbar__dropdown-icon" width="10" height="5">
+                                <use xmlns:xlink="" href="/web/images/icons/dropdown.svg"> </use>
                             </svg> </button>
                         <div class="l-navbar__dropdown">
                             <ul class="l-navbar__inner-list">
@@ -1015,29 +1070,101 @@
                             </ul>
                         </div>
                     </li>
+                    @endif
                     <li> <button class="l-navbar__list-link l-navbar__list-link--dropdown js-dropdown"> <span>About Choice</span>
                             <svg class="l-navbar__dropdown-icon" width="10" height="5">
-                                <use xmlns:xlink="" href="/web/images/icons/logo.png"> </use>
+                                <use xmlns:xlink="" href="/web/images/icons/dropdown.svg"> </use>
                             </svg> </button>
                         <div class="l-navbar__dropdown">
                             <ul class="l-navbar__inner-list">
                                 <li> <a href="{{url('/about-choice/our-story')}}" title="Story" class="l-navbar__inner-list-link "> Story Behind Choice & Our Process </a> </li>
+                                @if($teams->count() > 0)
                                 <li> <a href="{{url('/about-choice/people')}}" title="Team" class="l-navbar__inner-list-link "> Our Team </a></li>
+                                @endif
+                                @if($clients->count() > 0)
                                 <li> <a href="{{url('/about-choice/our-clients')}}" title="Clients" class="l-navbar__inner-list-link "> Our Clients </a></li>
+                                @endif
+                                @if($faqs->count() > 0)
                                 <li> <a href="{{url('/faq')}}" title="FAQ" class="l-navbar__inner-list-link "> FAQ </a> </li>
+                                @endif
                             </ul>
                         </div>
                     </li>
-                    <li> <a href="about-choice/careers.html" title="career Opportunities" class="l-navbar__list-link"> Career Opportunities </a></li>
+                    <li> <a href="{{url('/about-choice/careers')}}" title="career Opportunities" class="l-navbar__list-link"> Career Opportunities </a></li>
                     <li> <a href="{{url('/get-in-touch')}}" title="Contact" class="l-navbar__list-link"> Contact </a> </li>
                     <li> <a href="https://platinumaccountants.portal.accountants/login" title="Contact" class="l-navbar__list-link"> Login MYOB </a> </li>
                 </ul>
             </div>
         </div>
+
     </nav>
 
+    <!-- Enquiry Modal -->
+    <div class="modal fade" id="enquirymodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content cardnostyle">
+                <div class="modal-body p-0">
+                    <div class="row">
+                        <div class="col-lg-6 pe-0 d-lg-block d-none">
+                            <div class="modalbg"></div>
+                        </div>
+                        <div class="col-lg-6 col-12 ps-lg-0">
+                            <div class="grid__col  grid__col--4k-pushed-to-left relative">
+
+                                <div class="form form--card bg-purple max-width-720 form-wrapper-18 ">
+                                    <div class="relative zindex-3">
+                                        <div id="hubspotform-18"></div>
+                                        <div class="form-wrapper-18">
+                                            <div class="js-form-content">
+                                                <form action="{{url('/enquirysend')}}" id="custom-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
+                                                    @csrf
+                                                    <div class="modal-header d-flex flex-row c-white align-content-center justify-content-center p-0 mb-2" style="border: none;">
+                                                        <h1 class="fs-5 mt-0">Enquire Today</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: #fff !important;"><i class="fa-solid fa-xmark" style="color: #ffffff !important;font-size: 20px;"></i></button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <label for="fname">First Name *</label>
+                                                            <input type="text" id="fname" name="fname" placeholder="Enter Your First Name" onkeyup="checkfname()">
+                                                            <span id="nameerror"></span>
+
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <label for="phone">Phone Number *</label>
+                                                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone No" onkeyup="checknumber()" maxlength="10">
+                                                            <span id="numbererror"></span>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <label for="service">Services *</label>
+                                                            <select name="serviceId" id="serviceId" style="width: 100%;padding: 8px;margin-bottom: 12px;border: 1px solid #ccc;border-radius: 3px;">
+                                                                <option value="">Select Service</option>
+                                                                
+                                                            </select>
+                                                            <span id="selecterror"></span>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn btn--secondary btn--purple mt-10em" type="button" id="submit-button">
+                                                        <span class="btn__text">Submit Details</span>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-shape size-144 quater-border-filled gradient-3 top right rotate-270">
+                                        <div class="bg-shape__inner animation-rotateRight90 mobile-no-animation" data-animation-delay="600">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @section('content')
     @show
+
 
     <footer class="l-footer bg-purple2">
         <div class="l-footer__container">
@@ -1067,16 +1194,19 @@
             <div class="l-footer__list-area bg-purple2" style="padding-bottom: 0;">
                 <div class="relative zindex-3">
                     <ul class="l-footer__list">
+                        @if($services->count() > 0)
                         <li> <span class="l-footer__list-item-link">Best Services </span>
                             <ul class="l-footer__inner-list">
                                 @foreach($services as $service)
-                                <li> <a class="l-footer__inner-list-item-link hover-pink" href="{{url('/our-services')}}/{{$service->department->slug}}/{{$service->slug}}" title="Housing">
+                                <li> <a class="l-footer__inner-list-item-link hover-pink" href="{{url('/our-services')}}/{{$service->department ? $service->department->slug : ''}}/{{$service->slug}}" title="{{$service->name}}">
                                         {{$service->name}}
                                     </a>
                                 </li>
                                 @endforeach
                             </ul>
                         </li>
+                        @endif
+                        @if($departments->count() > 0)
                         <li> <span class="l-footer__list-item-link"> What we do </span>
                             <ul class="l-footer__inner-list">
                                 @foreach($departments as $department)
@@ -1084,38 +1214,46 @@
                                 @endforeach
                             </ul>
                         </li>
+                        @endif
                         <li> <span class="l-footer__list-item-link"> Choice </span>
                             <ul class="l-footer__inner-list">
                                 <li> <a class="l-footer__inner-list-item-link hover-pink" href="{{url('/about-choice/our-story')}}" title="About"> Story
                                         Behind Choice & Our Process
                                     </a>
                                 </li>
+                                @if($teams->count() > 0)
                                 <li> <a class="l-footer__inner-list-item-link hover-pink" href="{{url('/about-choice/people')}}" title="Our Team"> Our
                                         Team
                                     </a>
                                 </li>
+                                @endif
+                                @if($clients->count() > 0)
                                 <li> <a class="l-footer__inner-list-item-link hover-pink" href="{{url('/about-choice/our-clients')}}" title="Clients">
                                         Our Clients
                                     </a>
                                 </li>
-
+                                @endif
+                                @if($faqs->count() > 0)
                                 <li> <a class="l-footer__inner-list-item-link hover-pink" href="{{url('/faq')}}" title="Faq">
                                         FAQ
                                     </a>
                                 </li>
+                                @endif
                             </ul>
                         </li>
+                        @if($blogs->count() > 0)
                         <li> <a href="{{url('/blog')}}" title="Blogs & Insights" class="l-footer__list-item-link hover-pink"> Blogs &
                                 Insights </a>
                             <ul class="l-footer__inner-list">
                                 @foreach($blogs as $blog)
-                                <li> <a class="l-footer__inner-list-item-link hover-pink" href="{{ url('/' . $blog->slug) }}" title="{{$blog->title}}">
+                                <li> <a class="l-footer__inner-list-item-link hover-pink" href="{{url('/our-blogs')}}/{{$blog->slug}}" title="{{$blog->title}}">
                                         {{$blog->title}}
                                     </a>
                                 </li>
                                 @endforeach
                             </ul>
                         </li>
+                        @endif
                     </ul>
 
                     <div class="content content--small-text">
@@ -1125,7 +1263,7 @@
                         </div>
                         <div class=" mt-20em mb-20em">
                             <p> Choice Accountants, 51 Ernest Ave, Chipping Norton NSW 2170, Australia<br />
-                                Copyright © Choice Accountants 2023 
+                                Copyright © Choice Accountants 2023
                             </p>
                         </div>
                     </div>
@@ -1137,44 +1275,159 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type='text/javascript' src='{{asset("/web/scripts/vendor.NqUTCl2z7yeXLPX7fxH6.js")}}'></script>
     <script type='text/javascript' src='{{asset("/web/scripts/app.NqUTCl2z7yeXLPX7fxH6.js")}}'></script>
     <script type='text/javascript' src='{{asset("/web/scripts/instantPage.js")}}' fetchpriority="low" type="module"></script>
 
-    <!-- <script>
-        (function(w, d) {
-            w.addEventListener('LazyLoad::Initialized', function(e) {
-                w.lazyLoadInstance = e.detail.instance;
-            }, false);
-            var b = d.getElementsByTagName('head')[0];
-            var s = d.createElement("script");
-            s.async = true;
-            var v = !("IntersectionObserver" in w) ? "lazyloadPolyfill.js" : "lazyloadIntersectionObserver.js";
-            s.src = "/scripts/" + v;
-            w.lazyLoadOptions = {
-                elements_selector: ".lazy",
-                threshold: 0,
-                callback_enter: function(element) {
-                    /* for elements that have lazy loaded background image with media queries */
-                    var css = element.getAttribute('data-style');
-                    if (css) {
-                        css = css.replace(/(\r\n|\n|\r)/gm, "");
-                        var style = document.createElement('style');
-                        var head = document.getElementsByTagName('head')[0];
-                        head.appendChild(style);
-                        style.setAttribute("type", "text/css");
-                        if (style.styleSheet) {
-                            style.styleSheet.cssText = css;
-                        } else {
-                            var styleText = document.createTextNode(css);
-                            style.appendChild(styleText);
+    <!-- js for enquiry modal -->
+    <script>
+        $(document).ready(function() {
+            var modalShown = false; 
+
+            var scrollThreshold = 100;
+            function showModalOnScroll() {
+                if (!modalShown) {
+
+                    var url = window.location.href;
+                    var urlsplit = url.split('/');
+
+                    $('#enquirymodal').modal('show');
+
+                    // check if url contains our-services/
+
+                    var lastsegment = '';
+                    if(url.includes('our-services/')){
+                        var lastsegment = urlsplit[urlsplit.length-1];
+                        console.log(lastsegment);
+                    } 
+                    $.ajax({
+                        type: "post",
+                        url: "{{url('/getServiceByDept')}}",
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                            "deptSlug": lastsegment
+                        },
+                        dataType: "json",
+                        success: function (response) {
+                            console.log(response);
+                            var options = '<option value="">Select Service</option>';
+                            $.each(response.services, function (index, value) {
+                                options += '<option value="' + value.id + '">' + value.name + '</option>';
+                            });
+                            $('#serviceId').html(options);
+                        }, error: function (response) {
+                            console.log(response);
                         }
-                    }
+                    });
+                    modalShown = true;
                 }
-            };
-            b.appendChild(s);
-        }(window, document));
-    </script> -->
+            }
+
+            // Attach the scroll event listener
+            $(window).on('scroll', function() {
+                var scrollPosition = $(window).scrollTop();
+                if (scrollPosition >= scrollThreshold) {
+                    showModalOnScroll();
+                }
+            });
+        });
+    </script>
+
+    <script>
+        function checkfname() {
+            var fnameInput = document.getElementById('fname');
+            var fnameValidation = document.getElementById('nameerror');
+            var button = document.getElementById('submit-button');
+
+            var fnameRegex = /^[a-zA-Z ]*$/;
+
+            if (fnameInput.value.match(fnameRegex)) {
+                fnameValidation.textContent = '';
+                button.disabled = false;
+            } else {
+                fnameValidation.textContent = 'Please enter valid name';
+                fnameValidation.style.color = 'red';
+                button.disabled = true;
+            }
+        }
+
+        function checknumber() {
+            var numberInput = document.getElementById('phone');
+            var numberValidation = document.getElementById('numbererror');
+            var button = document.getElementById('submit-button');
+
+            var numberRegex = /^[0-9]{10}$/;
+
+            if (numberInput.value.match(numberRegex)) {
+                numberValidation.textContent = '';
+                button.disabled = false;
+            } else {
+                numberValidation.textContent = 'Please enter valid phone number';
+                numberValidation.style.color = 'red';
+                button.disabled = true;
+            }
+        }
+    </script>
+
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            var fname = document.getElementById('fname').value;
+            var phone = document.getElementById('phone').value;
+            var serviceId = document.getElementById('serviceId').value;
+            var nameError = document.getElementById('nameerror');
+            var numberError = document.getElementById('numbererror');
+            var selectError = document.getElementById('selecterror');
+
+            nameError.textContent = '';
+            numberError.textContent = '';
+            selectError.textContent = '';
+
+            if (fname.trim() === '') {
+                nameError.textContent = 'Please enter first name';
+                nameError.style.color = 'red';
+            }
+
+            if (phone.trim() === '') {
+                numberError.textContent = 'Please enter phone number';
+                numberError.style.color = 'red';
+            }
+
+            if (serviceId === '') {
+                selectError.textContent = 'Please select service';
+                selectError.style.color = 'red';
+            }else{
+                selectError.textContent = '';
+            }
+
+            if (fname.trim() === '' || phone.trim() === '' || serviceId === '') {
+                return;
+            }
+
+            var formData = new FormData($('#custom-form')[0]);
+            $.ajax({
+                type: "POST",
+                url: "{{ url('/enquirysend') }}",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    if (response.status == 1) {
+                        console.log(response);
+                        $('#custom-form')[0].reset();
+                    } else {
+                        $('#custom-form')[0].reset();
+                    }
+                },
+                error: function(response) {
+                    console.log(response);
+                }
+            });
+        });
+    </script>
+
     @section('scripts')
     @show
 

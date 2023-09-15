@@ -107,17 +107,17 @@ Add Blog
                             <input type="text" class="txtOnly form-control form-control-solid " placeholder="Enter Writer Name" id="writer" name="writer" minlength="3">
                         </div>
                         <div class="col-md-9 fv-row">
-                            <label class="fs-6 fw-semibold mb-2">Sub Title</label>
+                            <label class="required fs-6 fw-semibold mb-2">Sub Title</label>
                             <input type="text" class="form-control form-control-solid" placeholder="Enter Sub Title" id="subtitle" name="subtitle" minlength="10">
                         </div>
                         <div class="col-md-12 fv-row">
                             <label class="required d-flex align-items-center fs-6 fw-semibold mb-2">Add Description</label>
-                            <textarea class="form-control form-control-solid" placeholder="Enter description" id="description1" name="description1" minlength="25" rows="7"></textarea>
+                            <textarea class="form-control form-control-solid" placeholder="Enter description" id="description1" name="description1" minlength="25" rows="15"></textarea>
                         </div>
-                        <div class="col-md-12 fv-row">
+                        <!-- <div class="col-md-12 fv-row">
                             <label class="d-flex align-items-center fs-6 fw-semibold mb-2">Add Description</label>
                             <textarea class="form-control form-control-solid" placeholder="Enter description" id="description2" name="description2" minlength="25" rows="7"></textarea>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -160,6 +160,13 @@ Add Blog
                                 validators: {
                                     notEmpty: {
                                         message: "Blog title is required"
+                                    },
+                                }
+                            },
+                            subtitle: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Blog subtitle is required"
                                     },
                                 }
                             },

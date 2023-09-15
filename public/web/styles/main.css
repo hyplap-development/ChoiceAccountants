@@ -464,7 +464,7 @@ textarea {
         transition: transform .3s, -webkit-transform .3s;
         overflow-y: auto;
         padding-top: 96px;
-        background: #f7fbff url("../images/icons/pink-quater-ring-rotated.svg") center center no-repeat;
+        background: #f7fbff url("/web/images/icons/pink-quater-ring-rotated.svg") center center no-repeat;
         background-size: 144px 144px;
         background-position: bottom right
     }
@@ -1730,7 +1730,7 @@ button {
 }
 
 .bg-pink2 {
-    background-color: #268d44
+    background-color: #268d44 !important
 }
 
 .bg-lightOffWhite {
@@ -1747,8 +1747,8 @@ button {
 }
 
 .bg-gradient {
-    background-color: linear-gradient(90deg, #159dd8, #268d44);
-    color: #fff
+    background-color: linear-gradient(90deg, #159dd8, #268d44) !important;
+    color: #fff !important
 }
 
 .bg-white {
@@ -1756,7 +1756,7 @@ button {
 }
 
 .bg-gradient {
-    background: linear-gradient(90deg, #159dd8, #268d44)
+    background: linear-gradient(90deg, #159dd8, #268d44) !important
 }
 
 .bg-next-el-tone-down+.bg-next-el {
@@ -2410,7 +2410,7 @@ select::placeholder,
 .form__select,
 .hubspot-form .hs-form select,
 select {
-    background-image: url("../images/icons/dropdown.svg");
+    background-image: url("/web/images/icons/dropdown.svg");
     background-repeat: no-repeat;
     background-size: 10px 8px;
     background-position: center right 1rem;
@@ -4782,7 +4782,7 @@ div.loading:not(.lazy) {
     right: 0;
     bottom: 0;
     z-index: 2;
-    background: rgba(255, 255, 255, .8) url(../images/ajax-loader.gif) center center no-repeat;
+    background: rgba(255, 255, 255, .8) url(/web/images/ajax-loader.gif) center center no-repeat;
     transition: opacity .6s, visibility .6s
 }
 
@@ -8790,8 +8790,8 @@ div.loading--active {
 }
 
 .quater-border-filled .bg-shape__inner {
-    -webkit-mask: url("../images/icons/ring-quater-mask.svg") center center no-repeat;
-    mask: url("../images/icons/ring-quater-mask.svg") center center no-repeat;
+    -webkit-mask: url("/web/images/icons/ring-quater-mask.svg") center center no-repeat;
+    mask: url("/web/images/icons/ring-quater-mask.svg") center center no-repeat;
     background-color: #159dd8
 }
 
@@ -8804,16 +8804,16 @@ div.loading--active {
     background: linear-gradient(45deg, #159dd8, #268d44);
     -webkit-transform-origin: center right;
     transform-origin: center right;
-    -webkit-mask: url("../images/icons/half-circle-shape.svg") center center no-repeat;
-    mask: url("../images/icons/half-circle-shape.svg") center center no-repeat
+    -webkit-mask: url("/web/images/icons/half-circle-shape.svg") center center no-repeat;
+    mask: url("/web/images/icons/half-circle-shape.svg") center center no-repeat
 }
 
 .half-border-filled .bg-shape__inner,
 .half-border-double .bg-shape__inner {
     -webkit-transform-origin: bottom center;
     transform-origin: bottom center;
-    -webkit-mask: url("../images/icons/half-circle-shape-top.svg") center center no-repeat;
-    mask: url("../images/icons/half-circle-shape-top.svg") center center no-repeat;
+    -webkit-mask: url("/web/images/icons/half-circle-shape-top.svg") center center no-repeat;
+    mask: url("/web/images/icons/half-circle-shape-top.svg") center center no-repeat;
     -webkit-mask-position: bottom center;
     mask-position: bottom center
 }
@@ -8821,8 +8821,8 @@ div.loading--active {
 .half-filled .bg-shape__inner {
     -webkit-transform-origin: bottom center;
     transform-origin: bottom center;
-    -webkit-mask: url("../images/icons/half-circle-full-shape-top.svg") center center no-repeat;
-    mask: url("../images/icons/half-circle-full-shape-top.svg") center center no-repeat;
+    -webkit-mask: url("/web/images/icons/half-circle-full-shape-top.svg") center center no-repeat;
+    mask: url("/web/images/icons/half-circle-full-shape-top.svg") center center no-repeat;
     -webkit-mask-position: bottom center;
     mask-position: bottom center
 }
@@ -9086,8 +9086,8 @@ div.loading--active {
 }
 
 .full-border-filled {
-    -webkit-mask: url("../images/icons/ring-mask.svg") center center no-repeat;
-    mask: url("../images/icons/ring-mask.svg") center center no-repeat
+    -webkit-mask: url("/web/images/icons/ring-mask.svg") center center no-repeat;
+    mask: url("/web/images/icons/ring-mask.svg") center center no-repeat
 }
 
 .x-gradient {
@@ -9096,8 +9096,8 @@ div.loading--active {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 20vw;
-    -webkit-mask: url("../images/icons/x-shape.svg") center center no-repeat;
-    mask: url("../images/icons/x-shape.svg") center center no-repeat;
+    -webkit-mask: url("/web/images/icons/x-shape.svg") center center no-repeat;
+    mask: url("/web/images/icons/x-shape.svg") center center no-repeat;
     background: linear-gradient(90deg, #159dd8, #268d44)
 }
 
@@ -9948,7 +9948,7 @@ div.loading--active {
     height: 72px;
     border-radius: 50%;
     background-color: #159dd8;
-    background-image: url("../images/icons/just-play.svg");
+    background-image: url("/web/images/icons/just-play.svg");
     background-size: 2.25rem 2.25rem;
     background-position: center center;
     background-repeat: no-repeat;
@@ -10390,7 +10390,7 @@ div.loading--active {
     height: 72px;
     border-radius: 50%;
     background-color: #159dd8;
-    background-image: url("../images/icons/just-play.svg");
+    background-image: url("/web/images/icons/just-play.svg");
     background-size: 2.25rem 2.25rem;
     background-position: center center;
     background-repeat: no-repeat;
@@ -10944,7 +10944,9 @@ div.loading--active {
     align-items: stretch;
     transition: border-color .4s;
     padding: 0;
-    position: relative
+    position: relative;
+    border-radius: 0 !important;
+    border: none !important;
 }
 
 @media(max-width: 767px) {
@@ -10965,19 +10967,24 @@ div.loading--active {
     background-color: #159dd8;
     z-index: -1;
     opacity: 0;
-    transition: opacity .4s
+    transition: opacity .4s;
 }
 
 .card--people:hover {
-    border-color: #159dd8
+    border-color: #159dd8;
+    border: 2px solid #159dd8 !important;
 }
 
 .card--people:hover:before {
-    opacity: 1
+    opacity: 1;
+    border-color: #159dd8;
+    border: 2px solid #159dd8 !important;
 }
 
 .card--people:hover .card__figure:before {
-    opacity: 1
+    opacity: 1;
+    border-color: #159dd8;
+    border: 2px solid #159dd8 !important;
 }
 
 .card--people:hover .card__figtext {
@@ -14926,12 +14933,81 @@ img:not([height]) {
     color: #fff;
     border-radius: 20px;
     padding: 15px;
-    border: 1px solid #fff;
-    margin: 15px 0;
+    background-color: #159dd8;
+    margin-top: 15px;
     font-weight: 600;
 }
 
 .btn-close{
     cursor: pointer;
     color: #fff !important;
+}
+
+/* modal css */
+
+/* The Close Button */
+.close {
+    color: var(--violet);
+    float: right;
+    font-size: 28px;
+    font-weight: 600;
+    opacity: 1;
+}
+
+.close:hover,
+.close:focus {
+    opacity: 1;
+    color: var(--violet);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalbg {
+    background-image: url('/web/images/choice.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+.cardnostyle{
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.btn-close{
+    background: none !important;
+    color: #fff !important;
+}
+
+.iconstyle{
+    background-color: #fff;
+    color: #159dd8;
+    padding: 7px;
+    border-radius: 50%;
+    border: 1px solid #159dd8;
+}
+.iconstyle:hover{
+    background-color: #159dd8;
+    color: #fff;
+    padding: 7px;
+    border-radius: 50%;
+    border: 1px solid #159dd8;
+}
+
+.Fw-500{
+    font-weight: 500;
+}
+
+.fs-10px{
+    font-size: 10px;
+}
+
+.submitformbtn {
+    font-weight: 600;
+    background-color: #fff;
+    color: #268d44;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 3px;
 }

@@ -31,7 +31,7 @@ Our Team & Our People | Choice Accountants
         </div>
         <div class=" bg-shape half-border-double top right-10 color-white size-120">
             <svg class="animation-rotateLeft180" width="242" height="120">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" href="../images/icons.svg#icon-half-circle-shape-top"> </use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" href="/web/images/icons.svg#icon-half-circle-shape-top"> </use>
             </svg>
         </div>
     </div>
@@ -40,7 +40,7 @@ Our Team & Our People | Choice Accountants
     <div class="section">
         <div class="container-xxl flex-container flex-container--people">
             @foreach($teams as $team)
-            <div class="card card--people bg-darkOffWhite">
+            <div class="card card--people bg-darkOffWhite flex-lg-row flex-md-row flex-column ">
                 <figure class="card__figure">
                     <picture class=" card__picture ">
                         <img class="card__image" width="3960" height="2640" src="/{{$team->image}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="{{$team->imgAlt}}">
@@ -52,14 +52,14 @@ Our Team & Our People | Choice Accountants
                     <p class="card__text normal-text">{{$team->about}}
                     </p>
                 </div>
-            </div> 
+            </div>
             @endforeach
         </div>
     </div>
     <section class="section bg-gradient overflow-hidden ">
         <div class="relative">
             <h2 class="headline-2 mb-0em marquee" data-text="As a team and as individuals, we give back to the community">
-                As a team and as individuals, we give back to the community 
+                As a team and as individuals, we give back to the community
             </h2>
         </div>
     </section>
@@ -87,17 +87,18 @@ Our Team & Our People | Choice Accountants
                     </picture>
                 </div>
             </div>
-            <div class="grid grid--50-50">
-                <button type="button" class="grid__col text-left bg-pink btn btn--grid-prev" aria-label="Previous photo">
+            <div class="grid grid--50-50 relative zindex-3">
+                <button type="button" class="grid__col text-left bg-pink cardnostyle btn btn--grid-prev js-cs-reel-prev">
                     <div class="btn__icon-wrapper">
-                        <svg class="btn__icon stroke-white stroke-width-2 rotate-180" width="58" height="48" role="img">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" href="/web/images/images/icons.svg#icon-arrow"> </use>
+                        <svg class="btn__icon stroke-white stroke-width-2 rotate-180" width="58" height="48" aria-label="Previous">
+                            <use xmlns:xlink="" href="/web/images/icons.svg#icon-arrow"> </use>
                         </svg>
                     </div>
-                </button> <button type="button" class="grid__col text-right bg-pink2 btn btn--grid-next" aria-label="Next photo">
+                </button>
+                <button type="button" class="grid__col text-right cardnostyle bg-pink2 btn btn--grid-next js-cs-reel-next">
                     <div class="btn__icon-wrapper">
-                        <svg class="btn__icon stroke-white stroke-width-2" width="58" height="48" role="img">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" href="/web/images/images/icons.svg#icon-arrow"> </use>
+                        <svg class="btn__icon stroke-white stroke-width-2" width="58" height="48" aria-label="Next">
+                            <use xmlns:xlink="" href="/web/images/icons.svg#icon-arrow"> </use>
                         </svg>
                     </div>
                 </button>

@@ -234,6 +234,17 @@ Route::group(['middleware' => 'checkUserr'], function () {
             Route::post('/delete', [AdminController::class, 'deleteService']);
         }
     );
+
+    // Enquiry
+    Route::group(
+        [
+            'prefix' => 'enquiry'
+        ],
+        function () {
+            Route::get('/', [AdminController::class, 'indexEnquiry']);
+            Route::post('/delete', [AdminController::class, 'deleteEnquiry']);
+        }
+    );
 });
 
 Route::group(['middleware' => 'NavContentt'], function () {
@@ -245,4 +256,15 @@ Route::group(['middleware' => 'NavContentt'], function () {
     Route::get('/about-choice/our-story', [webController::class, 'ourStory']);
     Route::get('/get-in-touch', [webController::class, 'contactUs']);
     Route::get('/blog', [webController::class, 'ourBlog']);
+    Route::get('/our-services', [webController::class, 'ourService']);
+    Route::get('/our-services/{slug}', [webController::class, 'singleDepartment']);
+    Route::get('/about-choice/careers', [webController::class, 'career']);
+    Route::get('/our-blogs/{slug}', [webController::class, 'singleBlog']);
+    Route::get('/about-choice/careers/{slug}', [webController::class, 'singleCareer']);
+    Route::get('/our-services/{slug}/{serviceslug}', [webController::class, 'singleService']);
+    Route::post('/enquirysend', [webController::class, 'enquiryForm']);
+    Route::post('/save', [webController::class, 'contactusForm']);
+    Route::post('/getServiceByDept', [webController::class, 'getServiceByDept']);
+    
 });
+

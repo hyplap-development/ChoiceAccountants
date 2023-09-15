@@ -44,14 +44,14 @@ Blogs & Insights | Choice Accountants
         <div class="container">
             <div class="row row--g-24">
                 @foreach($allblogs as $blog)
-                <a href="{{ url('/' . $blog->slug) }}" title="{{$blog->title}}" class="block block--insight link-hover col-md-6 col-xl-4">
+                <a href="{{url('/our-blogs')}}/{{$blog->slug}}" title="{{$blog->title}}" class="block block--insight link-hover col-md-6 col-xl-4">
                     <picture class=" block__image-frame ">
                         <img class="block__image" width="5760" height="3713" src="/{{$blog->image}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="{{$blog->imgAlt}}">
                     </picture>
                     @if(isset($blog->service))
                     <p class="block__preheadline"> {{$blog->service->name}} </p>
                     @else
-                    <p class="block__preheadline"> {{$blog->serviceId}} </p>
+                    <p class="block__preheadline"> Article </p>
                     @endif
                     <div class="block__title-wrap">
                         <h2 class="block__headline headline-5"> <span class="link-hover__text">{{$blog->title}}</span> </h2>

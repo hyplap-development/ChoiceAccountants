@@ -54,10 +54,24 @@ Frequently Asked Questions | Choice Accountants Australia
                         @foreach($faqs as $faq)
                         <li class="expanding-list__item">
                             <button class="expanding-list__btn js-expand-btn">
-                                <span class="expanding-list__headline headline-5 color-black" >{{$faq->question}}</span> <span type="button" class="expanding-list__icon "></span> </button>
+                                <span class="expanding-list__headline headline-5 color-black">{{$faq->question}}</span> <span type="button" class="expanding-list__icon "></span> </button>
                             <div class="expanding-list__content content" style="display: none">
+                                @if($faq->answer)
                                 <p style="white-space:pre-line;">{{$faq->answer}}
                                 </p>
+                                @endif
+                                @if($faq->answer2)
+                                <ul>
+                                    <?php
+                                    $answerArray = explode('.', $faq->answer2);
+                                    ?>
+                                    @foreach ($answerArray as $answer)
+                                    @if (!$loop->last)
+                                    <li>{{ $answer }}.</li>
+                                    @endif
+                                    @endforeach
+                                </ul>
+                                @endif
                             </div>
                         </li>
                         @endforeach

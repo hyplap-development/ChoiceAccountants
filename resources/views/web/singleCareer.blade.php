@@ -1,7 +1,7 @@
 @extends('layouts.web')
 
 @section('title')
-Valuable Clients of Choice Accountants | Australia
+{{$career->name}} | Choice Accountants
 @endsection
 
 @section('meta')
@@ -66,67 +66,53 @@ Valuable Clients of Choice Accountants | Australia
 @endsection
 
 @section('content')
-<header class="l-header">
-    <div class="container-fluid">
-        <div class="row no-gutters">
-            <div class=" col-xl-8 padding-xl-120-180 bg-purple ">
-                <div class=" content  zindex-3 relative ">
-                    <p class="preheadline mt-0em mb-15em"> Our Valuable Clients </p>
-                    <h1 class="headline-2 mb-0em"> We Work with everyone and help them to become the Best </h1>
-                </div>
-                <div class=" bg-shape quater-border-filled top left gradient-2 size-120  ">
-                    <div class="bg-shape__inner animation-rotateLeft90" data-animation-offset="100%"> </div>
-                </div>
-                <div class=" bg-shape quater-border-double top right color-white size-96  ">
-                    <div class="bg-shape__inner animation-rotateLeft90" data-animation-offset="100%"> </div>
-                </div>
-            </div>
-            <div class=" col-xl-4 d-none d-xl-block padding-xl bg-purple2 ">
-                <div class=" bg-shape quater-filled bottom right gradient-1 size-360  ">
-                    <div class="bg-shape__inner animation-rotateLeft90" data-animation-offset="100%"> </div>
-                </div>
-                <div class=" bg-shape quater-border-filled top left gradient-1 size-96  ">
-                    <div class="bg-shape__inner animation-rotateLeft90" data-animation-offset="100%"> </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 <main>
-    <div class=" section bg-darkOffWhite">
-        <div class="container ">
-            <div class="grid grid--3-columns-gapped">
-                @foreach($clients as $client)
-                <a class="grid__col card card--logo">
-                    <figure class="card__image-wrap"> <img class="card__image" src="/{{$client->logo}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" width="200" height="200" alt="{{$client->imgAlt}}">
-                    </figure>
-                </a>
-                @endforeach
+    <header class="l-header l-header--padding-tiny bg-purple relative">
+        <div class="container relative zindex-3">
+            <h1 class="headline-2 mb-0em"> {{$career->title}} (Minimum 2 years experience) </h1>
+            <div class="content  mt-20em">
+                <p style="white-space:pre-line;">{{$career->description}}</p>
+                @if($career->responsibilities)
+                <h3 class="headline-3">Responsibilities:</h3>
+                <ul type="disc">
+                    <?php
+                    $responsibilitiesArray = explode('.', $career->responsibilities);
+                    ?>
+                    @foreach ($responsibilitiesArray as $responsibility)
+                    @if (!$loop->last)
+                    <li>{{ $responsibility }}.</li>
+                    @endif
+                    @endforeach
+                </ul>
+                @endif
+                @if($career->benefits)
+                <h3 class="headline-3">Benefits</h3>
+                <ul>
+                    <?php
+                    $benefitsArray = explode('.', $career->benefits);
+                    ?>
+                    @foreach ($benefitsArray as $benefit)
+                    @if (!$loop->last)
+                    <li>{{ $benefit }}.</li>
+                    @endif
+                    @endforeach
+                </ul>
+                @endif
+
+                <p><br /><em><strong>Join us at Choice and seize this exciting opportunity to be an integral part of our
+                            ongoing growth and success.</strong></em></p>
             </div>
         </div>
-    </div>
-
+    </header>
     <section class="section">
         <div class="container-fluid">
             <div class="row no-gutters">
                 <div class="col-xl-6 padding-xl-240 align-center">
                     <div class="relative zindex-3">
-                        <h2 class="headline-3"> At Choice Accountants, our team of experts is poised and ready to take on your
-                            next financial
-                            challenge. </h2>
+                        <h2 class="headline-3"> Contact Us </h2>
                         <div class="content  mb-30em">
-                            <p> Contact us today to initiate the process! We're eager to arrange a discovery workshop,
-                                where we'll thoroughly delve into your business project or issue, ensuring we provide you with the
-                                best possible solutions.
+                            <p><span>If you have any questions or would like more information, please use the contact form.</span>
                             </p>
-                        </div>
-                    </div>
-                    <div class="bg-shape-container zindex-1">
-                        <div class=" bg-shape quater-filled top left  size-300  ">
-                            <div class="bg-shape__inner animation-rotateLeft90" data-animation-offset="100%"> </div>
-                        </div>
-                        <div class=" bg-shape quater-border-filled top right gradient-1 size-96  ">
-                            <div class="bg-shape__inner animation-rotateLeft90" data-animation-offset="100%"> </div>
                         </div>
                     </div>
                 </div>
@@ -138,7 +124,6 @@ Valuable Clients of Choice Accountants | Australia
                                 <p> We aim to respond to all enquiries within 72 hours. </p>
                             </div>
                             <div id="hubspotform-18"></div>
-
 
                             <div class="form-wrapper-18">
                                 <div class="js-form-content">
@@ -170,7 +155,7 @@ Valuable Clients of Choice Accountants | Australia
                                             <label for="privacy-policy">By submitting this form, you consent to our <a href="{{url('/privacy-policy')}}" target="_blank">privacy policy</a>.</label>
                                         </div>
 
-                                       <button type="button" class="submitformbtn" id="submit-button1" >Submit Details</button>
+                                        <button type="button" class="submitformbtn" id="submit-button1" >Submit Details</button>
 
                                     </form>
                                 </div>
@@ -186,9 +171,11 @@ Valuable Clients of Choice Accountants | Australia
         </div>
     </section>
 </main>
+
 @endsection
 
 @section('scripts')
+
 <script>
     function checkemail() {
         var emailInput = document.getElementById('email1');
@@ -225,7 +212,7 @@ Valuable Clients of Choice Accountants | Australia
         }
     }
 
-    function checkfname() {
+    function checkfname(){
         var fnameInput = document.getElementById('fname1');
         var fnameValidation = document.getElementById('nameerror1');
         var button = document.getElementById('submit-button1');
@@ -242,7 +229,7 @@ Valuable Clients of Choice Accountants | Australia
         }
     }
 
-    function checklname() {
+    function checklname(){
         var lnameInput = document.getElementById('lname1');
         var lnameValidation = document.getElementById('lnameerror1');
         var button = document.getElementById('submit-button1');

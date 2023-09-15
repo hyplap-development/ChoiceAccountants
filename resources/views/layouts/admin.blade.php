@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
-	<link rel="shortcut icon" href="{{asset('/webassets/uploads/2022/10/cropped-favicon-192x192.png')}}" />
+	<link rel="shortcut icon" href="{{asset('/web/images/favicon.png')}}" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 	<link href="{{asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
 	<link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
@@ -61,7 +61,7 @@
 									<span class="fw-semibold d-block fs-8 mb-1" style="color: white;">{{Auth::User()->rolee->name}}</span>
 								</div>
 								<div class="me-n2">
-									<a class="btn btn-icon btn-sm mt-n2" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-kt-menu-overflow="true" >
+									<a class="btn btn-icon btn-sm mt-n2" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-kt-menu-overflow="true">
 										<span class="svg-icon svg-icon-2" style="color: white;">
 											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="currentColor" />
@@ -215,6 +215,29 @@
 								</div>
 							</div>
 
+							<div class="menu-item pt-5">
+								<div class="menu-content">
+									<span class="menu-heading fw-bold text-uppercase fs-7" style="color: white;">Enquiries</span>
+								</div>
+							</div>
+
+							<a href="{{url('/enquiry')}}" class="menu-item menu-accordion {{Request::is('enquiry*') ? 'here show' : ''}}">
+								<span class="menu-link {{Request::is('enquiry*') ? 'active' : ''}}">
+									<span class="menu-icon">
+										<span class="svg-icon svg-icon-2">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<polygon points="0 0 24 0 24 24 0 24" />
+													<path d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="currentColor" fill-rule="nonzero" opacity="0.3" />
+													<path d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="currentColor" fill-rule="nonzero" />
+												</g>
+											</svg></span>
+									</span>
+									<span class="menu-title">Enquiries</span>
+								</span>
+							</a>
+
+
 							@if(auth()->user()->role == 'developer')
 							<div class="menu-item pt-5">
 								<div class="menu-content">
@@ -274,6 +297,7 @@
 							</div>
 							@endif
 
+							
 							<div class="menu-item pt-5">
 								<div class="menu-content">
 									<span class="menu-heading fw-bold text-uppercase fs-7" style="color: white;">Other</span>

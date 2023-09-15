@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\Careeropportunity;
 use App\Models\Client;
 use App\Models\Department;
+use App\Models\Enquiry;
 use App\Models\Faq;
 use App\Models\Log;
 use App\Models\Newslatter;
@@ -912,6 +913,7 @@ class AdminController extends Controller
         $faq = new Faq;
         $faq->question = $request->question;
         $faq->answer = $request->answer;
+        $faq->answer2 = $request->answer2;
         $faq->sequence = $request->sequence;
         $faq->status = $request->status;
         $faq->save();
@@ -926,6 +928,7 @@ class AdminController extends Controller
         $faq = Faq::find($request->faqId);
         $faq->question = $request->question;
         $faq->answer = $request->answer;
+        $faq->answer2 = $request->answer2;
         $faq->sequence = $request->sequence;
         $faq->status = $request->status;
         $faq->update();
@@ -1986,4 +1989,25 @@ class AdminController extends Controller
         Session()->flash('alert-danger', "Deleted successfully");
         return redirect()->back();
     }
+
+    // Enquiry Controller
+
+    public function indexEnquiry()
+    {
+        $enquiries = Enquiry::where('deleteId', 0)->orderBy('id', 'DESC')->with('service')->get();
+
+        return view('admin.other.enquiry', compact('enquiries'));
+    }
+
+    public function deleteEnquiry(Request $request)
+    {
+        $enquiry = Enquiry::find($request->enquiryId);
+        $enquiry->deleteId = 1;
+        $enquiry->save();
+
+        $this->storeLog('Delete', 'deleteEnquiry', $enquiry);
+        Session()->flash('alert-danger', "The enquiry has been deleted successfully");
+        return redirect()->back();
+    }
+
 }

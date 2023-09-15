@@ -52,9 +52,10 @@ Solving Accounting Challenges in Australia | Choice Accountants
     </div>
 </header>
 <main>
+    @if($departments->count()>0)
     <section class="section ">
         <div class="container-fluid grid grid--4-column-cards bg-checkboard-2-2-4-cols" style=" --checkboardFirstColor: #fff; --checkboardSecondColor: #f7fbff; ">
-            <div class=" grid__col grid__col--heading grid__col--heading-2-cols grid__col--heading-2-rows padding-heading content  bg-purple ">
+            <div class=" grid__col grid__col--heading grid__col--heading-2-cols grid__col--heading-2-rows padding-heading content bg-purple ">
                 <div class="relative zindex-3">
                     <h2 class="headline-2"> Struggling with day-to-day accounting challenges ? Your Path to Optimal Solutions
                         Starts Here!
@@ -72,9 +73,9 @@ Solving Accounting Challenges in Australia | Choice Accountants
                 </div>
             </div>
             @foreach($departments as $department)
-            <a href="{{url('/our-services')}}/{{$department->slug}}" title="{{$department->name}}" class=" grid__col card card--gradient-hover padding-xl-72 content">
+            <a href="{{url('/our-services')}}/{{$department->slug}}" title="{{$department->name}}" class=" grid__col card card--gradient-hover padding-xl-72 content cardnostyle">
                 <div class="card__btn btn btn--round-prev"> <svg class="btn__icon" width="32" height="26" aria-hidden="true">
-                        <use xmlns:xlink="" href="../choiceaccountant/images/icons.svg#icon-arrow"> </use>
+                        <use xmlns:xlink="" href="/web/images/icons.svg#icon-arrow"> </use>
                     </svg> </div>
                 <figure class="card__icon"> <img width="48" height="48" src="/{{$department->image}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="{{$department->imgAlt}}"> </figure>
                 <h3 class="card__headline headline-4">{{$department->name}}
@@ -85,6 +86,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
             @endforeach
         </div>
     </section>
+    @endif
     <section class="section">
         <div class="bg-blue2">
             <div class="container text-center">
@@ -92,7 +94,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
             </div>
         </div>
         <div class="">
-            <div class="container ">
+            <div class="container">
                 <div class="link-block-wrapper">
                     <a title="Proactive Guidance" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
@@ -148,6 +150,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
             </div>
         </div>
     </section>
+    @if($allservices->count()>0)
     <div class="section">
         <div class="bg-blue2">
             <div class="container text-center">
@@ -163,7 +166,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
                         <div class="content content--large-text">
                             <h2 class="headline-3"> {{$allservice->name}} </h2>
                             <p> "{{$allservice->homePageDesc}}" </p>
-                            <a href="{{url('/our-services')}}/{{$allservice->department->slug}}/{{$allservice->slug}}" title="{{$allservice->name}}" class="btn btn--primary btn--purple mt-10em mb-10em mr-15em">
+                            <a href="{{url('/our-services')}}/{{$allservice->department ? $allservice->department->slug : ''}}/{{$allservice->slug}}" title="{{$allservice->name}}" class="btn btn--primary btn--purple mt-10em mb-10em mr-15em">
                                 <span class="btn__text"> Read More</span>
                             </a>
                             <a href="{{url('/get-in-touch')}}" title="Contact Us" class="btn btn--secondary btn--purple mt-10em mb-10em">
@@ -189,7 +192,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
                         <div class="content content--large-text">
                             <h2 class="headline-3"> {{$allservice->name}} </h2>
                             <p> "{{$allservice->homePageDesc}}" </p>
-                            <a href="{{url('/our-services')}}/{{$allservice->department->slug}}/{{$allservice->slug}}" title="{{$allservice->name}}" class="btn btn--primary btn--purple mt-10em mb-10em mr-15em">
+                            <a href="{{url('/our-services')}}/{{$allservice->department ? $allservice->department->slug : ''}}/{{$allservice->slug}}" title="{{$allservice->name}}" class="btn btn--primary btn--purple mt-10em mb-10em mr-15em">
                                 <span class="btn__text"> Read More </span>
                             </a>
                             <a href="{{url('/get-in-touch')}}" title="Contact Us" class="btn btn--secondary btn--purple mt-10em mb-10em">
@@ -212,24 +215,26 @@ Solving Accounting Challenges in Australia | Choice Accountants
                 @endforeach
             </div>
             <div class="grid grid--50-50 relative zindex-3">
-                <button type="button" class="grid__col text-left bg-pink btn btn--grid-prev js-cs-reel-prev">
+                <button type="button" class="grid__col text-left bg-pink cardnostyle btn btn--grid-prev js-cs-reel-prev">
                     <div class="btn__icon-wrapper">
                         <svg class="btn__icon stroke-white stroke-width-2 rotate-180" width="58" height="48" aria-label="Previous">
-                            <use xmlns:xlink="" href="../choiceaccountant/images/icons.svg#icon-arrow"> </use>
+                            <use xmlns:xlink="" href="/web/images/icons.svg#icon-arrow"> </use>
                         </svg>
                     </div>
                 </button>
-                <button type="button" class="grid__col text-right bg-pink2 btn btn--grid-next js-cs-reel-next">
+                <button type="button" class="grid__col text-right cardnostyle bg-pink2 btn btn--grid-next js-cs-reel-next">
                     <div class="btn__icon-wrapper">
                         <svg class="btn__icon stroke-white stroke-width-2" width="58" height="48" aria-label="Next">
-                            <use xmlns:xlink="" href="../choiceaccountant/images/icons.svg#icon-arrow"> </use>
+                            <use xmlns:xlink="" href="/web/images/icons.svg#icon-arrow"> </use>
                         </svg>
                     </div>
                 </button>
             </div>
         </div>
     </div>
+    @endif
     <!-- SERVICE AREAS ENDS -->
+    @if($testimonials -> count()>0)
     <section class="section ">
         <div class="container-fluid">
             <div class="row no-gutters">
@@ -273,17 +278,17 @@ Solving Accounting Challenges in Australia | Choice Accountants
                             <div class="scrollbar__scroll js-testimonial-reel-scrollbar"></div>
                         </div>
                         <div class="grid grid--50-50 relative zindex-3">
-                            <button type="button" class="grid__col text-left bg-pink btn btn--grid-prev">
+                            <button type="button" class="grid__col text-left bg-pink cardnostyle btn btn--grid-prev js-cs-reel-prev">
                                 <div class="btn__icon-wrapper">
                                     <svg class="btn__icon stroke-white stroke-width-2 rotate-180" width="58" height="48" aria-label="Previous">
-                                        <use xmlns:xlink="" href="../choiceaccountant/images/icons.svg#icon-arrow"> </use>
+                                        <use xmlns:xlink="" href="/web/images/icons.svg#icon-arrow"> </use>
                                     </svg>
                                 </div>
                             </button>
-                            <button type="button" class="grid__col text-right bg-pink2 btn btn--grid-next">
+                            <button type="button" class="grid__col text-right cardnostyle bg-pink2 btn btn--grid-next js-cs-reel-next">
                                 <div class="btn__icon-wrapper">
                                     <svg class="btn__icon stroke-white stroke-width-2" width="58" height="48" aria-label="Next">
-                                        <use xmlns:xlink="" href="../choiceaccountant/images/icons.svg#icon-arrow"> </use>
+                                        <use xmlns:xlink="" href="/web/images/icons.svg#icon-arrow"> </use>
                                     </svg>
                                 </div>
                             </button>
@@ -293,7 +298,9 @@ Solving Accounting Challenges in Australia | Choice Accountants
             </div>
         </div>
     </section>
+    @endif
 
+    @if ($allblogs->count()>0)
     <aside class="section bg-lightOffWhite">
         <div class="container">
             <div class="swiper js-slider overflow-visible" id="insights-reel">
@@ -302,28 +309,28 @@ Solving Accounting Challenges in Australia | Choice Accountants
                     <div class="swiper__btn-wrap">
                         <button type="button" class="btn btn--round-prev" aria-label="Previous resources">
                             <svg class="btn__icon rotate-180" width="32" height="26" role="img">
-                                <use xmlns:xlink="" href="../choiceaccountant/images/icons.svg#icon-arrow"> </use>
+                                <use xmlns:xlink="" href="/web/images/icons.svg#icon-arrow"> </use>
                             </svg>
                         </button>
                         <button type="button" class="btn btn--round-next" aria-label="Next resources"> <svg class="btn__icon" width="32" height="26" role="img">
-                                <use xmlns:xlink="" href="../choiceaccountant/images/icons.svg#icon-arrow"> </use>
+                                <use xmlns:xlink="" href="/web/images/icons.svg#icon-arrow"> </use>
                             </svg>
                         </button>
                     </div>
                 </div>
                 <div class="swiper-wrapper animation-slideLeft">
                     @foreach($allblogs as $blog)
-                    <a href="{{ url('/' . $blog->slug) }}" title="{{$blog->title}}" class="block block--insight link-hover swiper-slide">
+                    <a href="{{url('/our-blogs')}}/{{$blog->slug}}" title="{{$blog->title}}" class="block block--insight link-hover swiper-slide">
                         <picture class=" block__image-frame ">
                             <img class="block__image" width="5760" height="3713" src="/{{$blog->image}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="{{$blog->imgAlt}}">
                         </picture>
                         @if(isset($blog->service))
                         <p class="block__preheadline"> {{$blog->service->name}} </p>
                         @else
-                        <p class="block__preheadline"> {{$blog->serviceId}} </p>
+                        <p class="block__preheadline"> Article </p>
                         @endif
                         <div class="block__title-wrap">
-                            <h2 class="block__headline headline-5"> <span class="link-hover__text">{{$blog->title}}</span> </h2> 
+                            <h2 class="block__headline headline-5"> <span class="link-hover__text">{{$blog->title}}</span> </h2>
                             <svg class="block__icon link-hover__arrow" width="28" height="24" xmlns="" viewBox="0 0 61.21 53.63">
                                 <g id="Icon_feather-arrow-down" data-name="Icon feather-arrow-down">
                                     <path id="horizontal-line" data-name="horizontal-line" d="M2,26.82H59.21" fill="none" stroke-linecap="round" stroke-linejoin="round" />
@@ -340,6 +347,9 @@ Solving Accounting Challenges in Australia | Choice Accountants
             </div>
         </div>
     </aside>
+    @endif
+
+    @if($clients -> count()>0)
     <section class="section bg-gradient">
         <div class="content">
             <div class="container text-center">
@@ -347,7 +357,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
             </div>
         </div>
         <div class="container-fluid mt-25em js-marquee" data-speed="2" data-reverse="true" data-pausable="true">
-            <div> 
+            <div>
                 @foreach($clients as $client)
                 <div class="block block--small-rounded">
                     <figure class="block__picture"> <img class="block__image" src="/{{$client->logo}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" width="252" height="109" alt="{{$client->imgAlt}}">
@@ -357,13 +367,12 @@ Solving Accounting Challenges in Australia | Choice Accountants
             </div>
         </div>
     </section>
+    @endif
 </main>
+
 
 @endsection
 
 @section('scripts')
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 @endsection
