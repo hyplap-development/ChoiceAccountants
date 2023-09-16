@@ -5,7 +5,85 @@
 @endsection
 
 @section('meta')
-@show
+<link rel="canonical" href="{{url('our-blogs')}}/{{$blog->slug}}" />
+@if(isset($blog->seo->metaTitle))
+<meta name="title" content="{{ $blog->seo->metaTitle }}">
+@endif
+@if(isset($blog->seo->metaDescription))
+<meta name="description" content="{{$blog->seo->metaDescription}}">
+@endif
+@if(isset($blog->seo->metaKeyword))
+<meta name="keywords" content="{{$blog->seo->metaKeyword}}">
+@endif
+@if(isset($blog->seo->title))
+<title>{{$blog->seo->title}}</title>
+@endif
+@if(isset($blog->seo->metaRobot))
+<meta name="robots" content="{{$blog->seo->metaRobot}}">
+@endif
+@if(isset($blog->seo->metaAuthor))
+<meta name="author" content="{{$blog->seo->metaAuthor}}">
+@endif
+@if(isset($blog->seo->ogTitle))
+<meta property="og:title" content="{{$blog->seo->ogTitle}}">
+@endif
+@if(isset($blog->seo->ogDescription))
+<meta property="og:description" content="{{$blog->seo->ogDescription}}">
+@endif
+<meta property="og:url" content="{{url('our-blogs')}}/{{$blog->slug}}">
+@if(isset($blog->seo->ogImage))
+<meta name="og:image" content="{{$blog->seo->ogImage}}">
+@endif
+@if(isset($blog->seo->twitterTitle))
+<meta name="twitter:title" content="{{$blog->seo->twitterTitle}}">
+@endif
+@if(isset($blog->seo->twitterDescription))
+<meta name="twitter:description" content="{{$blog->seo->twitterDescription}}">
+@endif
+@if(isset($blog->seo->twitterImage))
+<meta name="twitter:image" content="{{$blog->seo->twitterImage}}">
+@endif
+@if(isset($blog->seo->twitterType))
+<meta name="twitter:card" content="{{$blog->seo->twitterType}}">
+@endif
+@if(isset($blog->seo->fbogTitle))
+<meta name="facebook:title" content="{{$blog->seo->fbogTitle}}">
+@endif
+@if(isset($blog->seo->fbogDescription))
+<meta name="facebook:description" content="{{$blog->seo->fbogDescription}}">
+@endif
+@if(isset($blog->seo->fbogType))
+<meta property="og:type" content="{{$blog->seo->fbogType}}">
+@endif
+@if(isset($blog->seo->fbogSiteName))
+<meta property="og:site_name" content="{{$blog->seo->fbogSiteName}}">
+@endif
+@if(isset($blog->seo->ipTitle))
+<meta itemprop="name" content="{{$blog->seo->ipTitle}}">
+@endif
+@if(isset($blog->seo->ipDescription))
+<meta itemprop="description" content="{{$blog->seo->ipDescription}}">
+@endif
+@if(isset($blog->seo->dcTitle))
+<meta name="DC.title" content="{{$blog->seo->dcTitle}}">
+@endif
+@if(isset($blog->seo->dcDescription))
+<meta name="DC.description" content="{{$blog->seo->dcDescription}}">
+@endif
+@if(isset($blog->seo->dcCreator))
+<meta name="DC.creator" content="{{$blog->seo->dcCreator}}">
+@endif
+@if(isset($blog->seo->schema1))
+<script>
+{!!$blog->seo->schema1!!}
+</script>
+@endif
+@if(isset($blog->seo->schema2))
+<script>
+{!!$blog->seo->schema2!!}
+</script>
+@endif
+@endsection
 
 @section('style')
 @endsection

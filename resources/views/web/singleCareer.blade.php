@@ -5,7 +5,85 @@
 @endsection
 
 @section('meta')
-@show
+<link rel="canonical" href="{{url('/about-choice/careers/')}}/{{$career->slug}}" />
+@if(isset($career->seo->metaTitle))
+<meta name="title" content="{{ $career->seo->metaTitle }}">
+@endif
+@if(isset($career->seo->metaDescription))
+<meta name="description" content="{{$career->seo->metaDescription}}">
+@endif
+@if(isset($career->seo->metaKeyword))
+<meta name="keywords" content="{{$career->seo->metaKeyword}}">
+@endif
+@if(isset($career->seo->title))
+<title>{{$career->seo->title}}</title>
+@endif
+@if(isset($career->seo->metaRobot))
+<meta name="robots" content="{{$career->seo->metaRobot}}">
+@endif
+@if(isset($career->seo->metaAuthor))
+<meta name="author" content="{{$career->seo->metaAuthor}}">
+@endif
+@if(isset($career->seo->ogTitle))
+<meta property="og:title" content="{{$career->seo->ogTitle}}">
+@endif
+@if(isset($career->seo->ogDescription))
+<meta property="og:description" content="{{$career->seo->ogDescription}}">
+@endif
+<meta property="og:url" content="{{url('/about-choice/careers/')}}/{{$career->slug}}">
+@if(isset($career->seo->ogImage))
+<meta name="og:image" content="{{$career->seo->ogImage}}">
+@endif
+@if(isset($career->seo->twitterTitle))
+<meta name="twitter:title" content="{{$career->seo->twitterTitle}}">
+@endif
+@if(isset($career->seo->twitterDescription))
+<meta name="twitter:description" content="{{$career->seo->twitterDescription}}">
+@endif
+@if(isset($career->seo->twitterImage))
+<meta name="twitter:image" content="{{$career->seo->twitterImage}}">
+@endif
+@if(isset($career->seo->twitterType))
+<meta name="twitter:card" content="{{$career->seo->twitterType}}">
+@endif
+@if(isset($career->seo->fbogTitle))
+<meta name="facebook:title" content="{{$career->seo->fbogTitle}}">
+@endif
+@if(isset($career->seo->fbogDescription))
+<meta name="facebook:description" content="{{$career->seo->fbogDescription}}">
+@endif
+@if(isset($career->seo->fbogType))
+<meta property="og:type" content="{{$career->seo->fbogType}}">
+@endif
+@if(isset($career->seo->fbogSiteName))
+<meta property="og:site_name" content="{{$career->seo->fbogSiteName}}">
+@endif
+@if(isset($career->seo->ipTitle))
+<meta itemprop="name" content="{{$career->seo->ipTitle}}">
+@endif
+@if(isset($career->seo->ipDescription))
+<meta itemprop="description" content="{{$career->seo->ipDescription}}">
+@endif
+@if(isset($career->seo->dcTitle))
+<meta name="DC.title" content="{{$career->seo->dcTitle}}">
+@endif
+@if(isset($career->seo->dcDescription))
+<meta name="DC.description" content="{{$career->seo->dcDescription}}">
+@endif
+@if(isset($career->seo->dcCreator))
+<meta name="DC.creator" content="{{$career->seo->dcCreator}}">
+@endif
+@if(isset($career->seo->schema1))
+<script>
+{!!$career->seo->schema1!!}
+</script>
+@endif
+@if(isset($career->seo->schema2))
+<script>
+{!!$career->seo->schema2!!}
+</script>
+@endif
+@endsection
 
 @section('style')
 <style>
@@ -155,7 +233,7 @@
                                             <label for="privacy-policy">By submitting this form, you consent to our <a href="{{url('/privacy-policy')}}" target="_blank">privacy policy</a>.</label>
                                         </div>
 
-                                        <button type="button" class="submitformbtn" id="submit-button1" >Submit Details</button>
+                                        <button type="button" class="submitformbtn" id="submit-button1">Submit Details</button>
 
                                     </form>
                                 </div>
@@ -212,7 +290,7 @@
         }
     }
 
-    function checkfname(){
+    function checkfname() {
         var fnameInput = document.getElementById('fname1');
         var fnameValidation = document.getElementById('nameerror1');
         var button = document.getElementById('submit-button1');
@@ -229,7 +307,7 @@
         }
     }
 
-    function checklname(){
+    function checklname() {
         var lnameInput = document.getElementById('lname1');
         var lnameValidation = document.getElementById('lnameerror1');
         var button = document.getElementById('submit-button1');

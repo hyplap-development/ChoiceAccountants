@@ -129,7 +129,7 @@ Choice Accountant Contact Details | Australia
             </div>
         </div>
         <div class="grid__col grid__col--center-content grid__col--4k-pushed-to-left padding-lg bg-lightOffWhite relative">
-            <div class=" form form--card bg-purple max-width-720 form-wrapper-18 " style="padding: 1.5rem; height: 730px; min-width: 475px;">
+            <div class=" form form--card bg-purple max-width-720 form-wrapper-18 " style="padding: 1.5rem; min-width: 475px;">
                 <div class="relative zindex-3">
                     <h2 class="headline-3 mb-5em js-form-headline"> Send a message </h2>
                     <div class="content mb-10em js-form-content">

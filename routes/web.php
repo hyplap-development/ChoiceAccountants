@@ -242,6 +242,7 @@ Route::group(['middleware' => 'checkUserr'], function () {
         ],
         function () {
             Route::get('/', [AdminController::class, 'indexEnquiry']);
+            Route::post('/update', [AdminController::class, 'updateEnquiry']);
             Route::post('/delete', [AdminController::class, 'deleteEnquiry']);
         }
     );

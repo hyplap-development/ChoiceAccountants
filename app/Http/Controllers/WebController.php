@@ -160,7 +160,7 @@ class WebController extends Controller
         $clients = Client::where('status', 1)->where('deleteId', 0)->orderBy('sequence', 'ASC')->get();
         $faqs = Faq::where('status', 1)->get();
         $teams = Team::where('status', 1)->where('deleteId', 0)->get();
-        $department = Department::where('deleteId', 0)->where('status', 1)->where('slug', $slug)->first();
+        $department = Department::where('deleteId', 0)->where('status', 1)->where('slug', $slug)->with('seo')->first();
         $depservices = Service::where('departmentId', $department->id)->where('deleteId', 0)->where('status', 1)->get();
         $allservices = Service::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->get();
 
@@ -189,7 +189,7 @@ class WebController extends Controller
         $clients = Client::where('status', 1)->where('deleteId', 0)->orderBy('sequence', 'ASC')->get();
         $faqs = Faq::where('status', 1)->get();
         $teams = Team::where('status', 1)->where('deleteId', 0)->get();
-        $blog = Blog::where('deleteId', 0)->where('status', 1)->where('slug', $slug)->first();
+        $blog = Blog::where('deleteId', 0)->where('status', 1)->where('slug', $slug)->with('seo')->first();
         $allservices = Service::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->get();
 
         return view('web.singleBlog', compact('departments', 'services', 'blogs', 'clients', 'faqs', 'teams', 'blog', 'allservices'));
@@ -203,7 +203,7 @@ class WebController extends Controller
         $clients = Client::where('status', 1)->where('deleteId', 0)->orderBy('sequence', 'ASC')->get();
         $faqs = Faq::where('status', 1)->get();
         $teams = Team::where('status', 1)->where('deleteId', 0)->get();
-        $career = Careeropportunity::where('status', 1)->where('slug', $slug)->first();
+        $career = Careeropportunity::where('status', 1)->where('slug', $slug)->with('seo')->first();
         $allservices = Service::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->get();
 
         return view('web.singleCareer', compact('departments', 'services', 'blogs', 'clients', 'faqs', 'teams', 'career', 'allservices'));
@@ -217,7 +217,7 @@ class WebController extends Controller
         $clients = Client::where('status', 1)->where('deleteId', 0)->orderBy('sequence', 'ASC')->get();
         $faqs = Faq::where('status', 1)->get();
         $teams = Team::where('status', 1)->where('deleteId', 0)->get();
-        $service = Service::where('deleteId', 0)->where('status', 1)->where('slug', $serviceslug)->with('department')->first();
+        $service = Service::where('deleteId', 0)->where('status', 1)->where('slug', $serviceslug)->with('department')->with('seo')->first();
         $serviceblogs = Blog::where('status', 1)->where('deleteId', 0)->where('serviceId', $service->id)->orderBy('id', 'DESC')->get();
         $allservices = Service::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->get();
 
@@ -276,8 +276,8 @@ class WebController extends Controller
             $contactusForm->type = 'CONTACT US';
             $contactusForm->save();
 
-            $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
-            $this->sendEmail('Contact Us Admin', 'help@choice.in', 'Choice Accountants', $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
+            // $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
+            // $this->sendEmail('Contact Us Admin', 'help@choice.in', 'Choice Accountants', $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
 
             return response()->json([
                 'status' => 1,

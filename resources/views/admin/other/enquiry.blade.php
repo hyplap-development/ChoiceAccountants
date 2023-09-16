@@ -141,7 +141,7 @@ All Enquiries
                         @endif
                     </td>
                     <td class="text-center">
-                        <!-- <button class="btn btn-icon btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="modal" data-bs-target="#updatemodal{{$data->id}}">
+                        <button class="btn btn-icon btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="modal" data-bs-target="#updatemodal{{$data->id}}" onclick="getId('{{$data->id}}')">
                             <span class="svg-icon svg-icon-3">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect x="0" y="0" width="24" height="24" />
@@ -149,7 +149,7 @@ All Enquiries
                                     <rect fill="currentColor" opacity="0.3" x="5" y="20" width="15" height="2" rx="1" />
                                 </svg>
                             </span>
-                        </button> -->
+                        </button>
                         <button class="btn btn-icon btn-active-light-primary w-30px h-30px" data-bs-toggle="modal" data-bs-target="#deleteModal{{$data->id}}">
                             <span class="svg-icon svg-icon-3">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +160,89 @@ All Enquiries
                             </span>
                         </button>
                     </td>
-                   
+                    <!--update modal start-->
+                    <div class="modal fade" id="updatemodal{{$data->id}}" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered mw-900px">
+                            <div class="modal-content rounded">
+                                <div class="modal-header">
+                                    <h1 class="modal-tital w-100 text-center"> Update Enquiry</h1>
+                                    <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                        <span class="svg-icon svg-icon-1">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <form action="{{url('/enquiry/update')}}" method="POST" enctype="multipart/form-data" id="kt_modal_add_form">
+                                    <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+                                        @csrf
+                                        <input type="hidden" name="enquiryId" value="{{$data->id}}">
+                                        <div class="row g-9 mt-3">
+                                            <div class="col-md-4 fv-row">
+                                                <label class="required fs-6 fw-semibold mb-2 ">Form Type</label>
+                                                <select class="form-select form-select-solid" data-control="select2" data-placeholder="Select" data-hide-search="true" name="type" id="type{{$data->id}}">
+                                                    <option value=""></option>
+                                                    <option value="CONTACT US" {{$data->type == 'CONTACT US' ? 'selected' : ''}}>CONTACT US</option>
+                                                    <option value="ENQUIRY" {{$data->type == 'ENQUIRY' ? 'selected' : ''}}>ENQUIRY</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4 fv-row" id="fnamediv{{$data->id}}">
+                                                <label class="required fs-6 fw-semibold mb-2">First Name</label>
+                                                <input type="text" class="txtOnly form-control form-control-solid" placeholder="Enter Your Name" id="fname{{$data->id}}" name="fname" value="{{$data->fname}}">
+                                            </div>
+                                            <div class="col-md-4 fv-row" id="lnamediv{{$data->id}}" style="display:{{$data->type =='ENQUIRY' ? 'none': 'block'}}">
+                                                <label class="required fs-6 fw-semibold mb-2">Last Name</label>
+                                                <input type="text" class="txtOnly form-control form-control-solid" placeholder="Enter Your Name" id="lname{{$data->id}}" name="lname" value="{{$data->lname}}">
+                                            </div>
+                                            <div class="col-md-4 fv-row" id="emaildiv{{$data->id}}" style="display:{{$data->type =='ENQUIRY' ? 'none': 'block'}}">
+                                                <label class="required fs-6 fw-semibold mb-2">Email</label>
+                                                <input type="email" class="form-control form-control-solid" placeholder="Enter your email" id="email{{$data->id}}" name="email" value="{{$data->email}}">
+                                            </div>
+                                            <div class="col-md-4 fv-row" id="phonediv{{$data->id}}">
+                                                <label class="required fs-6 fw-semibold mb-2">Phone Number</label>
+                                                <input class="form-control form-control-solid" placeholder="Enter phone number" id="phone{{$data->id}}" name="phone" value="{{$data->phone}}" maxlength="10">
+                                            </div>
+                                            <div class="col-md-4 fv-row" id="compdiv{{$data->id}}" style="display:{{$data->type =='ENQUIRY' ? 'none': 'block'}}">
+                                                <label class="fs-6 fw-semibold mb-2">Company Name</label>
+                                                <input type="text" class="form-control form-control-solid" placeholder="Enter Your Company Name" id="companyName{{$data->id}}" name="companyName" value="{{$data->companyName}}">
+                                            </div>
+                                            <div class="col-md-4 fv-row" id="servicediv{{$data->id}}" style="display:{{$data->type =='ENQUIRY' ? 'block': 'none'}}">
+                                                <label class="required fs-6 fw-semibold mb-2">Select Service</label>
+                                                <select class="form-select form-select-solid" data-control="select2" data-placeholder="Select Service" data-hide-search="false" data-dropdown-parent="#updatemodal{{$data->id}}" name="serviceId" id="serviceId{{$data->id}}">
+                                                    <option value=""></option>
+                                                    @foreach($services as $service)
+                                                    <option value="{{$service->id}}" {{$service->id == $data->serviceId  ? 'selected' : ''}}>{{$service->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4 fv-row" id="statusdiv{{$data->id}}">
+                                                <label class="required fs-6 fw-semibold mb-2 ">Status</label>
+                                                <select class="form-select form-select-solid" data-control="select2" data-placeholder="Select Status" data-hide-search="true" name="status" id="status{{$data->id}}">
+                                                    <option value=""></option>
+                                                    <option value="pending" {{$data->status == 'pending' ? 'selected' : ''}}>Pending</option>
+                                                    <option value="in process" {{$data->status == 'in process' ? 'selected' : ''}}>In Process</option>
+                                                    <option value="completed" {{$data->status == 'completed' ? 'selected' : ''}}>Completed</option>
+                                                    <option value="not interested" {{$data->status == 'not interested' ? 'selected' : ''}}>Not Interested</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-12 fv-row" id="msgdiv{{$data->id}}" style="display:{{$data->type =='ENQUIRY' ? 'none': 'block'}}">
+                                                <label class="fs-6 fw-semibold mb-2">Message</label>
+                                                <textarea class="form-control form-control-solid" placeholder="Enter Message" id="message{{$data->id}}" name="message" rows="5" style="white-space:pre-wrap;">{{$data->message}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" id="kt_modal_add_submit1">
+                                            <span class="indicator-label">Update</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!--update modal end-->
                     <!--delete modal start-->
                     <div class="modal fade" id="deleteModal{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog ">
@@ -183,9 +265,9 @@ All Enquiries
                                         <span>Are you sure you want to delete this enquiry? <br> Action cannot be reverted</span>
                                     </div>
                                     <div class="modal-footer">
-                                    <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">No</button>
-                                    <button type="submit" id="delYes" class="btn btn-danger">Yes</button>
-                                </div>
+                                        <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">No</button>
+                                        <button type="submit" id="delYes" class="btn btn-danger">Yes</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -202,6 +284,44 @@ All Enquiries
 @endsection
 
 @section('scripts')
+<script>
+    function getId(id) {
+        var services = document.getElementById('servicediv' + id);
+        var fname = document.getElementById('fnamediv' + id);
+        var lname = document.getElementById('lnamediv' + id);
+        var email = document.getElementById('emaildiv' + id);
+        var phone = document.getElementById('phonediv' + id);
+        var company = document.getElementById('compdiv' + id);
+        var message = document.getElementById('msgdiv' + id);
+        var status = document.getElementById('statusdiv' + id).value;
+
+        $('#type' + id).change(function(e) {
+            e.preventDefault();
+            var type = document.getElementById('type' + id).value;
+
+            if (type == 'CONTACT US') {
+                services.style.display = "none"
+                fname.style.display = "block"
+                lname.style.display = "block"
+                email.style.display = "block"
+                phone.style.display = "block"
+                company.style.display = "block"
+                message.style.display = "block"
+                status.style.display = "block"
+            } else {
+                services.style.display = "block"
+                fname.style.display = "block"
+                lname.style.display = "none"
+                email.style.display = "none"
+                phone.style.display = "block"
+                company.style.display = "none"
+                message.style.display = "none"
+                status.style.display = "block"
+
+            }
+        });
+    }
+</script>
 
 
 <!--Datatable-->

@@ -46,7 +46,7 @@ class AdminController extends Controller
         $department = Department::where('deleteId', 0)->orderBy('id', 'DESC')->limit(4)->get();
         $client = Client::where('deleteId', 0)->get();
         $blog = Blog::where('deleteId', 0)->get();
-       
+
         return view('admin.dashboard', compact('service', 'user', 'department', 'blog', 'client'));
     }
 
@@ -1248,7 +1248,7 @@ class AdminController extends Controller
     {
         $seoblog = Seo::where('id', $id)->first();
         $blog = Blog::where('id', $seoblog->fieldId)->first();
-        return view('admin.seo.blogSeoUpdate', compact('seoblog','blog'));
+        return view('admin.seo.blogSeoUpdate', compact('seoblog', 'blog'));
     }
 
     public function addSeoBlog(Request $request)
@@ -1437,7 +1437,7 @@ class AdminController extends Controller
     {
         $seo = Seo::where('id', $id)->first();
         $department = Department::where('id', $seo->fieldId)->first();
-        return view('admin.seo.departmentSeoUpdate', compact('seo','department'));
+        return view('admin.seo.departmentSeoUpdate', compact('seo', 'department'));
     }
 
     public function addSeoDepartment(Request $request)
@@ -1626,7 +1626,7 @@ class AdminController extends Controller
     {
         $seo = Seo::where('id', $id)->first();
         $service = Service::where('id', $seo->fieldId)->first();
-        return view('admin.seo.serviceSeoUpdate', compact('seo','service'));
+        return view('admin.seo.serviceSeoUpdate', compact('seo', 'service'));
     }
 
     public function addSeoService(Request $request)
@@ -1815,7 +1815,7 @@ class AdminController extends Controller
     {
         $seo = Seo::where('id', $id)->first();
         $careeropportunity = Careeropportunity::where('id', $seo->fieldId)->first();
-        return view('admin.seo.careerSeoUpdate', compact('seo','careeropportunity'));
+        return view('admin.seo.careerSeoUpdate', compact('seo', 'careeropportunity'));
     }
 
     public function addSeoCareeropportunity(Request $request)
@@ -1987,8 +1987,40 @@ class AdminController extends Controller
     public function indexEnquiry()
     {
         $enquiries = Enquiry::where('deleteId', 0)->orderBy('id', 'DESC')->with('service')->get();
+        $services = Service::where('status', 1)->where('deleteId', 0)->get();
 
-        return view('admin.other.enquiry', compact('enquiries'));
+        return view('admin.other.enquiry', compact('enquiries', 'services'));
+    }
+
+    public function updateEnquiry(Request $request)
+    {
+        $enquiry = Enquiry::find($request->enquiryId);
+        if ($request->type == 'CONTACT US') {
+            $enquiry->fname = $request->fname;
+            $enquiry->lname = $request->lname;
+            $enquiry->serviceId = null;
+            $enquiry->phone = $request->phone;
+            $enquiry->email = $request->email;
+            $enquiry->companyName = $request->companyName;
+            $enquiry->message = $request->message;
+            $enquiry->type = $request->type;
+            $enquiry->status = $request->status;
+        } else {
+            $enquiry->fname = $request->fname;
+            $enquiry->phone = $request->phone;
+            $enquiry->serviceId = $request->serviceId;
+            $enquiry->status = $request->status;
+            $enquiry->type = $request->type;
+            $enquiry->lname = null;
+            $enquiry->email = null;
+            $enquiry->companyName = null;
+            $enquiry->message = null;
+        }
+        $enquiry->update();
+
+        $this->storeLog('Update', 'updateEnquiry', $enquiry);
+        Session()->flash('alert-success', "The enquiry has been updated successfully");
+        return redirect()->back();
     }
 
     public function deleteEnquiry(Request $request)
@@ -2001,5 +2033,4 @@ class AdminController extends Controller
         Session()->flash('alert-danger', "The enquiry has been deleted successfully");
         return redirect()->back();
     }
-
 }

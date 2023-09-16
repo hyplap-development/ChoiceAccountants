@@ -5,7 +5,86 @@
 @endsection
 
 @section('meta')
-@show
+<link rel="canonical" href="{{url('/our-services')}}/{{$department->slug}}" />
+@if(isset($department->seo->metaTitle))
+<meta name="title" content="{{ $department->seo->metaTitle }}">
+@endif
+@if(isset($department->seo->metaDescription))
+<meta name="description" content="{{$department->seo->metaDescription}}">
+@endif
+@if(isset($department->seo->metaKeyword))
+<meta name="keywords" content="{{$department->seo->metaKeyword}}">
+@endif
+@if(isset($department->seo->title))
+<title>{{$department->seo->title}}</title>
+@endif
+@if(isset($department->seo->metaRobot))
+<meta name="robots" content="{{$department->seo->metaRobot}}">
+@endif
+@if(isset($department->seo->metaAuthor))
+<meta name="author" content="{{$department->seo->metaAuthor}}">
+@endif
+@if(isset($department->seo->ogTitle))
+<meta property="og:title" content="{{$department->seo->ogTitle}}">
+@endif
+@if(isset($department->seo->ogDescription))
+<meta property="og:description" content="{{$department->seo->ogDescription}}">
+@endif
+<meta property="og:url" content="{{url('/our-services')}}/{{$department->slug}}">
+@if(isset($department->seo->ogImage))
+<meta name="og:image" content="{{$department->seo->ogImage}}">
+@endif
+@if(isset($department->seo->twitterTitle))
+<meta name="twitter:title" content="{{$department->seo->twitterTitle}}">
+@endif
+@if(isset($department->seo->twitterDescription))
+<meta name="twitter:description" content="{{$department->seo->twitterDescription}}">
+@endif
+@if(isset($department->seo->twitterImage))
+<meta name="twitter:image" content="{{$department->seo->twitterImage}}">
+@endif
+@if(isset($department->seo->twitterType))
+<meta name="twitter:card" content="{{$department->seo->twitterType}}">
+@endif
+@if(isset($department->seo->fbogTitle))
+<meta name="facebook:title" content="{{$department->seo->fbogTitle}}">
+@endif
+@if(isset($department->seo->fbogDescription))
+<meta name="facebook:description" content="{{$department->seo->fbogDescription}}">
+@endif
+@if(isset($department->seo->fbogType))
+<meta property="og:type" content="{{$department->seo->fbogType}}">
+@endif
+@if(isset($department->seo->fbogSiteName))
+<meta property="og:site_name" content="{{$department->seo->fbogSiteName}}">
+@endif
+@if(isset($department->seo->ipTitle))
+<meta itemprop="name" content="{{$department->seo->ipTitle}}">
+@endif
+@if(isset($department->seo->ipDescription))
+<meta itemprop="description" content="{{$department->seo->ipDescription}}">
+@endif
+@if(isset($department->seo->dcTitle))
+<meta name="DC.title" content="{{$department->seo->dcTitle}}">
+@endif
+@if(isset($department->seo->dcDescription))
+<meta name="DC.description" content="{{$department->seo->dcDescription}}">
+@endif
+@if(isset($department->seo->dcCreator))
+<meta name="DC.creator" content="{{$department->seo->dcCreator}}">
+@endif
+@if(isset($department->seo->schema1))
+<script>
+{!!$department->seo->schema1!!}
+</script>
+@endif
+@if(isset($department->seo->schema2))
+<script>
+{!!$department->seo->schema2!!}
+</script>
+@endif
+@endsection
+
 
 @section('style')
 @endsection

@@ -13,4 +13,9 @@ class Service extends Model
     {
         return $this->hasOne(Department::class,'id','departmentId')->where('deleteId',0);
     }
+    
+    public function seo()
+    {
+        return $this->hasOne(Seo::class,'fieldId','id')->where('type','SERVICE')->where('deleteId',0);
+    }
 }
