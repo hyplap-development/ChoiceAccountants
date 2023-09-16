@@ -11,13 +11,11 @@
 <div class="bg-body d-flex flex-center rounded-4 w-md-600px p-10">
 	<div class="w-md-400px">
 		<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="" action="#">
-			<div class="text-center mb-11">
-				<h1 class="text-dark fw-bolder mb-3">Sign In</h1>
+			
+			<div class="row">
+				<img alt="logo" src="{{asset('/web/images/logo.png')}}">
 			</div>
-			<!-- <div class="row g-3">
-				<img alt="logo" src="{{asset('assets/media/logos/logo.png')}}">
-			</div> -->
-			<div class="fv-row mt-5" style="text-align: left;">
+			<div class="fv-row mt-10" style="text-align: left;">
 				<label class="required form-label fs-6 fw-bolder">Phone Number </label>
 				<input type="text" placeholder="Phone Number" id="Login" name="login" autocomplete="off" class="form-control bg-transparent" maxlength="10" />
 			</div>
