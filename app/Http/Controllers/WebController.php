@@ -243,6 +243,9 @@ class WebController extends Controller
             $enquiryForm->type = 'ENQUIRY';
             $enquiryForm->save();
 
+            $this->sendEmail('Enquire', $contactusForm->email, $contactusForm->fname, $contactusForm->lname, $contactusForm->phone, $contactusForm->email);
+            $this->sendEmail('Enquire Admin', 'help@choice.in', 'Choice Accountants', $contactusForm->name, $contactusForm->phone, $contactusForm->email);
+
             return response()->json([
                 'status' => 1,
                 'message' => 'Send successfully'
@@ -261,16 +264,19 @@ class WebController extends Controller
                 'message' => 'An enquiry already exists'
             ]);
         } else {
-            $enquiryForm = new Enquiry();
-            $enquiryForm->fname = $request->fname;
-            $enquiryForm->lname = $request->lname;
-            $enquiryForm->email = $request->email;
-            $enquiryForm->phone = $request->phone;
-            $enquiryForm->companyName = $request->companyName;
-            $enquiryForm->message = $request->message;
-            $enquiryForm->status = 'pending';
-            $enquiryForm->type = 'CONTACT US';
-            $enquiryForm->save();
+            $contactusForm = new Enquiry();
+            $contactusForm->fname = $request->fname;
+            $contactusForm->lname = $request->lname;
+            $contactusForm->email = $request->email;
+            $contactusForm->phone = $request->phone;
+            $contactusForm->companyName = $request->companyName;
+            $contactusForm->message = $request->message;
+            $contactusForm->status = 'pending';
+            $contactusForm->type = 'CONTACT US';
+            $contactusForm->save();
+
+            $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->lname, $contactusForm->phone, $contactusForm->email);
+            $this->sendEmail('Contact Us Admin', 'help@choice.in', 'Choice Accountants', $contactusForm->name, $contactusForm->phone, $contactusForm->email);
 
             return response()->json([
                 'status' => 1,
