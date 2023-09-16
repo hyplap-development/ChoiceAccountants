@@ -276,8 +276,8 @@ class WebController extends Controller
             $contactusForm->type = 'CONTACT US';
             $contactusForm->save();
 
-            // $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
-            // $this->sendEmail('Contact Us Admin', 'help@choice.in', 'Choice Accountants', $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
+            $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
+            $this->sendEmail('Contact Us Admin', 'help@choice.in', 'Choice Accountants', $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
 
             return response()->json([
                 'status' => 1,
