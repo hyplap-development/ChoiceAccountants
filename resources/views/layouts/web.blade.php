@@ -1110,7 +1110,7 @@
                         </div>
                         <div class="col-lg-6 col-12 ps-lg-0">
                             <div class="grid__col  grid__col--4k-pushed-to-left relative">
-                                <div class="form form--card bg-purple max-width-720 form-wrapper-18 " style="height: 450px;">
+                                <div class="form form--card bg-purple max-width-720 form-wrapper-18 ">
                                     <div class="relative zindex-3">
                                         <div id="hubspotform-18"></div>
                                         <div class="form-wrapper-18">
