@@ -1289,8 +1289,6 @@ class AdminController extends Controller
             $blogseo->twitterImage = $request->twitterImageurl;
         }
 
-        $blogseo->ogImage = $ogImage_path;
-        $blogseo->twitterImage = $twitterImage_path;
         $blogseo->fieldId = $request->fieldId;
         $blogseo->type = 'BLOG';
         $blogseo->title = $request->title;
@@ -1480,8 +1478,6 @@ class AdminController extends Controller
             $departmentseo->twitterImage = $request->twitterImageurl;
         }
 
-        $departmentseo->ogImage = $ogImage_path;
-        $departmentseo->twitterImage = $twitterImage_path;
         $departmentseo->fieldId = $request->fieldId;
         $departmentseo->type = 'DEPARTMENT';
         $departmentseo->title = $request->title;
@@ -1671,8 +1667,6 @@ class AdminController extends Controller
             $serviceseo->twitterImage = $request->twitterImageurl;
         }
 
-        $serviceseo->ogImage = $ogImage_path;
-        $serviceseo->twitterImage = $twitterImage_path;
         $serviceseo->fieldId = $request->fieldId;
         $serviceseo->type = 'SERVICE';
         $serviceseo->title = $request->title;
@@ -1862,8 +1856,6 @@ class AdminController extends Controller
             $careerseo->twitterImage = $request->twitterImageurl;
         }
 
-        $careerseo->ogImage = $ogImage_path;
-        $careerseo->twitterImage = $twitterImage_path;
         $careerseo->fieldId = $request->fieldId;
         $careerseo->type = 'CAREER OPPORTUNITY';
         $careerseo->title = $request->title;
