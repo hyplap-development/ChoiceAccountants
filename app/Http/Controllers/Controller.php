@@ -35,7 +35,7 @@ class Controller extends BaseController
         } else if ($type == 'Enquire Admin') {
             $name = 'Choice Accountants Pty. Ltd.';
             $subject = 'New Enquiry Received - Choice Accountants Pty Ltd!';
-            $body = '<html><head></head><body><p>Dear Admin Team,</p> <p> Congratulations! We have received a new Enquiry through our website. Please find the details below: </p> <p> <b> Name: </b> &nbsp <span> ' . $username . ' </span> <br> <b> Email: </b> &nbsp <span> ' . $email . ' </span> <br> <b> Contact Number: </b> &nbsp <span> ' . $phone . ' </span> <br> <b> Enquiry Source: </b> &nbsp <span> ' . $formattedType . ' </span> <br> <p> To know more details <a href="'.$hostURL.'/login" > Click here </a> </p>  <br> </p> <br><br> <p> Best regards, <br> Automatic Mail Generator by HYPLAP <br> Choice Accountants Pty Ltd  </p>  </body></html>';
+            $body = '<html><head></head><body><p>Dear Admin Team,</p> <p> Congratulations! We have received a new Enquiry through our website. Please find the details below: </p> <p> <b> Name: </b> &nbsp <span> ' . $username . ' </span> <br> <b> Contact Number: </b> &nbsp <span> ' . $phone . ' </span> <br> <b> Enquiry Source: </b> &nbsp <span> ' . $formattedType . ' </span> <br> <p> To know more details <a href="'.$hostURL.'/login" > Click here </a> </p>  <br> </p> <br><br> <p> Best regards, <br> Automatic Mail Generator by HYPLAP <br> Choice Accountants Pty Ltd  </p>  </body></html>';
         }  else {
             $name = "Welcome To Choice Accountants Pty. Ltd.";
             $subject = 'Welcome To Choice Accountants Pty. Ltd.';

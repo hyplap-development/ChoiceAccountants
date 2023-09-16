@@ -129,7 +129,7 @@ Choice Accountant Contact Details | Australia
             </div>
         </div>
         <div class="grid__col grid__col--center-content grid__col--4k-pushed-to-left padding-lg bg-lightOffWhite relative">
-            <div class=" form form--card bg-purple max-width-720 form-wrapper-18 " style="padding: 1.5rem;">
+            <div class=" form form--card bg-purple max-width-720 form-wrapper-18 " style="padding: 1.5rem; height: 730px; min-width: 475px;">
                 <div class="relative zindex-3">
                     <h2 class="headline-3 mb-5em js-form-headline"> Send a message </h2>
                     <div class="content mb-10em js-form-content">
@@ -166,9 +166,15 @@ Choice Accountant Contact Details | Australia
                                     <label for="privacy-policy">By submitting this form, you consent to our <a href="{{url('/privacy-policy')}}" target="_blank">privacy policy</a>.</label>
                                 </div>
 
-                               <button type="button" class="submitformbtn" id="submit-button1" >Submit Details</button>
+                                <button type="button" class="submitformbtn" id="submit-button1">Submit Details</button>
 
                             </form>
+                            <div id="thankyouContactDiv" style="display: none; position: absolute; top: 150px;">
+                                <div class="" style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                    <h2>Thank You</h2>
+                                    <p>We have received your contact request. We will get in touch with you shortly. Meanwhile, feel free to explore our website.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -305,12 +311,9 @@ Choice Accountant Contact Details | Australia
             processData: false,
             contentType: false,
             success: function(response) {
-                if (response.status == 1) {
-                    console.log(response);
-                    $('#custom-form1')[0].reset();
-                } else {
-                    $('#custom-form1')[0].reset();
-                }
+                $('#custom-form1').fadeOut(400, function() {
+                    $('#thankyouContactDiv').fadeIn(700);
+                });
             },
             error: function(response) {
                 console.log(response);

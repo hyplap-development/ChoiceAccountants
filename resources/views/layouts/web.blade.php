@@ -1110,49 +1110,57 @@
                         </div>
                         <div class="col-lg-6 col-12 ps-lg-0">
                             <div class="grid__col  grid__col--4k-pushed-to-left relative">
-
-                                <div class="form form--card bg-purple max-width-720 form-wrapper-18 ">
+                                <div class="form form--card bg-purple max-width-720 form-wrapper-18 " style="height: 450px;">
                                     <div class="relative zindex-3">
                                         <div id="hubspotform-18"></div>
                                         <div class="form-wrapper-18">
                                             <div class="js-form-content">
-                                                <form action="{{url('/enquirysend')}}" id="custom-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
+                                                <div class="modal-header d-flex flex-row c-white align-content-center justify-content-center p-0 mb-2" style="border: none;">
+                                                    <h1 class="fs-5">Enquire Today</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: #fff !important;"><i class="fa-solid fa-xmark" style="color: #ffffff !important;font-size: 20px;"></i></button>
+                                                </div>
+                                                <form action="{{url('/enquirysend')}}" style="display: block;" id="custom-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
                                                     @csrf
-                                                    <div class="modal-header d-flex flex-row c-white align-content-center justify-content-center p-0 mb-2" style="border: none;">
-                                                        <h1 class="fs-5 mt-0">Enquire Today</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: #fff !important;"><i class="fa-solid fa-xmark" style="color: #ffffff !important;font-size: 20px;"></i></button>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <label for="fname">First Name *</label>
-                                                            <input type="text" id="fname" name="fname" placeholder="Enter Your First Name" onkeyup="checkfname()">
-                                                            <span id="nameerror"></span>
+                                                    <div class="">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <label for="fname">First Name *</label>
+                                                                <input type="text" id="fname" name="fname" placeholder="Enter Your First Name" onkeyup="checkfname()">
+                                                                <span id="nameerror"></span>
 
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <label for="phone">Phone Number *</label>
+                                                                <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone No" onkeyup="checknumber()" maxlength="10">
+                                                                <span id="numbererror"></span>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <label for="service">Services *</label>
+                                                                <select name="serviceId" id="serviceId" style="width: 100%;padding: 8px;margin-bottom: 12px;border: 1px solid #ccc;border-radius: 3px;">
+                                                                    <option value="">Select Service</option>
+
+                                                                </select>
+                                                                <span id="selecterror"></span>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-md-12">
-                                                            <label for="phone">Phone Number *</label>
-                                                            <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone No" onkeyup="checknumber()" maxlength="10">
-                                                            <span id="numbererror"></span>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <label for="service">Services *</label>
-                                                            <select name="serviceId" id="serviceId" style="width: 100%;padding: 8px;margin-bottom: 12px;border: 1px solid #ccc;border-radius: 3px;">
-                                                                <option value="">Select Service</option>
-                                                                
-                                                            </select>
-                                                            <span id="selecterror"></span>
-                                                        </div>
+                                                        <button class="btn btn--secondary btn--purple mt-10em" type="button" id="submit-button">
+                                                            <span class="btn__text">Submit Details</span>
+                                                        </button>
                                                     </div>
-                                                    <button class="btn btn--secondary btn--purple mt-10em" type="button" id="submit-button">
-                                                        <span class="btn__text">Submit Details</span>
-                                                    </button>
                                                 </form>
+                                                <div id="thankyouEnquireDiv" style="display: none; position: absolute; top: 150px;">
+                                                    <div class="" style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                                        <h2>Thank You</h2>
+                                                        <p>Your enquiry has been sent successfully. We will get in touch with you shortly. Meanwhile, feel free to explore our website.</p>
+                                                    </div>
+                                                </div>
                                             </div>
+
                                         </div>
                                     </div>
-                                    <div class="bg-shape size-144 quater-border-filled gradient-3 top right rotate-270">
-                                        <div class="bg-shape__inner animation-rotateRight90 mobile-no-animation" data-animation-delay="600">
-                                        </div>
+                                </div>
+                                <div class="bg-shape size-144 quater-border-filled gradient-3 top right rotate-270">
+                                    <div class="bg-shape__inner animation-rotateRight90 mobile-no-animation" data-animation-delay="600">
                                     </div>
                                 </div>
                             </div>
@@ -1162,9 +1170,11 @@
             </div>
         </div>
     </div>
+    </div>
+
+
     @section('content')
     @show
-
 
     <footer class="l-footer bg-purple2">
         <div class="l-footer__container">
@@ -1284,9 +1294,10 @@
     <!-- js for enquiry modal -->
     <script>
         $(document).ready(function() {
-            var modalShown = false; 
+            var modalShown = false;
 
             var scrollThreshold = 100;
+
             function showModalOnScroll() {
                 if (!modalShown) {
 
@@ -1298,10 +1309,10 @@
                     // check if url contains our-services/
 
                     var lastsegment = '';
-                    if(url.includes('our-services/')){
-                        var lastsegment = urlsplit[urlsplit.length-1];
+                    if (url.includes('our-services/')) {
+                        var lastsegment = urlsplit[urlsplit.length - 1];
                         console.log(lastsegment);
-                    } 
+                    }
                     $.ajax({
                         type: "post",
                         url: "{{url('/getServiceByDept')}}",
@@ -1310,14 +1321,15 @@
                             "deptSlug": lastsegment
                         },
                         dataType: "json",
-                        success: function (response) {
+                        success: function(response) {
                             console.log(response);
                             var options = '<option value="">Select Service</option>';
-                            $.each(response.services, function (index, value) {
+                            $.each(response.services, function(index, value) {
                                 options += '<option value="' + value.id + '">' + value.name + '</option>';
                             });
                             $('#serviceId').html(options);
-                        }, error: function (response) {
+                        },
+                        error: function(response) {
                             console.log(response);
                         }
                     });
@@ -1398,7 +1410,7 @@
             if (serviceId === '') {
                 selectError.textContent = 'Please select service';
                 selectError.style.color = 'red';
-            }else{
+            } else {
                 selectError.textContent = '';
             }
 
@@ -1414,12 +1426,9 @@
                 processData: false,
                 contentType: false,
                 success: function(response) {
-                    if (response.status == 1) {
-                        console.log(response);
-                        $('#custom-form')[0].reset();
-                    } else {
-                        $('#custom-form')[0].reset();
-                    }
+                    $('#custom-form').fadeOut(400, function() {
+                        $('#thankyouEnquireDiv').fadeIn(700);
+                    });
                 },
                 error: function(response) {
                     console.log(response);

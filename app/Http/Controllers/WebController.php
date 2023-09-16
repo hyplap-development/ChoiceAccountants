@@ -243,7 +243,7 @@ class WebController extends Controller
             $enquiryForm->type = 'ENQUIRY';
             $enquiryForm->save();
 
-            $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
+            // $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
             $this->sendEmail('Enquire Admin', 'help@choice.in', 'Choice Accountants', $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
 
 
@@ -276,7 +276,7 @@ class WebController extends Controller
             $contactusForm->type = 'CONTACT US';
             $contactusForm->save();
 
-            $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->lname, $contactusForm->phone, $contactusForm->email);
+            $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
             $this->sendEmail('Contact Us Admin', 'help@choice.in', 'Choice Accountants', $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
 
             return response()->json([
