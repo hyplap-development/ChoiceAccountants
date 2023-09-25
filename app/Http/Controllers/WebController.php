@@ -30,9 +30,10 @@ class WebController extends Controller
         return view('web.welcome', compact('departments', 'services', 'blogs', 'allservices', 'testimonials', 'allblogs', 'clients', 'faqs', 'teams'));
     }
 
-    public function getServiceByDept(Request $request){
+    public function getServiceByDept(Request $request)
+    {
         error_log($request->deptSlug);
-        if($request->deptSlug == ''){
+        if ($request->deptSlug == '') {
             $services = Service::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->get();
         } else {
             $dept = Department::where('slug', $request->deptSlug)->first();
@@ -43,7 +44,16 @@ class WebController extends Controller
             'status' => 1,
             'services' => $services
         ]);
+    }
 
+    public function getServiceBySlug(Request $request)
+    {
+        $service = Service::where('slug', $request->serviceSlug)->first();
+
+        return response()->json([
+            'status' => 1,
+            'service' => $service
+        ]);
     }
 
     public function privacyPolicy(Request $request)
@@ -227,7 +237,7 @@ class WebController extends Controller
     public function enquiryForm(Request $request)
     {
 
-        $existingEnquiry = Enquiry::where('fname', $request->fname)->where('phone', $request->phone)->where('serviceId', $request->serviceId)->where('type', 'ENQUIRY')->first();
+        $existingEnquiry = Enquiry::where('fname', $request->fname)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'ENQUIRY')->first();
 
         if ($existingEnquiry) {
             return response()->json([
@@ -237,13 +247,13 @@ class WebController extends Controller
         } else {
             $enquiryForm = new Enquiry();
             $enquiryForm->fname = $request->fname;
-            $enquiryForm->phone = $request->phone;
+            $enquiryForm->email = $request->email;
             $enquiryForm->serviceId = $request->serviceId;
             $enquiryForm->status = 'pending';
             $enquiryForm->type = 'ENQUIRY';
             $enquiryForm->save();
 
-            // $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
+            $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
             $this->sendEmail('Enquire Admin', 'help@choice.in', 'Choice Accountants', $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
 
 
@@ -257,7 +267,7 @@ class WebController extends Controller
     public function contactusForm(Request $request)
     {
 
-        $existingEnquiry = Enquiry::where('fname', $request->fname)->where('lname', $request->lname)->where('phone', $request->phone)->where('email', $request->email)->where('type', 'CONTACT US')->first();
+        $existingEnquiry = Enquiry::where('fname', $request->fname)->where('lname', $request->lname)->where('phone', $request->phone)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'CONTACT US')->first();
 
         if ($existingEnquiry) {
             return response()->json([
@@ -272,6 +282,7 @@ class WebController extends Controller
             $contactusForm->phone = $request->phone;
             $contactusForm->companyName = $request->companyName;
             $contactusForm->message = $request->message;
+            $contactusForm->serviceId = $request->serviceId;
             $contactusForm->status = 'pending';
             $contactusForm->type = 'CONTACT US';
             $contactusForm->save();
@@ -285,5 +296,4 @@ class WebController extends Controller
             ]);
         }
     }
-  
 }

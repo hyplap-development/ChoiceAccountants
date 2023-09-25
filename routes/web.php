@@ -266,6 +266,7 @@ Route::group(['middleware' => 'NavContentt'], function () {
     Route::post('/enquirysend', [webController::class, 'enquiryForm']);
     Route::post('/save', [webController::class, 'contactusForm']);
     Route::post('/getServiceByDept', [webController::class, 'getServiceByDept']);
+    Route::post('/getServiceBySlug', [webController::class, 'getServiceBySlug']);
     
 });
 

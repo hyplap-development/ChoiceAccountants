@@ -74,14 +74,10 @@
 <meta name="DC.creator" content="{{$blog->seo->dcCreator}}">
 @endif
 @if(isset($blog->seo->schema1))
-<script>
 {!!$blog->seo->schema1!!}
-</script>
 @endif
 @if(isset($blog->seo->schema2))
-<script>
 {!!$blog->seo->schema2!!}
-</script>
 @endif
 @endsection
 

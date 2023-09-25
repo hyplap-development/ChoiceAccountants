@@ -81,6 +81,7 @@
 													</div>
 													<a href="mailto:{{Auth::User()->email}}" class="fw-semibold text-muted text-hover-primary fs-7">{{Auth::User()->email}}</a>
 												</div>
+												
 											</div>
 										</div>
 										<div class="separator my-2"></div>

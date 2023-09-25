@@ -133,13 +133,12 @@ Valuable Clients of Choice Accountants | Australia
                 <div class="col-xl-6 padding-xl-96 bg-lightOffWhite">
                     <div class=" form form--card bg-purple max-width-720 form-wrapper-18 " style="padding: 1.5rem;">
                         <div class="relative zindex-3">
-                            <h2 class="headline-3 mb-5em js-form-headline"> Send a message </h2>
-                            <div class="content mb-10em js-form-content">
-                                <p> We aim to respond to all enquiries within 72 hours. </p>
+                            <div class="classdiv">
+                                <h2 class="headline-3 mb-5em js-form-headline"> Send a message </h2>
+                                <div class="content mb-10em js-form-content">
+                                    <p> We aim to respond to all enquiries within 24 hours. </p>
+                                </div>
                             </div>
-                            <div id="hubspotform-18"></div>
-
-
                             <div class="form-wrapper-18">
                                 <div class="js-form-content">
                                     <form action="{{url('/save')}}" id="custom-form1" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
@@ -160,6 +159,15 @@ Valuable Clients of Choice Accountants | Australia
                                         <input type="tel" id="phone1" name="phone" placeholder="Enter Your Phone No" onkeyup="checknum()" maxlength="10">
                                         <span id="numbererror1"></span>
 
+                                        <label for="service">Services *</label>
+                                        <select name="serviceId" id="serviceId1" style="margin-bottom: 12px;border: 1px solid #ccc;border-radius: 3px;">
+                                            <option value="">Select Service</option>
+                                            @foreach($allservices as $allservice)
+                                            <option value="{{$allservice->id}}">{{$allservice->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span id="selecterror1"></span>
+
                                         <label for="company">Company Name</label>
                                         <input type="text" id="companyName1" name="companyName" placeholder="Enter Company Name">
 
@@ -170,9 +178,18 @@ Valuable Clients of Choice Accountants | Australia
                                             <label for="privacy-policy">By submitting this form, you consent to our <a href="{{url('/privacy-policy')}}" target="_blank">privacy policy</a>.</label>
                                         </div>
 
-                                       <button type="button" class="submitformbtn" id="submit-button1" >Submit Details</button>
+                                        <button type="button" class="submitformbtn" id="submit-button1">Submit Details</button>
 
                                     </form>
+                                    <div id="thankyouContactDiv" style="display: none;">
+                                        <div class="" style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                            <h2>Thank You</h2>
+                                            <p>We have received your enquiry. We aim to respond to all enquiries within 24 hours. In case of emergency you can contact to given number.Meanwhile, feel free to explore our website.</p>
+                                        </div>
+                                        <div class="d-flex justify-content-center">
+                                            <a href="tel:+61 2 8717 2222" type="button" class="btn btn--secondary btn--purple mt-10em">Call Now</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -267,15 +284,18 @@ Valuable Clients of Choice Accountants | Australia
         var lname = document.getElementById('lname1').value;
         var phone = document.getElementById('phone1').value;
         var email = document.getElementById('email1').value;
+        var serviceId = document.getElementById('serviceId1').value;
         var nameError = document.getElementById('nameerror1');
         var lnameError = document.getElementById('lnameerror1');
         var numberError = document.getElementById('numbererror1');
         var emailError = document.getElementById('emailerror1');
+        var selectError = document.getElementById('selecterror1');
 
         nameError.textContent = '';
         lnameError.textContent = '';
         numberError.textContent = '';
         emailError.textContent = '';
+        selectError.textContent = '';
 
         if (fname.trim() === '') {
             nameError.textContent = 'Please enter first name';
@@ -297,8 +317,13 @@ Valuable Clients of Choice Accountants | Australia
             numberError.style.color = 'red';
         }
 
+        if (serviceId === '') {
+            selectError.textContent = 'Please select service';
+            selectError.style.color = 'red';
+        }
 
-        if (fname.trim() === '' || phone.trim() === '' || email.trim() === '' || lname.trim() === '') {
+
+        if (fname.trim() === '' || phone.trim() === '' || email.trim() === '' || lname.trim() === '' || serviceId === '') {
             return;
         }
 
@@ -310,12 +335,11 @@ Valuable Clients of Choice Accountants | Australia
             processData: false,
             contentType: false,
             success: function(response) {
-                if (response.status == 1) {
-                    console.log(response);
-                    $('#custom-form1')[0].reset();
-                } else {
-                    $('#custom-form1')[0].reset();
-                }
+                $('.classdiv h2').fadeOut(400);
+                $('#custom-form1').fadeOut(400);
+                $('.classdiv .content p').fadeOut(400, function() {
+                    $('#thankyouContactDiv').fadeIn(700);
+                });
             },
             error: function(response) {
                 console.log(response);

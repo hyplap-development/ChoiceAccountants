@@ -1125,33 +1125,34 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <label for="fname">First Name *</label>
-                                                                <input type="text" id="fname" name="fname" placeholder="Enter Your First Name" onkeyup="checkfname()">
+                                                                <input type="text" id="fname" name="fname" placeholder="Enter Your First Name" onkeyup="checkfname1()">
                                                                 <span id="nameerror"></span>
 
                                                             </div>
                                                             <div class="col-md-12">
-                                                                <label for="phone">Phone Number *</label>
-                                                                <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone No" onkeyup="checknumber()" maxlength="10">
-                                                                <span id="numbererror"></span>
+                                                                <label for="phone">Email *</label>
+                                                                <input type="text" id="email" name="email" placeholder="Enter Your Email" onkeyup="checkemail1()">
+                                                                <span id="emailerror"></span>
                                                             </div>
                                                             <div class="col-md-12">
                                                                 <label for="service">Services *</label>
-                                                                <select name="serviceId" id="serviceId" style="width: 100%;padding: 8px;margin-bottom: 12px;border: 1px solid #ccc;border-radius: 3px;">
+                                                                <select name="serviceId" id="serviceId" style="margin-bottom: 12px;border: 1px solid #ccc;border-radius: 3px;">
                                                                     <option value="">Select Service</option>
-
                                                                 </select>
                                                                 <span id="selecterror"></span>
                                                             </div>
+                                                            <div class="col-md-12">
+                                                                <button class="btn btn--secondary btn--purple mt-10em w-100" type="button" id="submit-button">
+                                                                    <span class="btn__text">Submit Details</span>
+                                                                </button>
+                                                            </div>
                                                         </div>
-                                                        <button class="btn btn--secondary btn--purple mt-10em" type="button" id="submit-button">
-                                                            <span class="btn__text">Submit Details</span>
-                                                        </button>
                                                     </div>
                                                 </form>
-                                                <div id="thankyouEnquireDiv" style="display: none; position: absolute; top: 150px;">
-                                                    <div class="" style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                                <div id="thankyouEnquireDiv" style="display: none;">
+                                                    <div class="" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                                                         <h2>Thank You</h2>
-                                                        <p>Your enquiry has been sent successfully. We will get in touch with you shortly. Meanwhile, feel free to explore our website.</p>
+                                                        <p>We have received your contact request. We aim to respond to all enquiries within 24 hours. In case of emergency you can contact to given number. Meanwhile, feel free to explore our website.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1310,29 +1311,82 @@
 
                     var lastsegment = '';
                     if (url.includes('our-services/')) {
-                        var lastsegment = urlsplit[urlsplit.length - 1];
-                        console.log(lastsegment);
-                    }
-                    $.ajax({
-                        type: "post",
-                        url: "{{url('/getServiceByDept')}}",
-                        data: {
-                            "_token": "{{ csrf_token() }}",
-                            "deptSlug": lastsegment
-                        },
-                        dataType: "json",
-                        success: function(response) {
-                            console.log(response);
-                            var options = '<option value="">Select Service</option>';
-                            $.each(response.services, function(index, value) {
-                                options += '<option value="' + value.id + '">' + value.name + '</option>';
+
+                        // count how many / in url
+                        var count = (url.match(/\//g) || []).length;
+                        console.log(count);
+                        if (count == 5) {
+                            var lastsegment = urlsplit[urlsplit.length - 1];
+                            console.log(lastsegment);
+
+                            $.ajax({
+                                type: "post",
+                                url: "{{url('/getServiceBySlug')}}",
+                                data: {
+                                    "_token": "{{ csrf_token() }}",
+                                    "serviceSlug": lastsegment
+                                },
+                                dataType: "json",
+                                success: function(response) {
+                                    console.log(response);
+                                    var options = '<option value="">Select Service</option>';
+                                    var options = '<option value="' + response.service.id + '">' + response.service.name + '</option>';
+
+                                    $('#serviceId').html(options);
+                                },
+                                error: function(response) {
+                                    console.log(response);
+                                }
                             });
-                            $('#serviceId').html(options);
-                        },
-                        error: function(response) {
-                            console.log(response);
+                        } else {
+                            var lastsegment = urlsplit[urlsplit.length - 1];
+                            console.log(lastsegment);
+
+                            $.ajax({
+                                type: "post",
+                                url: "{{url('/getServiceByDept')}}",
+                                data: {
+                                    "_token": "{{ csrf_token() }}",
+                                    "deptSlug": lastsegment
+                                },
+                                dataType: "json",
+                                success: function(response) {
+                                    console.log(response);
+                                    var options = '<option value="">Select Service</option>';
+                                    $.each(response.services, function(index, value) {
+                                        options += '<option value="' + value.id + '">' + value.name + '</option>';
+                                    });
+                                    $('#serviceId').html(options);
+                                },
+                                error: function(response) {
+                                    console.log(response);
+                                }
+                            });
+                        } 
+                        console.log(lastsegment);
+                    } else {
+                            $.ajax({
+                                type: "post",
+                                url: "{{url('/getServiceByDept')}}",
+                                data: {
+                                    "_token": "{{ csrf_token() }}",
+                                    "deptSlug": ''
+                                },
+                                dataType: "json",
+                                success: function(response) {
+                                    console.log(response);
+                                    var options = '<option value="">Select Service</option>';
+                                    $.each(response.services, function(index, value) {
+                                        options += '<option value="' + value.id + '">' + value.name + '</option>';
+                                    });
+                                    $('#serviceId').html(options);
+                                },
+                                error: function(response) {
+                                    console.log(response);
+                                }
+                            });
                         }
-                    });
+
                     modalShown = true;
                 }
             }
@@ -1348,7 +1402,7 @@
     </script>
 
     <script>
-        function checkfname() {
+        function checkfname1() {
             var fnameInput = document.getElementById('fname');
             var fnameValidation = document.getElementById('nameerror');
             var button = document.getElementById('submit-button');
@@ -1365,20 +1419,21 @@
             }
         }
 
-        function checknumber() {
-            var numberInput = document.getElementById('phone');
-            var numberValidation = document.getElementById('numbererror');
+        function checkemail1() {
+            var emailInput = document.getElementById('email');
+            var emailValidation = document.getElementById('emailerror');
             var button = document.getElementById('submit-button');
 
-            var numberRegex = /^[0-9]{10}$/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            if (numberInput.value.match(numberRegex)) {
-                numberValidation.textContent = '';
+            if (emailInput.value.match(emailRegex)) {
+                emailValidation.textContent = '';
                 button.disabled = false;
             } else {
-                numberValidation.textContent = 'Please enter valid phone number';
-                numberValidation.style.color = 'red';
+                emailValidation.textContent = 'Please enter valid email';
+                emailValidation.style.color = 'red';
                 button.disabled = true;
+
             }
         }
     </script>
@@ -1387,14 +1442,14 @@
         document.getElementById('submit-button').addEventListener('click', function(event) {
             event.preventDefault();
             var fname = document.getElementById('fname').value;
-            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
             var serviceId = document.getElementById('serviceId').value;
             var nameError = document.getElementById('nameerror');
-            var numberError = document.getElementById('numbererror');
+            var emailerror = document.getElementById('emailerror');
             var selectError = document.getElementById('selecterror');
 
             nameError.textContent = '';
-            numberError.textContent = '';
+            emailerror.textContent = '';
             selectError.textContent = '';
 
             if (fname.trim() === '') {
@@ -1402,9 +1457,9 @@
                 nameError.style.color = 'red';
             }
 
-            if (phone.trim() === '') {
-                numberError.textContent = 'Please enter phone number';
-                numberError.style.color = 'red';
+            if (email.trim() === '') {
+                emailerror.textContent = 'Please enter email';
+                emailerror.style.color = 'red';
             }
 
             if (serviceId === '') {
@@ -1414,7 +1469,7 @@
                 selectError.textContent = '';
             }
 
-            if (fname.trim() === '' || phone.trim() === '' || serviceId === '') {
+            if (fname.trim() === '' || email.trim() === '' || serviceId === '') {
                 return;
             }
 
@@ -1426,7 +1481,8 @@
                 processData: false,
                 contentType: false,
                 success: function(response) {
-                    $('#custom-form').fadeOut(400, function() {
+                    // Hide the form and the h1 element and show the thank you message and close button
+                    $('#custom-form, .modal-header h1').fadeOut(400, function() {
                         $('#thankyouEnquireDiv').fadeIn(700);
                     });
                 },

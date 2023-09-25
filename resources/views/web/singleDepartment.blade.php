@@ -74,14 +74,10 @@
 <meta name="DC.creator" content="{{$department->seo->dcCreator}}">
 @endif
 @if(isset($department->seo->schema1))
-<script>
 {!!$department->seo->schema1!!}
-</script>
 @endif
 @if(isset($department->seo->schema2))
-<script>
 {!!$department->seo->schema2!!}
-</script>
 @endif
 @endsection
 

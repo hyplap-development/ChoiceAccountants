@@ -74,14 +74,10 @@
 <meta name="DC.creator" content="{{$service->seo->dcCreator}}">
 @endif
 @if(isset($service->seo->schema1))
-<script>
 {!!$service->seo->schema1!!}
-</script>
 @endif
 @if(isset($service->seo->schema2))
-<script>
 {!!$service->seo->schema2!!}
-</script>
 @endif
 @endsection
 
@@ -204,11 +200,12 @@
                     <div class="col-md-10 col-lg-6">
                         <p style="white-space: pre-line;">{{$service->intropara1}}</p>
                         <p></p>
-                        <p><a href="{{url('/get-in-touch')}}" class="btn btn--primary">Contact Us</a></p>
                     </div>
                     <div class="col-md-10 col-lg-6">
                         <p style="white-space: pre-line;">{{$service->intropara2}}</p>
                     </div>
+                    <p><a href="{{url('/get-in-touch')}}" class="btn btn--primary mt-3">Contact Us</a></p>
+
                 </div>
             </div>
         </header>
@@ -367,71 +364,134 @@
     </div>
     @endif
     <div id="section-6">
-        <section class="section">
-            <div class="container-fluid">
-                <div class="row no-gutters">
-                    <div class="col-xl-6 padding-xl-240 align-center">
-                        <div class="relative zindex-3">
-                            <h2 class="headline-3"> Contact Us </h2>
-                            <div class="content  mb-30em">
-                                <p><span>If you have any questions or would like more information, please use the contact form.</span>
-                                </p>
-                            </div>
+        <div class="grid grid--xl-50-50 relative">
+            <div class="grid__col grid__col--center-content grid__col--4k-pushed-to-right padding relative zindex-3">
+                <div class="grid__col-content max-width-600 relative zindex-3">
+                    <div class="col-75">
+                        <h1 class="headline-2 mb-10em"> Get in Touch </h1>
+                        <div class="content mb-30em">
+                            <p>Our friendly team is on hand to answer any questions, we're all happy to help.</p>
                         </div>
                     </div>
-                    <div class="col-xl-6 padding-xl-96 bg-lightOffWhite">
-                        <div class=" form form--card bg-purple max-width-720 form-wrapper-18 " style="padding: 1.5rem;">
-                            <div class="relative zindex-3">
-                                <h2 class="headline-3 mb-5em js-form-headline"> Send a message </h2>
-                                <div class="content mb-10em js-form-content">
-                                    <p> We aim to respond to all enquiries within 72 hours. </p>
+                    <div class="block padding-sm bg-lightOffWhite relative">
+                        <h2 class="headline-4">Contact Us At</h2>
+                        <div class="content mb-2">
+                            <p>Our friendly team is on hand to answer any questions, we're all happy to help.</p>
+                        </div>
+                        <div class="grid grid--50-50-gapped mt-20em">
+                            <div class="link-block link-block--contact">
+                                <div class="d-flex align-items-center justify-content-start gap-2">
+                                    <i class="fa-solid fa-phone fs-10px iconstyle"></i> <span class="link-block__label small-text Fw-500 p-0"> Sales </span>
                                 </div>
-                                <div id="hubspotform-18"></div>
-                                <div class="form-wrapper-18">
-                                    <div class="js-form-content">
-                                        <form action="{{url('/save')}}" id="custom-form1" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
-                                            @csrf
-                                            <label for="fname">First Name *</label>
-                                            <input type="text" id="fname1" name="fname" placeholder="Enter Your First Name" onkeyup="checkfname()">
-                                            <span id="nameerror1"></span>
+                                <a href="tel:+61 2 8717 2222" class="link-block__link link-hover normal-text" title="Call Sales">
+                                    <span class="link-hover__text"> +61 2 8717 2222 </span> </a>
+                            </div>
+                            <div class="link-block link-block--contact">
+                                <div class="d-flex align-items-center justify-content-start gap-2">
+                                    <i class="fa-solid fa-phone fs-10px iconstyle"></i> <span class="link-block__label small-text Fw-500 p-0"> Support </span>
+                                </div>
+                                <a href="tel:+61 2 8717 2222" class="link-block__link link-hover normal-text">
+                                    <span class="link-hover__text"> +61 2 8717 2222 </span> </a>
+                            </div>
+                            <div class="link-block link-block--contact">
+                                <div class="d-flex align-items-center justify-content-start gap-2">
+                                    <i class="fa-solid fa-envelope fs-10px iconstyle"></i> <span class="link-block__label small-text Fw-500 p-0"> Email </span>
+                                </div>
+                                <a href="mailto:help@choice.in" class="link-block__link link-hover normal-text" title="Email us">
+                                    <span class="link-hover__text">help@choice.in
+                                    </span> </a>
+                            </div>
+                            <div class="link-block link-block--contact">
+                                <div class="d-flex align-items-center justify-content-start gap-2">
+                                    <i class="fa-solid fa-comment fs-10px iconstyle"></i> <span class="link-block__label small-text Fw-500 p-0"> Chat </span>
+                                </div>
+                                <a href="{{url('/')}}" class="link-block__link link-hover normal-text" title="Open the chat">
+                                    <span class="link-hover__text">Go to Live Chat </span> </a>
+                            </div>
+                            <div class="link-block link-block--contact">
+                                <div class="d-flex align-items-center justify-content-start gap-2">
+                                    <i class="fa-solid fa-user fs-10px iconstyle"></i> <span class="link-block__label small-text Fw-500 p-0"> Login </span>
+                                </div>
+                                <a href="https://platinumaccountants.portal.accountants/login" class="link-block__link link-hover normal-text" target="_blank" title="CZone Portal">
+                                    <span class="link-hover__text"> MYOB Login </span> </a>
+                            </div>
+                        </div>
+                        <div class="bg-shape size-96 full-border-filled gradient-3 bottom-right-outside zindex-below color-white">
+                            <div class=" bg-shape__inner animation-fadeInUp mobile-no-animation " data-animation-delay="600"> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-shape size-96 quater-filled gradient-1 top left rotate-180 color-white">
+                    <div class=" bg-shape__inner animation-rotateRight90 mobile-no-animation " data-animation-delay="600"> </div>
+                </div>
+            </div>
+            <div class="grid__col grid__col--center-content grid__col--4k-pushed-to-left padding-lg bg-lightOffWhite relative">
+                <div class=" form form--card bg-purple max-width-720 form-wrapper-18 " style="padding: 1.5rem;">
+                    <div class="relative zindex-3">
+                        <div class="classdiv">
+                            <h2 class="headline-3 mb-5em js-form-headline"> Send a message </h2>
+                            <div class="content mb-10em js-form-content">
+                                <p> We aim to respond to all enquiries within 24 hours. </p>
+                            </div>
+                        </div>
+                        <div class="form-wrapper-18">
+                            <div class="js-form-content">
+                                <form action="{{url('/save')}}" id="custom-form1" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
+                                    @csrf
+                                    <label for="fname">First Name *</label>
+                                    <input type="text" id="fname1" name="fname" placeholder="Enter Your First Name" onkeyup="checkfname()">
+                                    <span id="nameerror1"></span>
 
-                                            <label for="lname">Last Name *</label>
-                                            <input type="text" id="lname1" name="lname" placeholder="Enter Your First Name" onkeyup="checklname()">
-                                            <span id="lnameerror1"></span>
+                                    <label for="lname">Last Name *</label>
+                                    <input type="text" id="lname1" name="lname" placeholder="Enter Your First Name" onkeyup="checklname()">
+                                    <span id="lnameerror1"></span>
 
-                                            <label for="email">Email *</label>
-                                            <input type="email" id="email1" name="email" placeholder="Enter Your Email" onkeyup="checkemail()">
-                                            <span id="emailerror1"></span>
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email1" name="email" placeholder="Enter Your Email" onkeyup="checkemail()">
+                                    <span id="emailerror1"></span>
 
-                                            <label for="phone">Phone Number *</label>
-                                            <input type="tel" id="phone1" name="phone" placeholder="Enter Your Phone No" onkeyup="checknum()" maxlength="10">
-                                            <span id="numbererror1"></span>
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone1" name="phone" placeholder="Enter Your Phone No" onkeyup="checknum()" maxlength="10">
+                                    <span id="numbererror1"></span>
 
-                                            <label for="company">Company Name</label>
-                                            <input type="text" id="companyName1" name="companyName" placeholder="Enter Company Name">
+                                    <label for="service">Services *</label>
+                                    <select name="serviceId" id="serviceId1" style="margin-bottom: 12px;border: 1px solid #ccc;border-radius: 3px;">
+                                        <option value="{{$service->id}}">{{$service->name}}</option>
+                                    </select>
+                                    <span id="selecterror1"></span>
 
-                                            <label for="message">Message/Question</label>
-                                            <textarea id="message1" name="message" placeholder="Enter Your Message"></textarea>
+                                    <label for="company">Company Name</label>
+                                    <input type="text" id="companyName1" name="companyName" placeholder="Enter Company Name">
 
-                                            <div id="privacy-policy">
-                                                <label for="privacy-policy">By submitting this form, you consent to our <a href="{{url('/privacy-policy')}}" target="_blank">privacy policy</a>.</label>
-                                            </div>
+                                    <label for="message">Message/Question</label>
+                                    <textarea id="message1" name="message" placeholder="Enter Your Message"></textarea>
 
-                                           <button type="button" class="submitformbtn" id="submit-button1" >Submit Details</button>
+                                    <div id="privacy-policy">
+                                        <label for="privacy-policy">By submitting this form, you consent to our <a href="{{url('/privacy-policy')}}" target="_blank">privacy policy</a>.</label>
+                                    </div>
 
-                                        </form>
+                                    <button type="button" class="submitformbtn" id="submit-button1">Submit Details</button>
+
+                                </form>
+                                <div id="thankyouContactDiv" style="display: none;">
+                                    <div class="" style=" display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                        <h2>Thank You</h2>
+                                        <p>We have received your enquiry. We aim to respond to all enquiries within 24 hours. In case of emergency you can contact to given number.Meanwhile, feel free to explore our website.</p>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="tel:+61 2 8717 2222" type="button" class="btn btn--secondary btn--purple mt-10em">Call Now</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-shape size-144 quater-border-filled gradient-3 top right rotate-270">
-                                <div class=" bg-shape__inner animation-rotateRight90 mobile-no-animation" data-animation-delay="600">
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-shape size-144 quater-border-filled gradient-3 top right rotate-270">
+                        <div class=" bg-shape__inner animation-rotateRight90 mobile-no-animation" data-animation-delay="600">
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
     @if(isset($blog->service))
     <div id="section-7">
@@ -567,15 +627,18 @@
         var lname = document.getElementById('lname1').value;
         var phone = document.getElementById('phone1').value;
         var email = document.getElementById('email1').value;
+        var serviceId = document.getElementById('serviceId1').value;
         var nameError = document.getElementById('nameerror1');
         var lnameError = document.getElementById('lnameerror1');
         var numberError = document.getElementById('numbererror1');
         var emailError = document.getElementById('emailerror1');
+        var selectError = document.getElementById('selecterror1');
 
         nameError.textContent = '';
         lnameError.textContent = '';
         numberError.textContent = '';
         emailError.textContent = '';
+        selectError.textContent = '';
 
         if (fname.trim() === '') {
             nameError.textContent = 'Please enter first name';
@@ -597,8 +660,13 @@
             numberError.style.color = 'red';
         }
 
+        if (serviceId === '') {
+            selectError.textContent = 'Please select service';
+            selectError.style.color = 'red';
+        }
 
-        if (fname.trim() === '' || phone.trim() === '' || email.trim() === '' || lname.trim() === '') {
+
+        if (fname.trim() === '' || phone.trim() === '' || email.trim() === '' || lname.trim() === '' || serviceId === '') {
             return;
         }
 
@@ -610,12 +678,11 @@
             processData: false,
             contentType: false,
             success: function(response) {
-                if (response.status == 1) {
-                    console.log(response);
-                    $('#custom-form1')[0].reset();
-                } else {
-                    $('#custom-form1')[0].reset();
-                }
+                $('.classdiv h2').fadeOut(400);
+                $('#custom-form1').fadeOut(400);
+                $('.classdiv .content p').fadeOut(400, function() {
+                    $('#thankyouContactDiv').fadeIn(700);
+                });
             },
             error: function(response) {
                 console.log(response);
