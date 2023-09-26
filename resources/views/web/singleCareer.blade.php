@@ -211,8 +211,8 @@
                             <div class="d-flex align-items-center justify-content-start gap-2">
                                 <i class="fa-solid fa-envelope fs-10px iconstyle"></i> <span class="link-block__label small-text Fw-500 p-0"> Email </span>
                             </div>
-                            <a href="mailto:help@choice.in" class="link-block__link link-hover normal-text" title="Email us">
-                                <span class="link-hover__text">help@choice.in
+                            <a href="mailto:hello@choice.accountants" class="link-block__link link-hover normal-text" title="Email us">
+                                <span class="link-hover__text">hello@choice.accountants
                                 </span> </a>
                         </div>
                         <div class="link-block link-block--contact">

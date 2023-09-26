@@ -44,7 +44,7 @@ class Controller extends BaseController
 
         $data = array(
             "sender" => array(
-                "email" => 'help@choice.in',
+                "email" => 'hello@choice.accountants',
                 "name" => 'Choice Accountants Pty. Ltd.'
             ),
             "to" => array(
