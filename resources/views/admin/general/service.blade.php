@@ -112,7 +112,7 @@ Services
                     <th class="text-center min-w-125px">Department Name</th>
                     <th class="text-center min-w-125px">Best or Not</th>
                     <th class="text-center min-w-125px">Status</th>
-                    <th class="text-center min-w-70px">Actions</th>
+                    <th class="text-center min-w-150px">Actions</th>
                 </tr>
             </thead>
             <tbody class="fw-semibold text-gray-600">

@@ -165,7 +165,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
                     <div class="block__col padding-fcs overflow-hidden">
                         <div class="content content--large-text">
                             <h2 class="headline-3"> {{$allservice->name}} </h2>
-                            <p> "{{$allservice->homePageDesc}}" </p>
+                            <p> {{$allservice->description}} </p>
                             <a href="{{url('/our-services')}}/{{$allservice->department ? $allservice->department->slug : ''}}/{{$allservice->slug}}" title="{{$allservice->name}}" class="btn btn--primary btn--purple mt-10em mb-10em mr-15em">
                                 <span class="btn__text"> Read More</span>
                             </a>
@@ -191,7 +191,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
                     <div class="block__col padding-fcs overflow-hidden">
                         <div class="content content--large-text">
                             <h2 class="headline-3"> {{$allservice->name}} </h2>
-                            <p> "{{$allservice->homePageDesc}}" </p>
+                            <p> {{$allservice->description}} </p>
                             <a href="{{url('/our-services')}}/{{$allservice->department ? $allservice->department->slug : ''}}/{{$allservice->slug}}" title="{{$allservice->name}}" class="btn btn--primary btn--purple mt-10em mb-10em mr-15em">
                                 <span class="btn__text"> Read More </span>
                             </a>

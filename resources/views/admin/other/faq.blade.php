@@ -218,7 +218,7 @@ FAQ's
                                     @csrf
                                     <input type="hidden" name="faqId" value="{{$data->id}}">
                                     <div class="row g-9 mt-3">
-                                        <div class="col-md-8 fv-row">
+                                        <div class="col-md-6 fv-row">
                                             <label class="required fs-6 fw-semibold mb-2">Question</label>
                                             <input type="text" class="form-control form-control-solid" placeholder="Enter Question" name="question" id="question{{$data->id}}" value="{{$data->question}}">
                                         </div>
@@ -232,6 +232,13 @@ FAQ's
                                         <div class="col-md-2 fv-row">
                                             <label class="required fs-6 fw-semibold mb-2">Sequence</label>
                                             <input type="number" class="form-control form-control-solid" placeholder="Enter the viewing sequence" id="sequence{{$data->id}}" value="{{$data->sequence}}" name="sequence" min="0">
+                                        </div>
+                                        <div class="col-md-2 fv-row">
+                                            <label class="required fs-6 fw-semibold mb-2">Button visibility</label>
+                                            <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" name="flag">
+                                                <option value="Yes" {{$data->flag == "Yes" ? 'selected' : ''}}>Yes</option>
+                                                <option value="No" {{$data->flag == "No" ? 'selected' : ''}}>No</option>
+                                            </select>
                                         </div>
                                         <div class="col-md-6 mb-5">
                                             <label class="fs-6 fw-semibold mb-2">If Answer In Paragraph</label>
@@ -310,7 +317,7 @@ FAQ's
                 <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                     @csrf
                     <div class="row g-9 mt-3">
-                        <div class="col-md-8 fv-row">
+                        <div class="col-md-6 fv-row">
                             <label class="required fs-6 fw-semibold mb-2">Question</label>
                             <input type="text" class="form-control form-control-solid" placeholder="Enter Question" id="question" name="question">
                         </div>
@@ -324,6 +331,14 @@ FAQ's
                         <div class="col-md-2 fv-row">
                             <label class="required fs-6 fw-semibold mb-2">Sequence</label>
                             <input type="number" class="form-control form-control-solid" placeholder="Enter the viewing sequence" id="sequence" name="sequence" min="0">
+                        </div>
+                        <div class="col-md-2 fv-row">
+                            <label class="required fs-6 fw-semibold mb-2">Button visibility</label>
+                            <select class="form-select form-select-solid" data-control="select2" data-placeholder="Select Option" data-hide-search="true" name="flag" id="flag">
+                                <option value=""></option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
                         </div>
                         <div class="col-md-6 fv-row">
                             <label class="fs-6 fw-semibold mb-2">If Answer In Paragraph</label>
@@ -370,13 +385,6 @@ FAQ's
                                     },
                                 }
                             },
-                            answer: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Enter answer is required"
-                                    },
-                                }
-                            },
                             sequence: {
                                 validators: {
                                     notEmpty: {
@@ -384,6 +392,13 @@ FAQ's
                                     },
                                 }
                             },
+                            flag: {
+                                validators: {
+                                    notEmpty: {
+                                        message: "Select option is required"
+                                    },
+                                }
+                            }
                         },
                         plugins: {
                             trigger: new FormValidation.plugins.Trigger,

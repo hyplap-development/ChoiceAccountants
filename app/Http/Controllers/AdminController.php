@@ -916,6 +916,7 @@ class AdminController extends Controller
         $faq->answer2 = $request->answer2;
         $faq->sequence = $request->sequence;
         $faq->status = $request->status;
+        $faq->flag= $request->flag;
         $faq->save();
 
         $this->storeLog('Add', 'addFaq', $faq);
@@ -931,6 +932,7 @@ class AdminController extends Controller
         $faq->answer2 = $request->answer2;
         $faq->sequence = $request->sequence;
         $faq->status = $request->status;
+        $faq->flag= $request->flag;
         $faq->update();
 
         $this->storeLog('Update', 'updateFaq', $faq);
@@ -1076,6 +1078,7 @@ class AdminController extends Controller
         $service->subtitle = $request->subtitle;
         $service->flag = $request->flag;
         $service->homePageDesc = $request->homePageDesc;
+        $service->description = $request->description;
         $service->intropara1 = $request->intropara1;
         $service->intropara2 = $request->intropara2;
         $service->nt1 = $request->nt1;
@@ -1173,6 +1176,7 @@ class AdminController extends Controller
         $service->subtitle = $request->subtitle;
         $service->flag = $request->flag;
         $service->homePageDesc = $request->homePageDesc;
+        $service->description = $request->description;
         $service->intropara1 = $request->intropara1;
         $service->intropara2 = $request->intropara2;
         $service->nt1 = $request->nt1;
@@ -1998,7 +2002,7 @@ class AdminController extends Controller
         if ($request->type == 'CONTACT US') {
             $enquiry->fname = $request->fname;
             $enquiry->lname = $request->lname;
-            $enquiry->serviceId = null;
+            $enquiry->serviceId = $request->serviceId;
             $enquiry->phone = $request->phone;
             $enquiry->email = $request->email;
             $enquiry->companyName = $request->companyName;
@@ -2007,12 +2011,12 @@ class AdminController extends Controller
             $enquiry->status = $request->status;
         } else {
             $enquiry->fname = $request->fname;
-            $enquiry->phone = $request->phone;
+            $enquiry->phone = null;
             $enquiry->serviceId = $request->serviceId;
             $enquiry->status = $request->status;
             $enquiry->type = $request->type;
             $enquiry->lname = null;
-            $enquiry->email = null;
+            $enquiry->email = $request->email;
             $enquiry->companyName = null;
             $enquiry->message = null;
         }

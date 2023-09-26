@@ -95,7 +95,13 @@ Add Service
                                     <label class="fs-6 fw-semibold mb-2">Conclusion Image Alt Tags (Comma Seperated)</label>
                                     <input type="text" class="form-control form-control-solid" placeholder="Enter Alt Tags" name="conclusionImageAltTag" id="conclusionImageAltTag">
                                 </div>
-
+                                <div class="col-md-3 fv-row">
+                                    <label class="fs-6 fw-semibold mb-2 ">Status</label>
+                                    <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" name="status" id="status">
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -120,17 +126,15 @@ Add Service
                                         <option value="No">No</option>
                                     </select>
                                 </div>
-                                <div class="col-md-9 fv-row">
+                                <div class="col-md-6 fv-row">
                                     <label class="required d-flex align-items-center fs-6 fw-semibold mb-2">Home Page Description</label>
-                                    <textarea class="form-control form-control-solid" placeholder="Enter Home Page Description" id="homePageDesc" name="homePageDesc"></textarea>
+                                    <textarea class="form-control form-control-solid" placeholder="Enter Home Page Description" id="homePageDesc" name="homePageDesc" rows="3"></textarea>
                                 </div>
-                                <div class="col-md-3 fv-row">
-                                    <label class="fs-6 fw-semibold mb-2 ">Status</label>
-                                    <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" name="status" id="status">
-                                        <option value="1">Active</option>
-                                        <option value="0">Inactive</option>
-                                    </select>
+                                <div class="col-md-6 fv-row">
+                                    <label class="required d-flex align-items-center fs-6 fw-semibold mb-2">Description</label>
+                                    <textarea class="form-control form-control-solid" placeholder="Enter Description" id="description" name="description" rows="3"></textarea>
                                 </div>
+                                
                                 <div class="col-md-8 fv-row">
                                     <label class="fs-6 fw-semibold mb-2">Subtitle</label>
                                     <textarea class="form-control form-control-solid" placeholder="Enter Subtitle" id="subtitle" name="subtitle"></textarea>
@@ -144,7 +148,6 @@ Add Service
                                         @endforeach
                                     </select>
                                 </div>
-
                                 <div class="col-md-6 fv-row">
                                     <label class="d-flex align-items-center fs-6 fw-semibold mb-2">Introduction 1</label>
                                     <textarea class="form-control form-control-solid" placeholder="Enter Introduction" id="intropara1" name="intropara1" rows="6"></textarea>
@@ -335,49 +338,57 @@ Add Service
                 r = document.querySelector("#kt_modal_add_form"),
                     t = r.querySelector("#kt_modal_add_submit"),
                     n = FormValidation.formValidation(r, {
-                        fields: {
-                            name: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Enter name is required"
-                                    },
-                                }
-                            },
-                            url: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Enter url is required"
-                                    },
-                                }
-                            },
-                            coverImage: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Select cover image is required"
-                                    },
-                                }
-                            },
-                            flag: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Select option is required"
-                                    },
-                                }
-                            },
-                            homePageDesc: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Enter description is required"
-                                    },
-                                }
-                            },
-                            departmentId: {
-                                validators: {
-                                    notEmpty: {
-                                        message: "Select department is required"
-                                    },
-                                }
-                            },
+                            fields: {
+                                name: {
+                                    validators: {
+                                        notEmpty: {
+                                            message: "Enter name is required"
+                                        },
+                                    }
+                                },
+                                url: {
+                                    validators: {
+                                        notEmpty: {
+                                            message: "Enter url is required"
+                                        },
+                                    }
+                                },
+                                coverImage: {
+                                    validators: {
+                                        notEmpty: {
+                                            message: "Select cover image is required"
+                                        },
+                                    }
+                                },
+                                flag: {
+                                    validators: {
+                                        notEmpty: {
+                                            message: "Select option is required"
+                                        },
+                                    }
+                                },
+                                homePageDesc: {
+                                    validators: {
+                                        notEmpty: {
+                                            message: "Enter description is required"
+                                        },
+                                    }
+                                },
+                                departmentId: {
+                                    validators: {
+                                        notEmpty: {
+                                            message: "Select department is required"
+                                        },
+                                    }
+                                },
+                                description: {
+                                    validators: {
+                                        notEmpty: {
+                                            message: "Enter description is required"
+                                        },
+                                    }
+                                },
+                            }
                         },
                         plugins: {
                             trigger: new FormValidation.plugins.Trigger,
@@ -387,29 +398,30 @@ Add Service
                                 eleValidClass: ""
                             })
                         }
-                    }), t.addEventListener("click", (function(e) {
-                        e.preventDefault(), n && n.validate().then((function(e) {
+                    }),
+            t.addEventListener("click", (function(e) {
+                e.preventDefault(), n && n.validate().then((function(e) {
 
-                            console.log("validated!"), "Valid" == e ? (t.setAttribute("data-kt-indicator", "on"), t.disabled = !0, setTimeout((function() {
-                                t.removeAttribute("data-kt-indicator")
-                                e.isConfirmed && (t.disabled = !1)
+                    console.log("validated!"), "Valid" == e ? (t.setAttribute("data-kt-indicator", "on"), t.disabled = !0, setTimeout((function() {
+                        t.removeAttribute("data-kt-indicator")
+                        e.isConfirmed && (t.disabled = !1)
 
-                                // Submit form
-                                r.submit();
+                        // Submit form
+                        r.submit();
 
-                            }), 2e3)) : Swal.fire({
-                                text: "Sorry, looks like there are some missing fields, please try again.",
-                                icon: "error",
-                                buttonsStyling: !1,
-                                confirmButtonText: "Ok, got it!",
-                                customClass: {
-                                    confirmButton: "btn btn-primary"
-                                }
-                            })
-                        }))
-                    }))
-            }
+                    }), 2e3)) : Swal.fire({
+                        text: "Sorry, looks like there are some missing fields, please try again.",
+                        icon: "error",
+                        buttonsStyling: !1,
+                        confirmButtonText: "Ok, got it!",
+                        customClass: {
+                            confirmButton: "btn btn-primary"
+                        }
+                    })
+                }))
+            }))
         }
+    }
     }();
     KTUtil.onDOMContentLoaded((function() {
         KTModalAdd.init()

@@ -72,6 +72,9 @@ Frequently Asked Questions | Choice Accountants Australia
                                     @endforeach
                                 </ul>
                                 @endif
+                                @if($faq->flag == "Yes")
+                                <p><span> <a href="{{url('/get-in-touch')}}" target="_blank" class="btn btn--primary">Speak to one of our specialists here.</a></span></p>
+                                @endif
                             </div>
                         </li>
                         @endforeach

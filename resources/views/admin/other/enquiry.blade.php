@@ -92,7 +92,7 @@ All Enquiries
                     <th class="text-center min-w-25px">#</th>
                     <th class="text-center min-w-125px">Form</th>
                     <th class="text-center min-w-125px">Name</th>
-                    <th class="text-center min-w-125px">Phone No</th>
+                    <th class="text-center min-w-125px">Email</th>
                     <th class="text-center min-w-125px">Service</th>
                     <th class="text-center min-w-125px">Status</th>
                     <th class="text-center min-w-70px">Actions</th>
@@ -112,7 +112,7 @@ All Enquiries
                         {{ $data->fname }} {{ $data->lname }}
                     </td>
                     <td class="text-center">
-                        {{ $data->phone }}
+                        {{ $data->email }}
                     </td>
                     <td class="text-center">
                         @if(isset($data->service))
@@ -185,30 +185,30 @@ All Enquiries
                                                 <select class="form-select form-select-solid" data-control="select2" data-placeholder="Select" data-hide-search="true" name="type" id="type{{$data->id}}">
                                                     <option value=""></option>
                                                     <option value="CONTACT US" {{$data->type == 'CONTACT US' ? 'selected' : ''}}>CONTACT US</option>
-                                                    <option value="ENQUIRY" {{$data->type == 'ENQUIRY' ? 'selected' : ''}}>ENQUIRY</option>
+                                                    <option value="ENQUIRE" {{$data->type == 'ENQUIRE' ? 'selected' : ''}}>ENQUIRE</option>
                                                 </select>
                                             </div>
                                             <div class="col-md-4 fv-row" id="fnamediv{{$data->id}}">
                                                 <label class="required fs-6 fw-semibold mb-2">First Name</label>
                                                 <input type="text" class="txtOnly form-control form-control-solid" placeholder="Enter Your Name" id="fname{{$data->id}}" name="fname" value="{{$data->fname}}">
                                             </div>
-                                            <div class="col-md-4 fv-row" id="lnamediv{{$data->id}}" style="display:{{$data->type =='ENQUIRY' ? 'none': 'block'}}">
+                                            <div class="col-md-4 fv-row" id="lnamediv{{$data->id}}" style="display:{{$data->type =='ENQUIRE' ? 'none': 'block'}}">
                                                 <label class="required fs-6 fw-semibold mb-2">Last Name</label>
                                                 <input type="text" class="txtOnly form-control form-control-solid" placeholder="Enter Your Name" id="lname{{$data->id}}" name="lname" value="{{$data->lname}}">
                                             </div>
-                                            <div class="col-md-4 fv-row" id="emaildiv{{$data->id}}" style="display:{{$data->type =='ENQUIRY' ? 'none': 'block'}}">
+                                            <div class="col-md-4 fv-row" id="emaildiv{{$data->id}}" style="display:{{$data->type =='ENQUIRE' ? 'block': 'block'}}">
                                                 <label class="required fs-6 fw-semibold mb-2">Email</label>
                                                 <input type="email" class="form-control form-control-solid" placeholder="Enter your email" id="email{{$data->id}}" name="email" value="{{$data->email}}">
                                             </div>
-                                            <div class="col-md-4 fv-row" id="phonediv{{$data->id}}">
+                                            <div class="col-md-4 fv-row" id="phonediv{{$data->id}}" style="display:{{$data->type =='ENQUIRE' ? 'none': 'block'}}">
                                                 <label class="required fs-6 fw-semibold mb-2">Phone Number</label>
                                                 <input class="form-control form-control-solid" placeholder="Enter phone number" id="phone{{$data->id}}" name="phone" value="{{$data->phone}}" maxlength="10">
                                             </div>
-                                            <div class="col-md-4 fv-row" id="compdiv{{$data->id}}" style="display:{{$data->type =='ENQUIRY' ? 'none': 'block'}}">
+                                            <div class="col-md-4 fv-row" id="compdiv{{$data->id}}" style="display:{{$data->type =='ENQUIRE' ? 'none': 'block'}}">
                                                 <label class="fs-6 fw-semibold mb-2">Company Name</label>
                                                 <input type="text" class="form-control form-control-solid" placeholder="Enter Your Company Name" id="companyName{{$data->id}}" name="companyName" value="{{$data->companyName}}">
                                             </div>
-                                            <div class="col-md-4 fv-row" id="servicediv{{$data->id}}" style="display:{{$data->type =='ENQUIRY' ? 'block': 'none'}}">
+                                            <div class="col-md-8 fv-row" id="servicediv{{$data->id}}" style="display:{{$data->type =='ENQUIRE' ? 'block': 'block'}}">
                                                 <label class="required fs-6 fw-semibold mb-2">Select Service</label>
                                                 <select class="form-select form-select-solid" data-control="select2" data-placeholder="Select Service" data-hide-search="false" data-dropdown-parent="#updatemodal{{$data->id}}" name="serviceId" id="serviceId{{$data->id}}">
                                                     <option value=""></option>
@@ -227,7 +227,7 @@ All Enquiries
                                                     <option value="not interested" {{$data->status == 'not interested' ? 'selected' : ''}}>Not Interested</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-12 fv-row" id="msgdiv{{$data->id}}" style="display:{{$data->type =='ENQUIRY' ? 'none': 'block'}}">
+                                            <div class="col-md-12 fv-row" id="msgdiv{{$data->id}}" style="display:{{$data->type =='ENQUIRE' ? 'none': 'block'}}">
                                                 <label class="fs-6 fw-semibold mb-2">Message</label>
                                                 <textarea class="form-control form-control-solid" placeholder="Enter Message" id="message{{$data->id}}" name="message" rows="5" style="white-space:pre-wrap;">{{$data->message}}</textarea>
                                             </div>
@@ -300,7 +300,7 @@ All Enquiries
             var type = document.getElementById('type' + id).value;
 
             if (type == 'CONTACT US') {
-                services.style.display = "none"
+                services.style.display = "block"
                 fname.style.display = "block"
                 lname.style.display = "block"
                 email.style.display = "block"
@@ -312,8 +312,8 @@ All Enquiries
                 services.style.display = "block"
                 fname.style.display = "block"
                 lname.style.display = "none"
-                email.style.display = "none"
-                phone.style.display = "block"
+                email.style.display = "block"
+                phone.style.display = "none"
                 company.style.display = "none"
                 message.style.display = "none"
                 status.style.display = "block"

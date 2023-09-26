@@ -110,6 +110,13 @@ Update Service
                                     <label class="fs-6 fw-semibold mb-2">Conclusion Image Alt Tags (Comma Seperated)</label>
                                     <input type="text" class="form-control form-control-solid" placeholder="Enter Alt Tags" name="conclusionImageAltTag" id="conclusionImageAltTag" value="{{$service->coverImageAltTag}}">
                                 </div>
+                                <div class="col-md-12 fv-row">
+                                    <label class="fs-6 fw-semibold mb-2 ">Status</label>
+                                    <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" name="status" id="status">
+                                        <option value="1" {{$service->status == 1 ? 'selected' : ''}}>Active</option>
+                                        <option value="0" {{$service->status == 0 ? 'selected' : ''}}>Inactive</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -134,17 +141,15 @@ Update Service
                                         <option value="No" {{$service->flag == 'No' ? 'selected' : ''}}>No</option>
                                     </select>
                                 </div>
-                                <div class="col-md-9 fv-row">
+                                <div class="col-md-6 fv-row">
                                     <label class="required d-flex align-items-center fs-6 fw-semibold mb-2">Home Page Description</label>
-                                    <textarea class="form-control form-control-solid" placeholder="Enter Home Page Description" id="homePageDesc" name="homePageDesc">{!!$service->homePageDesc!!}</textarea>
+                                    <textarea class="form-control form-control-solid" placeholder="Enter Home Page Description" id="homePageDesc" name="homePageDesc" rows="4">{!!$service->homePageDesc!!}</textarea>
                                 </div>
-                                <div class="col-md-3 fv-row">
-                                    <label class="fs-6 fw-semibold mb-2 ">Status</label>
-                                    <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" name="status" id="status">
-                                        <option value="1" {{$service->status == 1 ? 'selected' : ''}}>Active</option>
-                                        <option value="0" {{$service->status == 0 ? 'selected' : ''}}>Inactive</option>
-                                    </select>
+                                <div class="col-md-6 fv-row">
+                                    <label class="required d-flex align-items-center fs-6 fw-semibold mb-2">Description</label>
+                                    <textarea class="form-control form-control-solid" placeholder="Enter Description" id="description" name="description" rows="4">{!!$service->description!!}</textarea>
                                 </div>
+                                
                                 <div class="col-md-8 fv-row">
                                     <label class="fs-6 fw-semibold mb-2">Subtitle</label>
                                     <textarea class="form-control form-control-solid" placeholder="Enter Subtitle" id="subtitle" name="subtitle">{!!$service->subtitle!!}</textarea>
@@ -389,6 +394,13 @@ Update Service
                                 validators: {
                                     notEmpty: {
                                         message: "Select department is required"
+                                    },
+                                }
+                            },
+                            description:{
+                                validators: {
+                                    notEmpty: {
+                                        message: "Enter description is required"
                                     },
                                 }
                             },

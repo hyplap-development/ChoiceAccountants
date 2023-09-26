@@ -74,7 +74,7 @@ class WebController extends Controller
         $departments = Department::where('status', 1)->where('deleteId', 0)->orderBy('id', 'ASC')->get();
         $services = Service::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->where('flag', 'Yes')->get();
         $blogs = Blog::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->take(5)->get();
-        $faqs = Faq::where('status', 1)->orderBy('sequence', 'DESC')->get();
+        $faqs = Faq::where('status', 1)->orderBy('sequence', 'ASC')->get();
         $clients = Client::where('status', 1)->where('deleteId', 0)->orderBy('sequence', 'ASC')->get();
         $teams = Team::where('status', 1)->where('deleteId', 0)->get();
         $allservices = Service::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->get();
@@ -100,7 +100,7 @@ class WebController extends Controller
         $departments = Department::where('status', 1)->where('deleteId', 0)->orderBy('id', 'ASC')->get();
         $services = Service::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->where('flag', 'Yes')->get();
         $blogs = Blog::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->take(5)->get();
-        $teams = Team::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->get();
+        $teams = Team::where('status', 1)->where('deleteId', 0)->orderBy('id', 'ASC')->get();
         $clients = Client::where('status', 1)->where('deleteId', 0)->orderBy('sequence', 'ASC')->get();
         $faqs = Faq::where('status', 1)->get();
         $allservices = Service::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->get();
@@ -185,7 +185,7 @@ class WebController extends Controller
         $clients = Client::where('status', 1)->where('deleteId', 0)->orderBy('sequence', 'ASC')->get();
         $faqs = Faq::where('status', 1)->get();
         $teams = Team::where('status', 1)->where('deleteId', 0)->get();
-        $careers = Careeropportunity::where('status', 1)->get();
+        $careers = Careeropportunity::where('status', 1)->orderBy('id', 'DESC')->get();
         $allservices = Service::where('status', 1)->where('deleteId', 0)->orderBy('id', 'DESC')->get();
 
         return view('web.career', compact('departments', 'services', 'blogs', 'clients', 'faqs', 'teams', 'careers', 'allservices'));
@@ -237,7 +237,7 @@ class WebController extends Controller
     public function enquiryForm(Request $request)
     {
 
-        $existingEnquiry = Enquiry::where('fname', $request->fname)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'ENQUIRY')->first();
+        $existingEnquiry = Enquiry::where('fname', $request->fname)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'ENQUIRE')->first();
 
         if ($existingEnquiry) {
             return response()->json([
@@ -250,7 +250,7 @@ class WebController extends Controller
             $enquiryForm->email = $request->email;
             $enquiryForm->serviceId = $request->serviceId;
             $enquiryForm->status = 'pending';
-            $enquiryForm->type = 'ENQUIRY';
+            $enquiryForm->type = 'ENQUIRE';
             $enquiryForm->save();
 
             $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);

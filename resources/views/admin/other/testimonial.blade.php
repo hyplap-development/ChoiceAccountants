@@ -5,9 +5,6 @@ Testimonials
 @endsection
 
 @section('header')
-<link href="{{asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
-<link href="{{asset('assets/plugins/custom/prismjs/prismjs.bundle.css')}}" rel="stylesheet" type="text/css" />
-
 
 @endsection
 
@@ -436,12 +433,12 @@ Testimonials
         var ValidationMessage = document.getElementById('ValidationMessage');
         var button = document.getElementById('kt_modal_add_submit');
 
-        if (comment.length <= 200) {
+        if (comment.length <= 250) {
             ValidationMessage.innerHTML = "";
             ValidationMessage.style.display = "none";
             button.disabled = false;
         } else {
-            ValidationMessage.innerHTML = "The comment should only be limited to 200 characters.";
+            ValidationMessage.innerHTML = "The comment should only be limited to 250 characters.";
             ValidationMessage.style.display = "block";
             ValidationMessage.style.color = "#f1416c";
             button.disabled = true;

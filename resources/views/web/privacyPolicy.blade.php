@@ -19,7 +19,7 @@ Privacy Policy | Choice Accountants Australia
           <h1 class="headline-2 mb-0em"> Privacy Policy </h1>
           <div class="content  mt-20em">
             <p><span>If you want to ask us anything about this policy or have any comments or complaints on or about our
-                Website, please email us at GDPR@btlnet.co.uk or call us on +61 2 8717 2222</span></p>
+                Website, please email us at <a href="mailto:GDPR@btlnet.co.uk" style="color: #fff;">GDPR@btlnet.co.uk</a> or call us on <a href="tel:+61 2 8717 2222" style="color: #fff;"> +61 2 8717 2222</a></span></p>
           </div>
         </div>
       </div>
@@ -231,7 +231,7 @@ Privacy Policy | Choice Accountants Australia
             <p>This privacy policy was last updated:<span> </span><strong>23/08/2021</strong></p>
             <h3 class="headline-2">How to contact us</h3>
             <p>For requests, complaints or queries relating to the use of your personal information please contact us
-              at<span> </span><a href="mailto:GDPR@btlnet.co.uk">GDPR@btlnet.co.uk</a> or call us on +61 2 8717 2222.
+              at<span> </span><a href="mailto:GDPR@btlnet.co.uk">GDPR@btlnet.co.uk</a> or call us on<a href="tel:+61 2 8717 2222"> +61 2 8717 2222.</a>  
             </p>
           </div>
         </div>

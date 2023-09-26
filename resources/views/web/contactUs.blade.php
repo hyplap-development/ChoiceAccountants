@@ -63,6 +63,7 @@ Choice Accountant Contact Details | Australia
         margin-top: 10px;
     }
 </style>
+
 @endsection
 
 @section('content')
