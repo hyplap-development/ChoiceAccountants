@@ -125,7 +125,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
                             <img src="/web/images/quality.png" class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Rich Experience </span>
-                        <p>A commitment to staying current in a dynamic world, mastering legislation, tech, and business
+                        <p>A commitment to staying current in a dynamic world, mastering legislation, technology, and business
                             evolution.
                         </p>
                     </a>
