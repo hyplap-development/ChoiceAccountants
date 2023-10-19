@@ -5,6 +5,13 @@ Valuable Clients of Choice Accountants | Australia
 @endsection
 
 @section('meta')
+<meta name="title" content="Valuable Clients of Choice Accountants | Australia">
+<meta name="keywords" content="">
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://choiceaccountants.com/meet-experienced-our-team-and-people"/>
+<meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
+<meta property="og:description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
+<meta name="description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
 @show
 
 @section('style')

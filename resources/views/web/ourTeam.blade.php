@@ -1,10 +1,17 @@
 @extends('layouts.web')
 
 @section('title')
-Our Team & Our People | Choice Accountants
+Meet Experienced Our Team & Our People | Choice Accountants
 @endsection
 
 @section('meta')
+<meta name="title" content="Meet Experienced Our Team & Our People | Choice Accountants">
+<meta name="keywords" content="">
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://choiceaccountants.com/meet-experienced-our-team-and-people"/>
+<meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
+<meta property="og:description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
+<meta name="description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
 @show
 
 @section('style')
@@ -43,7 +50,7 @@ Our Team & Our People | Choice Accountants
             <div class="card card--people bg-darkOffWhite flex-lg-row flex-md-row flex-column ">
                 <figure class="card__figure">
                     <picture class=" card__picture ">
-                        <img class="card__image" width="3960" height="2640" src="/{{$team->image}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="{{$team->imgAlt}}">
+                        <img class="card__image" width="3960" height="2640" src="/{{$team->image}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="Meet Our Experienced team - ">
                     </picture>
                 </figure>
                 <div class="card__content">

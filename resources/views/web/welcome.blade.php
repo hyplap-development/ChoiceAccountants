@@ -1,10 +1,17 @@
 @extends('layouts.web')
 
 @section('title')
-Solving Accounting Challenges in Australia | Choice Accountants
+Trusted partner for CPA services in Australia | Choice Accountants
 @endsection
 
 @section('meta')
+<meta name="title" content="Trusted partner for CPA services in Australia | Choice Accountants">
+<meta name="description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions.">
+<meta name="keywords" content="">
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ route('home') }}"/>
+<meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
+<meta property="og:description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions.">
 @show
 
 @section('style')
@@ -30,7 +37,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
         </div>
         <div class="grid__col grid__col--with-img grid__col--stretch-content grid__col--touch-dev-landscape zindex-2 relative">
             <picture class=" frame frame--stretch ">
-                <img class="frame__media" width="5760" height="3840" decoding="async" src="/web/images/choice.png" alt="Happy and engaged customer support executive">
+                <img class="frame__media" width="5760" height="3840" decoding="async" src="/web/images/choice.png" alt="Partner for Expert CPA Services in Australia - Choice Accountants">
             </picture>
             <div class="cover cover--to-left animation-css no-mobile-animation bg-white"></div>
             <div class="overlay overlay--with-shapes-large animation-css no-mobile-animation">
@@ -180,7 +187,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
                         </div>
                     </div>
                     <div class="block__col">
-                        <figure class="frame frame--rounded frame--center overflow-hidden"> <img class="frame__media" src="/web/images/choice-symbol.png" width="400" height="400" alt="RLB Logo"> </figure>
+                        <figure class="frame frame--rounded frame--center overflow-hidden"> <img class="frame__media" src="/web/images/choice-symbol.png" width="400" height="400" alt="Best Financial Accounting Service in Sydney - Choice Accountants"> </figure>
                         <picture class=" frame frame--image-covered frame--cs-tile ">
                             <img class="frame__media" width="1000" height="600" src="/{{$allservice->coverImage}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="{{$allservice->coverImageAltTag}}">
                         </picture>
@@ -204,7 +211,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
                         </div>
                     </div>
                     <div class="block__col">
-                        <figure class="frame frame--rounded frame--center overflow-hidden"> <img class="frame__media" src="/web/images/choice-symbol.png" width="468" height="217" alt=""> </figure>
+                        <figure class="frame frame--rounded frame--center overflow-hidden"> <img class="frame__media" src="/web/images/choice-symbol.png" width="468" height="217" alt="Choice Accountant- Trusted partner for Financial success"> </figure>
                         <picture class=" frame frame--image-covered frame--cs-tile ">
                             <img class="frame__media" width="1000" height="600" src="/{{$allservice->coverImage}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="{{$allservice->coverImageAltTag}}">
 
@@ -240,7 +247,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
             <div class="row no-gutters">
                 <div class="col-xl-4 overflow-hidden">
                     <picture class=" frame frame--image-covered frame--square-mobile frame--landscape-tablet height-100 ">
-                        <img class="frame__media" width="7360" height="4912" src="/web/images/testi.png" alt="Happy customer using  solutions">
+                        <img class="frame__media" width="7360" height="4912" src="/web/images/testi.png" alt="Our Customers love our services. Read more">
                     </picture>
                     <div class="overlay overlay--slideUp overlay--padding-3 animation-css">
                         <div class="overlay__content grab animation-fadeInUp">
@@ -322,7 +329,7 @@ Solving Accounting Challenges in Australia | Choice Accountants
                     @foreach($allblogs as $blog)
                     <a href="{{url('/our-blogs')}}/{{$blog->slug}}" title="{{$blog->title}}" class="block block--insight link-hover swiper-slide">
                         <picture class=" block__image-frame ">
-                            <img class="block__image" width="5760" height="3713" src="/{{$blog->image}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="{{$blog->imgAlt}}">
+                            <img class="block__image" width="5760" height="3713" src="/{{$blog->image}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="Read our blogs to Know more">
                         </picture>
                         @if(isset($blog->service))
                         <p class="block__preheadline"> {{$blog->service->name}} </p>

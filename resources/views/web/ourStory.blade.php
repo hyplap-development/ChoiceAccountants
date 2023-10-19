@@ -5,6 +5,13 @@ Choice Accountants Story & Process we follow | Choice Accountants
 @endsection
 
 @section('meta')
+<meta name="description" content="Our Story Behind Choice-20 Years of Vision, Creativity & Expertise. Read More.">
+<meta name="title" content="Our Expert Services | Choice Accountants Australia">
+<meta name="keywords" content="">
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
+<meta property="og:description" content="Our Story Behind Choice-20 Years of Vision, Creativity & Expertise. Read More.">
 @show
 
 @section('style')
@@ -89,7 +96,7 @@ Choice Accountants Story & Process we follow | Choice Accountants
         </div>
         <div class="grid__col grid__col--with-img grid__col--stretch-content grid__col--touch-dev-landscape relative">
             <picture class=" frame frame--stretch ">
-                <img class="frame__media" width="1920" height="2160" decoding="async" src="/web/images/abt.png" alt="Writing a story">
+                <img class="frame__media" width="1920" height="2160" decoding="async" src="/web/images/abt.png" alt="Certified Public Accountant - Our Story">
             </picture>
             <div class=" overlay overlay--small animation-css no-mobile-animation"> </div>
             <div class=" bg-shape quater-border-double color-white size-96 top left rotate-180">
