@@ -1272,8 +1272,9 @@
                             <a href="{{url('/privacy-policy')}}" class="d-inline-block mr-30em color-white hover-pink" title="Privacy Policy"> Privacy Policy</a>
                         </div>
                         <div class=" mt-20em mb-20em">
-                            <p> Choice Accountants, 51 Ernest Ave, Chipping Norton NSW 2170, Australia<br />
-                                Copyright © Choice Accountants 2023
+                            <p> Choice Accountants, 21 Remembrance Driveway, Tahmoor, NSW 2573<br />
+                                Copyright © Choice Accountants & Advisors Pty Ltd 2023
+
                             </p>
                         </div>
                     </div>

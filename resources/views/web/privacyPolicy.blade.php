@@ -19,7 +19,7 @@ Privacy Policy | Choice Accountants Australia
           <h1 class="headline-2 mb-0em"> Privacy Policy </h1>
           <div class="content  mt-20em">
             <p><span>If you want to ask us anything about this policy or have any comments or complaints on or about our
-                Website, please email us at <a href="mailto:GDPR@btlnet.co.uk" style="color: #fff;">GDPR@btlnet.co.uk</a> or call us on <a href="tel:+61 2 8717 2222" style="color: #fff;"> +61 2 8717 2222</a></span></p>
+                Website, please email us at <a href="mailto:enquiry@choice.accountants" style="color: #fff;">enquiry@choice.accountants</a> or call us on <a href="tel:+61 2 8717 2200" style="color: #fff;"> +61 2 8717 2200</a></span></p>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@ Privacy Policy | Choice Accountants Australia
         <div class="row row--g-20 ">
           <div class="col-sm-12 ">
             <p><strong>Choice Accountants Limited are registered in England and Wales under company number 2097097 with
-                our registered office at Choice House, 51 Ernest Ave, Chipping Norton NSW 2170, Australia. Our VAT
+                our registered office at Choice House, 21 Remembrance Driveway, Tahmoor, NSW 2573. Our VAT
                 number is 529 1677 22.</strong></p>
             <h3 class="headline-2"></h3>
             <h3 class="headline-2">Background</h3>
@@ -166,13 +166,13 @@ Privacy Policy | Choice Accountants Australia
             </ul>
             <p>You can request to see, amend or delete the information you have provided to us through the registration
               process on our website, including any consent you have provided to receive communications from BTL. To do
-              so please contact us at GDPR@btlnet.co.uk or see ‘<strong>How to contact us</strong>’. </p>
+              so please contact us at enquiry@choice.accountants or see ‘<strong>How to contact us</strong>’. </p>
             <ul>
               <li><strong>Information provided through completing one of our feedback forms</strong></li>
             </ul>
             <p>You can request to see, amend or delete the information you have provided to us through the registration
               process on our website, including any consent you have provided to receive communications from BTL. To do
-              so please email us at GDPR@btlnet.co.uk or see ‘<strong>How to contact us</strong>’. </p>
+              so please email us at enquiry@choice.accountants or see ‘<strong>How to contact us</strong>’. </p>
             <ul>
               <li><strong>Information provided to enable provision of services</strong></li>
             </ul>
@@ -184,7 +184,7 @@ Privacy Policy | Choice Accountants Australia
               <li><strong>Requesting a copy of your information</strong></li>
             </ul>
             <p>You can request a copy of details of personal information Choice Accountants holds about you, including
-              on our website database. To do so please email us at GDPR@btlnet.co.uk or see<span> </span><strong>'How to
+              on our website database. To do so please email us at enquiry@choice.accountants or see<span> </span><strong>'How to
                 contact us'</strong>.</p>
             <p>Requests must be made in writing and a proof of identification is required in order to protect your
               information. We also require sufficient details to be able to locate your information. For example: dates
@@ -231,7 +231,7 @@ Privacy Policy | Choice Accountants Australia
             <p>This privacy policy was last updated:<span> </span><strong>23/08/2021</strong></p>
             <h3 class="headline-2">How to contact us</h3>
             <p>For requests, complaints or queries relating to the use of your personal information please contact us
-              at<span> </span><a href="mailto:GDPR@btlnet.co.uk">GDPR@btlnet.co.uk</a> or call us on<a href="tel:+61 2 8717 2222"> +61 2 8717 2222.</a>  
+              at<span> </span><a href="mailto:enquiry@choice.accountants">enquiry@choice.accountants</a> or call us on<a href="tel:+61 2 8717 2200"> +61 2 8717 2200.</a>  
             </p>
           </div>
         </div>

@@ -254,22 +254,22 @@ Choice Accountants Story & Process we follow | Choice Accountants
                             <div class="d-flex align-items-center justify-content-start gap-2">
                                 <i class="fa-solid fa-phone fs-10px iconstyle"></i> <span class="link-block__label small-text Fw-500 p-0"> Sales </span>
                             </div>
-                            <a href="tel:+61 2 8717 2222" class="link-block__link link-hover normal-text" title="Call Sales">
-                                <span class="link-hover__text"> +61 2 8717 2222 </span> </a>
+                            <a href="tel:+61 2 8717 2200" class="link-block__link link-hover normal-text" title="Call Sales">
+                                <span class="link-hover__text"> +61 2 8717 2200 </span> </a>
                         </div>
                         <div class="link-block link-block--contact">
                             <div class="d-flex align-items-center justify-content-start gap-2">
                                 <i class="fa-solid fa-phone fs-10px iconstyle"></i> <span class="link-block__label small-text Fw-500 p-0"> Support </span>
                             </div>
-                            <a href="tel:+61 2 8717 2222" class="link-block__link link-hover normal-text">
-                                <span class="link-hover__text"> +61 2 8717 2222 </span> </a>
+                            <a href="tel:+61 2 8717 2200" class="link-block__link link-hover normal-text">
+                                <span class="link-hover__text"> +61 2 8717 2200 </span> </a>
                         </div>
                         <div class="link-block link-block--contact">
                             <div class="d-flex align-items-center justify-content-start gap-2">
                                 <i class="fa-solid fa-envelope fs-10px iconstyle"></i> <span class="link-block__label small-text Fw-500 p-0"> Email </span>
                             </div>
-                            <a href="mailto:hello@choice.accountants" class="link-block__link link-hover normal-text" title="Email us">
-                                <span class="link-hover__text">hello@choice.accountants
+                            <a href="mailto:enquiry@choice.accountants" class="link-block__link link-hover normal-text" title="Email us">
+                                <span class="link-hover__text">enquiry@choice.accountants
                                 </span> </a>
                         </div>
                         <div class="link-block link-block--contact">
@@ -353,7 +353,7 @@ Choice Accountants Story & Process we follow | Choice Accountants
                                     <p>We have received your enquiry. We aim to respond to all enquiries within 24 hours. In case of emergency you can contact to given number.Meanwhile, feel free to explore our website.</p>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <a href="tel:+61 2 8717 2222" type="button" class="btn btn--secondary btn--purple mt-10em">Call Now</a>
+                                    <a href="tel:+61 2 8717 2200" type="button" class="btn btn--secondary btn--purple mt-10em">Call Now</a>
                                 </div>
                             </div>
                         </div>
