@@ -1,7 +1,9 @@
 @extends('layouts.web')
 
 @section('title')
-{{$service->name}} | Choice Accountants Australia
+@if(isset($service->seo->title))
+<title>{{$service->seo->title}}</title>
+@endif
 @endsection
 
 @section('meta')
@@ -14,9 +16,6 @@
 @endif
 @if(isset($service->seo->metaKeyword))
 <meta name="keywords" content="{{$service->seo->metaKeyword}}">
-@endif
-@if(isset($service->seo->title))
-<title>{{$service->seo->title}}</title>
 @endif
 @if(isset($service->seo->metaRobot))
 <meta name="robots" content="{{$service->seo->metaRobot}}">

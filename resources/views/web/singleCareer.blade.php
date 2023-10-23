@@ -1,7 +1,9 @@
 @extends('layouts.web')
 
 @section('title')
-{{$career->name}} | Choice Accountants
+@if(isset($career->seo->title))
+<title>{{$career->seo->title}}</title>
+@endif
 @endsection
 
 @section('meta')
@@ -15,9 +17,7 @@
 @if(isset($career->seo->metaKeyword))
 <meta name="keywords" content="{{$career->seo->metaKeyword}}">
 @endif
-@if(isset($career->seo->title))
-<title>{{$career->seo->title}}</title>
-@endif
+
 @if(isset($career->seo->metaRobot))
 <meta name="robots" content="{{$career->seo->metaRobot}}">
 @endif

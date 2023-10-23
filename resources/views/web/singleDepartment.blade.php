@@ -1,9 +1,10 @@
 @extends('layouts.web')
 
 @section('title')
-{{$department->name}} | Choice Accountants Australia
+@if(isset($department->seo->title))
+<title>{{$department->seo->title}}</title>
+@endif
 @endsection
-
 @section('meta')
 <link rel="canonical" href="{{url('/our-services')}}/{{$department->slug}}" />
 @if(isset($department->seo->metaTitle))
@@ -15,9 +16,7 @@
 @if(isset($department->seo->metaKeyword))
 <meta name="keywords" content="{{$department->seo->metaKeyword}}">
 @endif
-@if(isset($department->seo->title))
-<title>{{$department->seo->title}}</title>
-@endif
+
 @if(isset($department->seo->metaRobot))
 <meta name="robots" content="{{$department->seo->metaRobot}}">
 @endif

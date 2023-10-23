@@ -1,7 +1,9 @@
 @extends('layouts.web')
 
 @section('title')
-{{$blog->title}} | Choice Accountants Australia
+@if(isset($blog->seo->title))
+<title>{{$blog->seo->title}}</title>
+@endif
 @endsection
 
 @section('meta')
@@ -15,9 +17,7 @@
 @if(isset($blog->seo->metaKeyword))
 <meta name="keywords" content="{{$blog->seo->metaKeyword}}">
 @endif
-@if(isset($blog->seo->title))
-<title>{{$blog->seo->title}}</title>
-@endif
+
 @if(isset($blog->seo->metaRobot))
 <meta name="robots" content="{{$blog->seo->metaRobot}}">
 @endif
@@ -103,7 +103,7 @@
                             @if($blog->writer)
                             <div class="d-inline-flex align-items-center"> <svg class="fill-white" width="20" height="20" aria-label="Author">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" href="/web/images/icons.svg#icon-author"> </use>
-                                </svg> <span class="ml-10em normal-text"> {{$blog->writer}} </span> 
+                                </svg> <span class="ml-10em normal-text"> {{$blog->writer}} </span>
                             </div>
                             @endif
                             <div class="d-inline-flex align-items-center"> <svg class="fill-white" width="20" height="20" aria-label="Published at">
