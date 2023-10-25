@@ -2,7 +2,7 @@
 
 @section('title')
 @if(isset($blog->seo->title))
-<title>{{$blog->seo->title}}</title>
+{{$blog->seo->title}}
 @endif
 @endsection
 

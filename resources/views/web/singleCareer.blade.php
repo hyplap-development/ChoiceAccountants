@@ -2,7 +2,7 @@
 
 @section('title')
 @if(isset($career->seo->title))
-<title>{{$career->seo->title}}</title>
+{{$career->seo->title}}
 @endif
 @endsection
 

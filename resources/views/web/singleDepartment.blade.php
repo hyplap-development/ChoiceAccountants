@@ -2,7 +2,7 @@
 
 @section('title')
 @if(isset($department->seo->title))
-<title>{{$department->seo->title}}</title>
+{{$department->seo->title}}
 @endif
 @endsection
 @section('meta')
