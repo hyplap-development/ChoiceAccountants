@@ -9,10 +9,10 @@ Trusted partner for CPA services in Australia | Choice Accountants
 <meta name="description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions.">
 <meta name="keywords" content="">
 <meta property="og:type" content="website"/>
-<!-- commetnsad  -->
-<meta property="og:url" content="{{ route('home') }}"/>
+<meta property="og:url" content="https://www.choice.accountants/"/>
 <meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
 <meta property="og:description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions.">
+
 @show
 
 @section('style')
