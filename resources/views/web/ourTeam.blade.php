@@ -8,7 +8,7 @@ Meet Experienced Our Team & Our People | Choice Accountants
 <meta name="title" content="Meet Experienced Our Team & Our People | Choice Accountants">
 <meta name="keywords" content="Our dedicated team,">
 <meta property="og:type" content="website"/>
-<meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
+<meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.png"/>
 <meta property="og:description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
 <meta name="description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
 @endsection
