@@ -7,7 +7,6 @@
 @endsection
 
 @section('meta')
-<link rel="canonical" href="{{url('/our-services')}}/{{$service->department ? $service->department->slug : ''}}/{{$service->slug}}" />
 @if(isset($service->seo->metaTitle))
 <meta name="title" content="{{ $service->seo->metaTitle }}">
 @endif
@@ -29,7 +28,6 @@
 @if(isset($service->seo->ogDescription))
 <meta property="og:description" content="{{$service->seo->ogDescription}}">
 @endif
-<meta property="og:url" content="{{url('/our-services')}}/{{$service->department ? $service->department->slug : ''}}/{{$service->slug}}">
 @if(isset($service->seo->ogImage))
 <meta name="og:image" content="{{$service->seo->ogImage}}">
 @endif

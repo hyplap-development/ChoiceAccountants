@@ -5,8 +5,6 @@ Career Opportunity in Accountancy Firm in Australia | Choice Accountants
 @endsection
 
 @section('meta')
-
-<!-- <meta name="description" content="Accounting firm in Sydney, Melbourne and Brisbane offering career opportunities for accountants, auditors"/> -->
 @show
 
 @section('style')

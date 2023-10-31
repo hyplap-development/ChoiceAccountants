@@ -6,7 +6,6 @@
 @endif
 @endsection
 @section('meta')
-<link rel="canonical" href="{{url('/our-services')}}/{{$department->slug}}" />
 @if(isset($department->seo->metaTitle))
 <meta name="title" content="{{ $department->seo->metaTitle }}">
 @endif
@@ -29,7 +28,6 @@
 @if(isset($department->seo->ogDescription))
 <meta property="og:description" content="{{$department->seo->ogDescription}}">
 @endif
-<meta property="og:url" content="{{url('/our-services')}}/{{$department->slug}}">
 @if(isset($department->seo->ogImage))
 <meta name="og:image" content="{{$department->seo->ogImage}}">
 @endif

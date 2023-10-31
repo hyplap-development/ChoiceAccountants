@@ -7,7 +7,6 @@
 @endsection
 
 @section('meta')
-<link rel="canonical" href="{{url('our-blogs')}}/{{$blog->slug}}" />
 @if(isset($blog->seo->metaTitle))
 <meta name="title" content="{{ $blog->seo->metaTitle }}">
 @endif
@@ -30,7 +29,6 @@
 @if(isset($blog->seo->ogDescription))
 <meta property="og:description" content="{{$blog->seo->ogDescription}}">
 @endif
-<meta property="og:url" content="{{url('our-blogs')}}/{{$blog->slug}}">
 @if(isset($blog->seo->ogImage))
 <meta name="og:image" content="{{$blog->seo->ogImage}}">
 @endif
