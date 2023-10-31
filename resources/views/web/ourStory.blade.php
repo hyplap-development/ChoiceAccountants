@@ -9,7 +9,6 @@ Choice Accountants Story & Process we follow | Choice Accountants
 <meta name="title" content="Our Expert Services | Choice Accountants Australia">
 <meta name="keywords" content="">
 <meta property="og:type" content="website"/>
-<meta property="og:url" content=""/>
 <meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
 <meta property="og:description" content="Our Story Behind Choice-20 Years of Vision, Creativity & Expertise. Read More.">
 @show

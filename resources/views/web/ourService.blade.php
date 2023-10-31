@@ -9,7 +9,6 @@ Our Expert Services | Choice Accountants Australia
 <meta name="title" content="Our Expert Services | Choice Accountants Australia">
 <meta name="keywords" content="">
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://www.choiceaccountantsaustralia.com/our-expert-services/"/>
 <meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
 <meta property="og:description" content="We are expert in providing you the best Legal & Statutory Compliance, Small Business Advisory, Manufacturing & Logistics Solutions, and Business Support. Your one-stop destination for holistic business solutions.">
 @show
