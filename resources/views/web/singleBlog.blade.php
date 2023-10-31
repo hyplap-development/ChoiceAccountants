@@ -7,7 +7,6 @@
 @endsection
 
 @section('meta')
-<link rel="canonical" href="{{url('our-blogs')}}/{{$blog->slug}}" />
 @if(isset($blog->seo->metaTitle))
 <meta name="title" content="{{ $blog->seo->metaTitle }}">
 @endif

@@ -6,7 +6,6 @@
 @endif
 @endsection
 @section('meta')
-<link rel="canonical" href="{{url('/our-services')}}/{{$department->slug}}" />
 @if(isset($department->seo->metaTitle))
 <meta name="title" content="{{ $department->seo->metaTitle }}">
 @endif

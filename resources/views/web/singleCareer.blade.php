@@ -7,7 +7,6 @@
 @endsection
 
 @section('meta')
-<link rel="canonical" href="{{url('/about-choice/careers/')}}/{{$career->slug}}" />
 @if(isset($career->seo->metaTitle))
 <meta name="title" content="{{ $career->seo->metaTitle }}">
 @endif

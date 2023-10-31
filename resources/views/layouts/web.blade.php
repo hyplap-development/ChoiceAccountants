@@ -10,8 +10,12 @@
         @section('title')
         @show
     </title>
-
-    @section('meta')
+    <!-- canonical -->
+    @php
+    $url = url()->current();
+    @endphp
+    <link rel="canonical" href="{{ $url }}" />
+    
     <meta name="google-site-verification" content="yGl2VcwbVKq97znzeWGfzlhDaoAM10Q4_VOfMdH-j58" />
     <!-- Google Tag Manager -->
     <script>
@@ -43,7 +47,9 @@
 
         gtag('config', 'G-B54H9Q9JYZ');
     </script>
+
     
+    @section('meta')
     @show
     <link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
 
