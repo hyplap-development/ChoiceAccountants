@@ -10,12 +10,14 @@
         @section('title')
         @show
     </title>
-    <!-- canonical -->
     @php
     $url = url()->current();
     @endphp
+    <!-- canonical -->
     <link rel="canonical" href="{{ $url }}" />
-    
+    <!-- og:url -->
+    <meta property="og:url" content="{{ $url }}" />
+
     <meta name="google-site-verification" content="yGl2VcwbVKq97znzeWGfzlhDaoAM10Q4_VOfMdH-j58" />
     <!-- Google Tag Manager -->
     <script>

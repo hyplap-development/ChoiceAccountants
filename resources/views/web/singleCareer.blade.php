@@ -29,7 +29,6 @@
 @if(isset($career->seo->ogDescription))
 <meta property="og:description" content="{{$career->seo->ogDescription}}">
 @endif
-<meta property="og:url" content="{{url('/about-choice/careers/')}}/{{$career->slug}}">
 @if(isset($career->seo->ogImage))
 <meta name="og:image" content="{{$career->seo->ogImage}}">
 @endif
