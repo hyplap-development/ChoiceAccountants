@@ -11,7 +11,7 @@ Valuable Clients of Choice Accountants | Australia
 <meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
 <meta property="og:description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
 <meta name="description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
-@show
+@endsection
 
 @section('style')
 <style>

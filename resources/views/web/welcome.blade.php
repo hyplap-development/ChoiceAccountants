@@ -18,7 +18,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
 <meta property="twitter:url" content="https://choice.accountants/" />
 <link rel="alternate" href="https://choice.accountants/" hreflang="en-IN" />
 <link rel="alternate" href="https://choice.accountants/" hreflang="en-AE" />
-@show
+@endsection
 
 @section('style')
 @endsection

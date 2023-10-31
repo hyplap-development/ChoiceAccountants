@@ -5,7 +5,7 @@ Choice Accountant Contact Details | Australia
 @endsection
 
 @section('meta')
-@show
+@endsection
 
 @section('style')
 <style>

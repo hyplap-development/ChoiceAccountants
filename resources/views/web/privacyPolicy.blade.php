@@ -5,7 +5,7 @@ Privacy Policy | Choice Accountants Australia
 @endsection
 
 @section('meta')
-@show
+@endsection
 
 @section('style')
 @endsection

@@ -5,7 +5,7 @@ Frequently Asked Questions | Choice Accountants Australia
 @endsection
 
 @section('meta')
-@show
+@endsection
 
 @section('style')
 @endsection

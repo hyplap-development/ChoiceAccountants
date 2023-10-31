@@ -11,7 +11,7 @@ Our Expert Services | Choice Accountants Australia
 <meta property="og:type" content="website"/>
 <meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
 <meta property="og:description" content="We are expert in providing you the best Legal & Statutory Compliance, Small Business Advisory, Manufacturing & Logistics Solutions, and Business Support. Your one-stop destination for holistic business solutions.">
-@show
+@endsection
 
 @section('style')
 @endsection

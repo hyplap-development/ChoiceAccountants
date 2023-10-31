@@ -11,7 +11,7 @@ Choice Accountants Story & Process we follow | Choice Accountants
 <meta property="og:type" content="website"/>
 <meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
 <meta property="og:description" content="Our Story Behind Choice-20 Years of Vision, Creativity & Expertise. Read More.">
-@show
+@endsection
 
 @section('style')
 <style>
