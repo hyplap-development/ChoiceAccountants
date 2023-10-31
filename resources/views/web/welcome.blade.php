@@ -8,9 +8,16 @@ Trusted partner for CPA services in Australia | Choice Accountants
 <meta name="title" content="Trusted partner for CPA services in Australia | Choice Accountants">
 <meta name="description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions.">
 <meta name="keywords" content="Tax returns, Cpa, accounting, business advisory, Wealth management, top australian accounting firm">
-<meta property="og:type" content="website"/>
-<meta property="og:image" itemprop="image" content="/images/logo-white.png"/>
+<meta property="og:type" content="website" />
+<meta property="og:image" itemprop="image" content="/images/logo-white.png" />
 <meta property="og:description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions.">
+<meta name="twitter:site" content="@choiceacountants" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Trusted partner for CPA services in Australia | Choice Accountants" />
+<meta name="twitter:description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions." />
+<meta property="twitter:url" content="https://choice.accountants/" />
+<link rel="alternate" href="https://choice.accountants/" hreflang="en-IN" />
+<link rel="alternate" href="https://choice.accountants/" hreflang="en-AE" />
 @show
 
 @section('style')

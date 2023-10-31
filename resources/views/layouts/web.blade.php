@@ -15,6 +15,8 @@
     @php
     $url = url()->current();
     @endphp
+    <link rel="alternate" href="https://choice.accountants/" hreflang="en-IN" />
+    <link rel="alternate" href="https://choice.accountants/" hreflang="en-AE" />
     <!-- canonical -->
     <link rel="canonical" href="{{ $url }}" />
     <!-- og:url -->
@@ -52,7 +54,7 @@
         gtag('config', 'G-B54H9Q9JYZ');
     </script>
 
-    
+
     @section('meta')
     @show
     <link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
