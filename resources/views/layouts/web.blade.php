@@ -1227,7 +1227,7 @@
         <div class="l-footer__container">
             <div class="l-footer__logo-area bg-purple">
                 <a href="{{url('/')}}" class="l-footer__logo">
-                    <img src="/web/images/logo_white.webp" width="287" height="70">
+                    <img src="/web/images/logo_white.webp" alt="choice accountants- top cpa firm in Australia" width="287" height="70">
                 </a>
                 <div class="l-footer__bg-shape l-footer__bg-shape--logo bg-shape quater-border-filled gradient-3">
                     <div class="bg-shape__inner animation-rotateRight90"></div>
@@ -1235,7 +1235,7 @@
             </div>
             <div class="l-footer__newsletter-area bg-pink">
                 <div class="relative zindex-3">
-                    <img src="/web/images/cpa.webp" style="width: 20%;outline: none;">
+                    <img src="/web/images/cpa.webp" alt="choice accountants- top cpa firm in Australia" style="width: 20%;outline: none;">
                     <div class="mt-20em mb-20em">
                         <p> </p>
                     </div>
