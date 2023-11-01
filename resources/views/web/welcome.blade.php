@@ -111,7 +111,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                 <div class="link-block-wrapper">
                     <a title="Proactive Guidance" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/guidance.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/guidance.png" alt="Prompt Guidance" class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Proactive Guidance</span>
                         <p>Dedicated to prompt, reliable service, meeting deadlines, and efficiently managing financial matters.
@@ -119,7 +119,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                     </a>
                     <a title="Timely & Reliable" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/timing.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/timing.png" alt="Most Trusted and reliable source for Australian business complexities - Choice Accountants" class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Timely & Reliable </span>
                         <p>Proactive guidance, and solutions to navigate Australian business complexities.
@@ -127,7 +127,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                     </a>
                     <a title="Personalised Approach" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/personalization.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/personalization.png" alt="Solving Clients problems our top most priority." class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Personalised Approach </span>
                         <p>Understanding each client's distinct situation, crafting bespoke solutions aligned with their goals.
@@ -135,7 +135,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                     </a>
                     <a title="Rich Experience" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/quality.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/quality.png" alt="Rich Experience" class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Rich Experience </span>
                         <p>A commitment to staying current in a dynamic world, mastering legislation, technology, and business
@@ -144,7 +144,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                     </a>
                     <a title="Rich Experience" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/review.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/review.png" alt="Client Centered" class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Client
                             Centered </span>
@@ -153,7 +153,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                     </a>
                     <a title="Rich Experience" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/communication.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/communication.png" alt="Client Centric Communication" class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Transparent Communication</span>
                         <p>Upholding open dialogue, addressing conflicts, and educating through transparent communication.
