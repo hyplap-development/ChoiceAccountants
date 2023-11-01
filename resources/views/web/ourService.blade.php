@@ -9,7 +9,7 @@ Our Expert Services | Choice Accountants Australia
 <meta name="title" content="Our Expert Services | Choice Accountants Australia">
 <meta name="keywords" content="">
 <meta property="og:type" content="website"/>
-<meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.png"/>
+<meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.webp"/>
 <meta property="og:description" content="We are expert in providing you the best Legal & Statutory Compliance, Small Business Advisory, Manufacturing & Logistics Solutions, and Business Support. Your one-stop destination for holistic business solutions.">
 @endsection
 
@@ -48,7 +48,7 @@ Our Expert Services | Choice Accountants Australia
         </div>
         <div class="grid__col grid__col--with-img grid__col--stretch-content grid__col--touch-dev-landscape relative zindex-2 overflow-hidden">
             <picture class=" frame frame--stretch ">
-                <img class="frame__media" width="1200" height="1200" decoding="async" src="/web/images/servicepage.png" alt="Man on phone with card">
+                <img class="frame__media" width="1200" height="1200" decoding="async" src="/web/images/servicepage.webp" alt="Man on phone with card">
             </picture>
             <div class="cover animation-slideOut no-mobile-animation zindex-3" data-animation-delay="200"></div>
             <div class="bg-shape quater-border-filled gradient-3 top right rotate-270 size-180">

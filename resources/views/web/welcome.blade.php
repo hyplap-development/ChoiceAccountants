@@ -9,7 +9,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
 <meta name="description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions.">
 <meta name="keywords" content="Tax returns, Cpa, accounting, business advisory, Wealth management, top australian accounting firm">
 <meta property="og:type" content="website" />
-<meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.png" />
+<meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.webp" />
 <meta property="og:description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions.">
 <meta name="twitter:site" content="@choiceacountants" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -43,7 +43,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
         </div>
         <div class="grid__col grid__col--with-img grid__col--stretch-content grid__col--touch-dev-landscape zindex-2 relative">
             <picture class=" frame frame--stretch ">
-                <img class="frame__media" width="5760" height="3840" decoding="async" src="/web/images/choice.png" alt="Partner for Expert CPA Services in Australia - Choice Accountants">
+                <img class="frame__media" width="5760" height="3840" decoding="async" src="/web/images/choice.webp" alt="Partner for Expert CPA Services in Australia - Choice Accountants">
             </picture>
             <div class="cover cover--to-left animation-css no-mobile-animation bg-white"></div>
             <div class="overlay overlay--with-shapes-large animation-css no-mobile-animation">
@@ -111,7 +111,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                 <div class="link-block-wrapper">
                     <a title="Proactive Guidance" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/guidance.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/guidance.webp" alt="Prompt Guidance" class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Proactive Guidance</span>
                         <p>Dedicated to prompt, reliable service, meeting deadlines, and efficiently managing financial matters.
@@ -119,7 +119,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                     </a>
                     <a title="Timely & Reliable" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/timing.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/timing.webp" alt="Most Trusted and reliable source for Australian business complexities - Choice Accountants" class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Timely & Reliable </span>
                         <p>Proactive guidance, and solutions to navigate Australian business complexities.
@@ -127,7 +127,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                     </a>
                     <a title="Personalised Approach" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/personalization.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/personalization.webp" alt="Solving Clients problems our top most priority." class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Personalised Approach </span>
                         <p>Understanding each client's distinct situation, crafting bespoke solutions aligned with their goals.
@@ -135,7 +135,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                     </a>
                     <a title="Rich Experience" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/quality.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/quality.webp" alt="Rich Experience" class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Rich Experience </span>
                         <p>A commitment to staying current in a dynamic world, mastering legislation, technology, and business
@@ -144,7 +144,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                     </a>
                     <a title="Rich Experience" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/review.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/review.webp" alt="Client Centered" class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Client
                             Centered </span>
@@ -153,7 +153,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                     </a>
                     <a title="Rich Experience" class="link-block link-block--medium link-hover">
                         <div class="link-block__icon">
-                            <img src="/web/images/communication.png" class="" width="57" height="57" style="padding: 1%;">
+                            <img src="/web/images/communication.webp" alt="Client Centric Communication" class="" width="57" height="57" style="padding: 1%;">
                         </div> <span class="link-block__text link-hover__text">
                             Transparent Communication</span>
                         <p>Upholding open dialogue, addressing conflicts, and educating through transparent communication.
@@ -193,7 +193,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                         </div>
                     </div>
                     <div class="block__col">
-                        <figure class="frame frame--rounded frame--center overflow-hidden"> <img class="frame__media" src="/web/images/choice-symbol.png" width="400" height="400" alt="Best Financial Accounting Service in Sydney - Choice Accountants"> </figure>
+                        <figure class="frame frame--rounded frame--center overflow-hidden"> <img class="frame__media" src="/web/images/choice-symbol.webp" width="400" height="400" alt="Best Financial Accounting Service in Sydney - Choice Accountants"> </figure>
                         <picture class=" frame frame--image-covered frame--cs-tile ">
                             <img class="frame__media" width="1000" height="600" src="/{{$allservice->coverImage}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="{{$allservice->coverImageAltTag}}">
                         </picture>
@@ -217,7 +217,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
                         </div>
                     </div>
                     <div class="block__col">
-                        <figure class="frame frame--rounded frame--center overflow-hidden"> <img class="frame__media" src="/web/images/choice-symbol.png" width="468" height="217" alt="Choice Accountant- Trusted partner for Financial success"> </figure>
+                        <figure class="frame frame--rounded frame--center overflow-hidden"> <img class="frame__media" src="/web/images/choice-symbol.webp" width="468" height="217" alt="Choice Accountant- Trusted partner for Financial success"> </figure>
                         <picture class=" frame frame--image-covered frame--cs-tile ">
                             <img class="frame__media" width="1000" height="600" src="/{{$allservice->coverImage}}" onerror="this.onerror=null;this.src='/assets/media/blankimg.svg'" alt="{{$allservice->coverImageAltTag}}">
 
@@ -253,7 +253,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
             <div class="row no-gutters">
                 <div class="col-xl-4 overflow-hidden">
                     <picture class=" frame frame--image-covered frame--square-mobile frame--landscape-tablet height-100 ">
-                        <img class="frame__media" width="7360" height="4912" src="/web/images/testi.png" alt="Our Customers love our services. Read more">
+                        <img class="frame__media" width="7360" height="4912" src="/web/images/testi.webp" alt="Our Customers love our services. Read more">
                     </picture>
                     <div class="overlay overlay--slideUp overlay--padding-3 animation-css">
                         <div class="overlay__content grab animation-fadeInUp">

@@ -1100,7 +1100,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WB4CQ43Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <nav class="l-navbar js-navbar">
-        <div class="l-navbar__container"> <a href="{{url('/')}}" title="Homepage" class="l-navbar__logo"> <img src="/web/images/logo.png" width="197" height="68" alt="Choice Accountants"> </a> <button type="button" class="l-navbar__burger burger js-burger" aria-label="Open menu"> <span class="burger__line"></span> </button>
+        <div class="l-navbar__container"> <a href="{{url('/')}}" title="Homepage" class="l-navbar__logo"> <img src="/web/images/logo.webp" width="197" height="68" alt="Choice Accountants"> </a> <button type="button" class="l-navbar__burger burger js-burger" aria-label="Open menu"> <span class="burger__line"></span> </button>
             <div class="l-navbar__sidebar">
                 <ul class="l-navbar__list js-menu-wrapper">
                     <li> <a href="{{url('/')}}" title="Home-choice accountants" class="l-navbar__list-link"> Home </a> </li>
@@ -1227,7 +1227,7 @@
         <div class="l-footer__container">
             <div class="l-footer__logo-area bg-purple">
                 <a href="{{url('/')}}" class="l-footer__logo">
-                    <img src="/web/images/logo_white.png" width="287" height="70">
+                    <img src="/web/images/logo_white.webp" width="287" height="70">
                 </a>
                 <div class="l-footer__bg-shape l-footer__bg-shape--logo bg-shape quater-border-filled gradient-3">
                     <div class="bg-shape__inner animation-rotateRight90"></div>
@@ -1235,7 +1235,7 @@
             </div>
             <div class="l-footer__newsletter-area bg-pink">
                 <div class="relative zindex-3">
-                    <img src="/web/images/cpa.png" style="width: 20%;outline: none;">
+                    <img src="/web/images/cpa.webp" style="width: 20%;outline: none;">
                     <div class="mt-20em mb-20em">
                         <p> </p>
                     </div>
