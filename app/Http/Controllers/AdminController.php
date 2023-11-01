@@ -458,7 +458,7 @@ class AdminController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/blogs/' . $final_name, 0777);
             $image_path = "media/images/blogs/" . $final_name;
@@ -493,7 +493,7 @@ class AdminController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/teams/' . $final_name, 0777);
             $image_path = "media/images/teams/" . $final_name;
@@ -613,7 +613,7 @@ class AdminController extends Controller
         if ($request->hasFile('logo')) {
             $image = $request->file('logo');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/clients/' . $final_name, 0777);
             $image_path = "media/images/clients/" . $final_name;
@@ -640,7 +640,7 @@ class AdminController extends Controller
         if ($request->hasFile('logo')) {
             $image = $request->file('logo');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/clients/' . $final_name, 0777);
             $image_path = "media/images/clients/" . $final_name;
@@ -705,7 +705,7 @@ class AdminController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/departments/' . $final_name, 0777);
             $image_path = "media/images/departments/" . $final_name;
@@ -716,7 +716,7 @@ class AdminController extends Controller
         if ($request->hasFile('bannerImage')) {
             $image = $request->file('bannerImage');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/departments/' . $final_name, 0777);
             $bannerimage_path = "media/images/departments/" . $final_name;
@@ -752,7 +752,7 @@ class AdminController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/departments/' . $final_name, 0777);
             $image_path = "media/images/departments/" . $final_name;
@@ -767,7 +767,7 @@ class AdminController extends Controller
         if ($request->hasFile('bannerImage')) {
             $image = $request->file('bannerImage');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/departments/' . $final_name, 0777);
             $bannerimage_path = "media/images/departments/" . $final_name;
@@ -832,7 +832,7 @@ class AdminController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/teams/' . $final_name, 0777);
             $image_path = "media/images/teams/" . $final_name;
@@ -860,7 +860,7 @@ class AdminController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/teams/' . $final_name, 0777);
             $image_path = "media/images/teams/" . $final_name;
@@ -1034,7 +1034,7 @@ class AdminController extends Controller
         if ($request->hasFile('coverImage')) {
             $image = $request->file('coverImage');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/services/' . $final_name, 0777);
             $image_path = "media/images/services/" . $final_name;
@@ -1045,7 +1045,7 @@ class AdminController extends Controller
         if ($request->hasFile('necessaryImage')) {
             $image = $request->file('necessaryImage');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/services/' . $final_name, 0777);
             $necessaryImage_path = "media/images/services/" . $final_name;
@@ -1056,7 +1056,7 @@ class AdminController extends Controller
         if ($request->hasFile('conclusionImage')) {
             $image = $request->file('conclusionImage');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/services/' . $final_name, 0777);
             $conclusionImage_path = "media/images/services/" . $final_name;
@@ -1120,7 +1120,7 @@ class AdminController extends Controller
         if ($request->hasFile('coverImage')) {
             $image = $request->file('coverImage');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/services/' . $final_name, 0777);
             $image_path = "media/images/services/" . $final_name;
@@ -1135,7 +1135,7 @@ class AdminController extends Controller
         if ($request->hasFile('necessaryImage')) {
             $image = $request->file('necessaryImage');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/services/' . $final_name, 0777);
             $necessaryImage_path = "media/images/services/" . $final_name;
@@ -1150,7 +1150,7 @@ class AdminController extends Controller
         if ($request->hasFile('conclusionImage')) {
             $image = $request->file('conclusionImage');
             $image_name = $image->getClientOriginalName();
-            $final_name = time() . $image_name;
+            $final_name =  $image_name;
             $image->move($uploadpath, $final_name);
             chmod('media/images/services/' . $final_name, 0777);
             $conclusionImage_path = "media/images/services/" . $final_name;

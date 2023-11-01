@@ -8,7 +8,7 @@ Valuable Clients of Choice Accountants | Australia
 <meta name="title" content="Valuable Clients of Choice Accountants | Australia">
 <meta name="keywords" content="">
 <meta property="og:type" content="website"/>
-<meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.png"/>
+<meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.webp"/>
 <meta property="og:description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
 <meta name="description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
 @endsection

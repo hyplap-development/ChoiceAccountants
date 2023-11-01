@@ -41,7 +41,7 @@ Career Opportunity in Accountancy Firm in Australia | Choice Accountants
         <div class="row no-gutters">
             <div class="col-lg-4 bg-white   ">
                 <picture class=" frame frame--image-covered frame--landscape ">
-                    <img class="frame__media" width="6049" height="4033" src="/web/images/carrer.png" alt="Team collaborating around a laptop">
+                    <img class="frame__media" width="6049" height="4033" src="/web/images/carrer.webp" alt="Team collaborating around a laptop">
                 </picture>
             </div>
             <div class="col-lg-8 padding-xl-96-120 bg-white">
@@ -112,7 +112,7 @@ Career Opportunity in Accountancy Firm in Australia | Choice Accountants
                 </div>
                 <div class="grid__col grid__col--heading-2">
                     <picture class=" frame frame--image-covered frame--landscape ">
-                        <img class="frame__media" width="7900" height="5269" src="/web/images/tea.png" alt="Large team innovating together">
+                        <img class="frame__media" width="7900" height="5269" src="/web/images/tea.webp" alt="Large team innovating together">
                     </picture>
                     <div class="bg-shape quater-filled color-pink top right size-96"> <span class="bg-shape__inner animation-rotateLeft90"></span> </div>
                 </div>

@@ -8,7 +8,7 @@ Meet Experienced Our Team & Our People | Choice Accountants
 <meta name="title" content="Meet Experienced Our Team & Our People | Choice Accountants">
 <meta name="keywords" content="Our dedicated team,">
 <meta property="og:type" content="website"/>
-<meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.png"/>
+<meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.webp"/>
 <meta property="og:description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
 <meta name="description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
 @endsection
@@ -74,22 +74,22 @@ Meet Experienced Our Team & Our People | Choice Accountants
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <picture class=" frame frame--carousel ">
-                        <img class="frame__media" width="4256" height="2832" src="/web/images/pe1.png" alt="Passing a bowl of food">
+                        <img class="frame__media" width="4256" height="2832" src="/web/images/pe1.webp" alt="Passing a bowl of food">
                     </picture>
                 </div>
                 <div class="swiper-slide">
                     <picture class=" frame frame--carousel ">
-                        <img class="frame__media" width="5581" height="3721" src="/web/images/pe2.png" alt="Planting trees">
+                        <img class="frame__media" width="5581" height="3721" src="/web/images/pe2.webp" alt="Planting trees">
                     </picture>
                 </div>
                 <div class="swiper-slide">
                     <picture class=" frame frame--carousel ">
-                        <img class="frame__media" width="4256" height="2832" src="/web/images/pe3.png" alt="Working in a homeless kitchen">
+                        <img class="frame__media" width="4256" height="2832" src="/web/images/pe3.webp" alt="Working in a homeless kitchen">
                     </picture>
                 </div>
                 <div class="swiper-slide">
                     <picture class=" frame frame--carousel ">
-                        <img class="frame__media" width="6447" height="4281" src="/web/images/pe4.png" alt="Working in a food bank">
+                        <img class="frame__media" width="6447" height="4281" src="/web/images/pe4.webp" alt="Working in a food bank">
                     </picture>
                 </div>
             </div>
