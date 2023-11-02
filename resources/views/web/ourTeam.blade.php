@@ -1,7 +1,7 @@
 @extends('layouts.web')
 
 @section('title')
-Meet Experienced Our Team & Our People | Choice Accountants
+Expert Team for professional financial support | Choice Accountants
 @endsection
 
 @section('meta')
