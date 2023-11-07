@@ -1163,7 +1163,7 @@
                                         <div class="form-wrapper-18">
                                             <div class="js-form-content">
                                                 <div class="modal-header d-flex flex-row c-white align-content-center justify-content-center p-0 mb-2" style="border: none;">
-                                                    <h1 class="fs-5">Enquire Today</h1>
+                                                    <h6 class="fs-5">Enquire Today</h6>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: #fff !important;"><i class="fa-solid fa-xmark" style="color: #ffffff !important;font-size: 20px;"></i></button>
                                                 </div>
                                                 <form action="{{url('/enquirysend')}}" style="display: block;" id="custom-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
