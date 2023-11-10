@@ -72,7 +72,7 @@ Choice Accountant Contact Details | Australia
         <div class="grid__col grid__col--center-content grid__col--4k-pushed-to-right padding relative zindex-3">
             <div class="grid__col-content max-width-600 relative zindex-3">
                 <div class="col-75">
-                    <h1 class="headline-2 mb-10em"> Get in Touch </h1>
+                    <h2 class="headline-2 mb-10em"> Get in Touch </h2>
                     <div class="content mb-30em">
                         <p>Our friendly team is on hand to answer any questions, we're all happy to help.</p>
                     </div>
