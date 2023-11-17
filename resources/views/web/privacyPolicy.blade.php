@@ -202,7 +202,7 @@ Privacy Policy | Choice Accountants Australia
             <h3 class="headline-2"></h3>
             <h3 class="headline-2">Change your marketing preferences</h3>
             <p>You can change marketing preferences at any time  via the following link: <a
-                href="index.html">https://choiceaccountant/opt-in/become-a-britannic-insider</a></p>
+                href="{{url('/')}}">https://choiceaccountant/opt-in/become-a-britannic-insider</a></p>
             <p>If your information has been passed to third parties you may need to contact them if you change your mind
               in relation to their continued use of your information.</p>
             <h3 class="headline-2"></h3>
