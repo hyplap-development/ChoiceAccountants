@@ -30,8 +30,8 @@ Trusted partner for CPA services in Australia | Choice Accountants
     <div class="grid grid--xl-50-50 relative">
         <div class="grid__col grid__col--center-content padding-header-col relative ">
             <div class="grid__col-content zindex-3 max-width-575">
-                <h2 class="headline-1 mb-5em overflow-hidden"> <span class="cover-pseudo animation-css">Unleash Your
-                        Accounting Success with Choice</span> </h2>
+                <h1 class="headline-1 mb-5em overflow-hidden"> <span class="cover-pseudo animation-css">Unleash Your
+                        Accounting Success with Choice</span> </h1>
                 <div class="animation-fadeInUp mobile-no-animation" data-animation-delay="600">
                     <div class="content content__extra-large-text mb-30em">
                         <p>Your Trusted Partner for Expert CPA Services in Australia</p>
