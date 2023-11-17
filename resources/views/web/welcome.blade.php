@@ -16,6 +16,7 @@ Trusted partner for CPA services in Australia | Choice Accountants
 <meta name="twitter:title" content="Trusted partner for CPA services in Australia | Choice Accountants" />
 <meta name="twitter:description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions." />
 <meta property="twitter:url" content="https://choice.accountants/" />
+<meta name="msvalidate.01" content="E9B1D0E064B7E17C55DC6D0391FCC691" />
 <link rel="alternate" href="https://choice.accountants/" hreflang="en-IN" />
 <link rel="alternate" href="https://choice.accountants/" hreflang="en-AE" />
 @endsection
