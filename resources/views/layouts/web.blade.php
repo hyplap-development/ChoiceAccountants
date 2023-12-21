@@ -41,8 +41,9 @@
         })(window, document, 'script', 'dataLayer', 'GTM-WB4CQ43Z');
     </script>
     <!-- End Google Tag Manager -->
+
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B54H9Q9JYZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6R2B1NCSCE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -51,9 +52,8 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-B54H9Q9JYZ');
+        gtag('config', 'G-6R2B1NCSCE');
     </script>
-
 
     @section('meta')
     @show
