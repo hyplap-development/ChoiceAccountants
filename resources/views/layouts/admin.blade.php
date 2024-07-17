@@ -380,7 +380,7 @@
 								</span>
 							</a>
 
-							<a href="{{url('/newsletter')}}" class="menu-item menu-accordion {{Request::is('newsletter*') ? 'here show' : ''}}">
+							<!-- <a href="{{url('/newsletter')}}" class="menu-item menu-accordion {{Request::is('newsletter*') ? 'here show' : ''}}">
 								<span class="menu-link {{Request::is('newsletter*') ? 'active' : ''}}">
 									<span class="menu-icon">
 										<span class="svg-icon svg-icon-2">
@@ -395,7 +395,7 @@
 									</span>
 									<span class="menu-title">Newsletters</span>
 								</span>
-							</a>
+							</a> -->
 
 						</div>
 					</div>

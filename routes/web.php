@@ -131,17 +131,17 @@ Route::group(['middleware' => 'checkUserr'], function () {
     );
 
     // Newsletter
-    Route::group(
-        [
-            'prefix' => 'newsletter'
-        ],
-        function () {
-            Route::get('/', [AdminController::class, 'indexNewsletter']);
-            Route::post('/add', [AdminController::class, 'addNewsletter']);
-            Route::post('/sendBulkEmail', [AdminController::class, 'sendBulkEmail']);
-            Route::post('/deleteAll', [AdminController::class, 'deleteAllNewsletter']);
-        }
-    );
+    // Route::group(
+    //     [
+    //         'prefix' => 'newsletter'
+    //     ],
+    //     function () {
+    //         Route::get('/', [AdminController::class, 'indexNewsletter']);
+    //         Route::post('/add', [AdminController::class, 'addNewsletter']);
+    //         Route::post('/sendBulkEmail', [AdminController::class, 'sendBulkEmail']);
+    //         Route::post('/deleteAll', [AdminController::class, 'deleteAllNewsletter']);
+    //     }
+    // );
 
     // Faq
     Route::group(

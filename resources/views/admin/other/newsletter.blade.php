@@ -69,7 +69,7 @@ Newsletters
         </div>
         <div class="card-toolbar">
 
-            <div class="d-flex justify-content-end me-4" data-kt-customer-table-toolbar="base">
+            <!-- <div class="d-flex justify-content-end me-4" data-kt-customer-table-toolbar="base">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
                     <span class="svg-icon svg-icon-3">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +80,7 @@ Newsletters
                     </span>
                     Add Newletter
                 </button>
-            </div>
+            </div> -->
 
             <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addmodal">
@@ -200,7 +200,7 @@ Newsletters
 <!--create modal end-->
 
 <!--add newsletter  modal start-->
-<div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true">
+<!-- <div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content rounded">
             <div class="modal-header">
@@ -235,7 +235,7 @@ Newsletters
             </form>
         </div>
     </div>
-</div>
+</div> -->
 <!--add newsletter modal ends here  -->
 
 

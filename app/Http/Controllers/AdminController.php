@@ -595,49 +595,47 @@ class AdminController extends Controller
 
     // Newsletter Controller
 
-    public function indexNewsletter()
-    {
-        $newsletters = Newslatter::orderBy('id', 'DESC')->get();
-        return view('admin.other.newsletter', compact('newsletters'));
-    }
+    // public function indexNewsletter()
+    // {
+    //     $newsletters = Newslatter::orderBy('id', 'DESC')->get();
+    //     return view('admin.other.newsletter', compact('newsletters'));
+    // }
 
-    public function addNewsletter(Request $request)
-    {
-        $newsletter = new Newslatter();
-        $newsletter->email = $request->email;
-        $newsletter->save();
+    // public function addNewsletter(Request $request)
+    // {
+    //     $newsletter = new Newslatter();
+    //     $newsletter->email = $request->email;
+    //     $newsletter->save();
 
-        $emailData = [
-            'email' => $request->email,
-        ];
+    //     $emailData = [
+    //         'email' => $request->email,
+    //     ];
 
-        Mail::to($request->email)->send(new NewsletterMail($emailData));
-        // Mail::to($request->email)->send(new NewsletterMail($emailData, 'newsletterMail
-
-
-        Session()->flash('alert-success', "Newsletter Added Successfully");
-        return redirect()->back();
-    }
-
-    public function sendBulkEmail(Request $request)
-    {
-        $emailData = [
-            'email' => $request->email,
-            'subject' => $request->subject,
-            'image' => $request->image,
-            'msg' => $request->msg
-        ];
-
-        foreach ($request->recipients as $email) {
-            Mail::to($email)->send(new BulkMail($emailData));
-        }
-
-        Session()->flash('alert-success', "Bulk Emails Sent Successfully");
-        return redirect()->back();
-    }
+    //     Mail::to($request->email)->send(new NewsletterMail($emailData));
+    //     // Mail::to($request->email)->send(new NewsletterMail($emailData, 'newsletterMail
 
 
- 
+    //     Session()->flash('alert-success', "Newsletter Added Successfully");
+    //     return redirect()->back();
+    // }
+
+    // public function sendBulkEmail(Request $request)
+    // {
+    //     $emailData = [
+    //         'email' => $request->email,
+    //         'subject' => $request->subject,
+    //         'image' => $request->image,
+    //         'msg' => $request->msg
+    //     ];
+
+    //     foreach ($request->recipients as $email) {
+    //         Mail::to($email)->send(new BulkMail($emailData));
+    //     }
+
+    //     Session()->flash('alert-success', "Bulk Emails Sent Successfully");
+    //     return redirect()->back();
+    // }
+
 
     // Client Controller
 
