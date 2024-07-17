@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('newslatters', function (Blueprint $table) {
             $table->id();
             $table->string('email')->nullable();  
-            $table->longText('msg')->nullable();          
+            $table->string('subscribed')->nullable();          
             $table->timestamps();
         });
     }
