@@ -68,6 +68,20 @@ Newsletters
             </div>
         </div>
         <div class="card-toolbar">
+
+            <div class="d-flex justify-content-end me-4" data-kt-customer-table-toolbar="base">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+                    <span class="svg-icon svg-icon-3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                            <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
+                            <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                        </svg>
+                    </span>
+                    Add Newletter
+                </button>
+            </div>
+
             <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addmodal">
                     <span class="svg-icon svg-icon-3">
@@ -94,6 +108,7 @@ Newsletters
                 <tr class="text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                     <th class="text-center min-w-25px">#</th>
                     <th class="text-center min-w-125px">Email</th>
+                    <th class="text-center min-w-125px">Subscribed</th>
                 </tr>
             </thead>
             <tbody class="fw-semibold text-gray-600">
@@ -106,6 +121,18 @@ Newsletters
                     <td class="text-center">
                         {{ $data->email }}
                     </td>
+                    <td class="text-center">
+                        @if ($data->subscribed == 1)
+                        <div class="badge badge-light-success">
+                            Yes
+                        </div>
+                        @else
+                        <div class="badge badge-light-danger">
+                            No
+                        </div>
+                        @endif
+                    </td>
+
                 </tr>
                 @endforeach
             </tbody>
@@ -130,10 +157,29 @@ Newsletters
                     </span>
                 </div>
             </div>
-            <form autocomplete="off" action="" enctype="multipart/form-data" method="post" id="kt_modal_add_form">
+            <form autocomplete="off" action="{{ url('/newsletter/sendBulkEmail') }}" enctype="multipart/form-data" method="post" id="kt_modal_add_form">
                 <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                     @csrf
                     <div class="row g-9 mt-3">
+                        <div class="mb-3">
+                            <label for="recipient" class="form-label required">Recipient</label>
+                            <select class="form-select" data-control="select2" id="recipient[]" name="recipients[]" multiple>
+                                @foreach ($newsletters->where('subscribed', 1) as $data)
+                                <option value="{{ $data->email }}" selected>{{ $data->email }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-6 fv-row">
+                            <label for="image" class="form-label required">Image</label>
+                            <input type="file" id="image" name="image" class="form-control" accept="image/*" required>
+                        </div>
+
+                        <div class="mb-3 col-md-6">
+                            <label for="subject" class="form-label required">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+
+
                         <div class="col-md-12 fv-row">
                             <label class="required fs-6 fw-semibold mb-2">Message</label>
                             <textarea type="text" class="form-control form-control-solid" placeholder="Enter Message" id="msg" name="msg"></textarea>
@@ -153,10 +199,49 @@ Newsletters
 </div>
 <!--create modal end-->
 
+<!--add newsletter  modal start-->
+<div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content rounded">
+            <div class="modal-header">
+                <h1 class="modal-tital w-100 text-center"> Add Newsletter</h1>
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <span class="svg-icon svg-icon-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <form autocomplete="off" action="{{ url('/newsletter/add') }}" enctype="multipart/form-data" method="post" id="kt_modal_add_form">
+                @csrf
+                <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+                    <div class="col-md-12 fv-row">
+                        <label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+                            <span class="required">Email</span>
+                        </label>
+                        <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-light me-3">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="kt_modal_add_submit">
+                        <span class="indicator-label">Add</span>
+                        <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--add newsletter modal ends here  -->
+
+
 @endsection
 
 @section('scripts')
-
 <script>
     var KTModalAdd = function() {
         var t, e, o, n, r, i;
@@ -166,12 +251,11 @@ Newsletters
                     t = r.querySelector("#kt_modal_add_submit"),
                     n = FormValidation.formValidation(r, {
                         fields: {
-                            msg: {
+                            image: {
                                 validators: {
                                     notEmpty: {
-                                        message: "Enter message is required"
+                                        message: "Image is required"
                                     },
-
                                 }
                             },
                         },

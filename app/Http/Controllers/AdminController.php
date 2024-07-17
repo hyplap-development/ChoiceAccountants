@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BulkMail;
+use App\Models\Newslatter;
+use App\Mail\NewsletterMail;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Blog;
 use App\Models\Careeropportunity;
 use App\Models\Client;
@@ -9,7 +13,6 @@ use App\Models\Department;
 use App\Models\Enquiry;
 use App\Models\Faq;
 use App\Models\Log;
-use App\Models\Newslatter;
 use App\Models\Role;
 use App\Models\Seo;
 use App\Models\Service;
@@ -598,6 +601,44 @@ class AdminController extends Controller
         return view('admin.other.newsletter', compact('newsletters'));
     }
 
+    public function addNewsletter(Request $request)
+    {
+        $newsletter = new Newslatter();
+        $newsletter->email = $request->email;
+        $newsletter->save();
+
+        $emailData = [
+            'email' => $request->email,
+        ];
+
+        Mail::to($request->email)->send(new NewsletterMail($emailData));
+        // Mail::to($request->email)->send(new NewsletterMail($emailData, 'newsletterMail
+
+
+        Session()->flash('alert-success', "Newsletter Added Successfully");
+        return redirect()->back();
+    }
+
+    public function sendBulkEmail(Request $request)
+    {
+        $emailData = [
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'image' => $request->image,
+            'msg' => $request->msg
+        ];
+
+        foreach ($request->recipients as $email) {
+            Mail::to($email)->send(new BulkMail($emailData));
+        }
+
+        Session()->flash('alert-success', "Bulk Emails Sent Successfully");
+        return redirect()->back();
+    }
+
+
+ 
+
     // Client Controller
 
     public function indexClient()
@@ -916,7 +957,7 @@ class AdminController extends Controller
         $faq->answer2 = $request->answer2;
         $faq->sequence = $request->sequence;
         $faq->status = $request->status;
-        $faq->flag= $request->flag;
+        $faq->flag = $request->flag;
         $faq->save();
 
         $this->storeLog('Add', 'addFaq', $faq);
@@ -932,7 +973,7 @@ class AdminController extends Controller
         $faq->answer2 = $request->answer2;
         $faq->sequence = $request->sequence;
         $faq->status = $request->status;
-        $faq->flag= $request->flag;
+        $faq->flag = $request->flag;
         $faq->update();
 
         $this->storeLog('Update', 'updateFaq', $faq);

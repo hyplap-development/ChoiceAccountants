@@ -137,6 +137,9 @@ Route::group(['middleware' => 'checkUserr'], function () {
         ],
         function () {
             Route::get('/', [AdminController::class, 'indexNewsletter']);
+            Route::post('/add', [AdminController::class, 'addNewsletter']);
+            Route::post('/sendBulkEmail', [AdminController::class, 'sendBulkEmail']);
+            Route::post('/deleteAll', [AdminController::class, 'deleteAllNewsletter']);
         }
     );
 

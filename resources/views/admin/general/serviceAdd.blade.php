@@ -95,7 +95,7 @@ Add Service
                                     <label class="fs-6 fw-semibold mb-2">Conclusion Image Alt Tags (Comma Seperated)</label>
                                     <input type="text" class="form-control form-control-solid" placeholder="Enter Alt Tags" name="conclusionImageAltTag" id="conclusionImageAltTag">
                                 </div>
-                                <div class="col-md-3 fv-row">
+                                <div class="col-md-12 fv-row">
                                     <label class="fs-6 fw-semibold mb-2 ">Status</label>
                                     <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" name="status" id="status">
                                         <option value="1">Active</option>

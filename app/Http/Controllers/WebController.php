@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUsMail;
+use App\Mail\EnquiryMail;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Blog;
 use App\Models\Careeropportunity;
 use App\Models\Department;
@@ -253,9 +256,27 @@ class WebController extends Controller
             $enquiryForm->type = 'ENQUIRE';
             $enquiryForm->save();
 
-            $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
-            $this->sendEmail('Enquire Admin', 'enquiry@choice.accountants', 'Choice Accountants', $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
+            $emailData = [
+                'fname' => $enquiryForm->fname,
+                'phone' => $enquiryForm->phone,
+                'email' => $enquiryForm->email,
+                'subject' => 'Enquire'
+            ];
 
+            Mail::to($enquiryForm->email)->send(new ContactUsMail($emailData, 'Enquire'));
+
+
+            $emailDataAdmin = [
+                'fname' => $enquiryForm->fname,
+                'phone' => $enquiryForm->phone,
+                'email' => $enquiryForm->email,
+                'subject' => 'Enquire Admin'
+            ];
+    
+            Mail::to('shrutikap@hyplap.com')->send(new ContactUsMail($emailDataAdmin, 'Enquire Admin'));
+    
+
+            
 
             return response()->json([
                 'status' => 1,
@@ -274,6 +295,7 @@ class WebController extends Controller
                 'status' => 0,
                 'message' => 'An enquiry already exists'
             ]);
+
         } else {
             $contactusForm = new Enquiry();
             $contactusForm->fname = $request->fname;
@@ -287,8 +309,24 @@ class WebController extends Controller
             $contactusForm->type = 'CONTACT US';
             $contactusForm->save();
 
-            $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
-            $this->sendEmail('Contact Us Admin', 'enquiry@choice.accountants', 'Choice Accountants', $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
+            $emailData = [
+                'fname' => $contactusForm->fname,
+                'phone' => $contactusForm->phone,
+                'email' => $contactusForm->email,
+                'subject' => 'Contact Us'
+            ];
+
+            Mail::to($contactusForm->email)->send(new ContactUsMail($emailData, 'Contact Us'));
+
+
+            $emailDataAdmin = [
+                'fname' => $contactusForm->fname,
+                'phone' => $contactusForm->phone,
+                'email' => $contactusForm->email,
+                'subject' => 'Contact Us Admin'
+            ];
+    
+            Mail::to('shrutikap@hyplap.com')->send(new ContactUSMail($emailDataAdmin, 'Contact Us Admin'));
 
             return response()->json([
                 'status' => 1,
