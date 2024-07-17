@@ -273,7 +273,7 @@ class WebController extends Controller
                 'subject' => 'Enquire Admin'
             ];
     
-            Mail::to('shrutikap@hyplap.com')->send(new ContactUsMail($emailDataAdmin, 'Enquire Admin'));
+            Mail::to(env('Sendinblue_mail'))->send(new ContactUsMail($emailDataAdmin, 'Enquire Admin'));
     
 
             // $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
@@ -328,11 +328,7 @@ class WebController extends Controller
                 'subject' => 'Contact Us Admin'
             ];
     
-            Mail::to('shrutikap@hyplap.com')->send(new ContactUSMail($emailDataAdmin, 'Contact Us Admin'));
-    
-
-            // $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
-            // $this->sendEmail('Contact Us Admin', 'shrutikap@hyplap.com', 'Choice Accountants', $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
+            Mail::to(env('Sendinblue_mail'))->send(new ContactUSMail($emailDataAdmin, 'Contact Us Admin'));
 
             return response()->json([
                 'status' => 1,
