@@ -43,7 +43,7 @@ class Controller extends BaseController
 
     //     $data = array(
     //         "sender" => array(
-    //             "email" => 'shrutikap@hyplap.com',
+    //             "email" => env('Sendinblue_mail'),
     //             "name" => 'Choice Accountants Pty. Ltd.'
     //         ),
     //         "to" => array(
