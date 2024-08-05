@@ -124,10 +124,10 @@ Add Blog
                             <label class="required d-flex align-items-center fs-6 fw-semibold mb-2">Add Description</label>
                             <textarea class="form-control form-control-solid" placeholder="Enter description" id="description1" name="description1" minlength="25" rows="15">{!!$blog->description1!!}</textarea>
                         </div>
-                        <!-- <div class="col-md-12 fv-row">
+                        <div class="col-md-12 fv-row">
                             <label class="d-flex align-items-center fs-6 fw-semibold mb-2">Add Description</label>
                             <textarea class="form-control form-control-solid" placeholder="Enter description" id="description2" name="description2" minlength="25" rows="7">{!!$blog->description2!!}</textarea>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -296,6 +296,48 @@ Add Blog
             services.style.display = "none"
         }
 
+    });
+</script>
+
+<script>
+    $('#description1').summernote({
+        placeholder: 'Type Description',
+        tabsize: 2,
+        height: 200,
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript', 'fontname']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['color', ['color']],
+            ['view', ['codeview']],
+            ['insert', ['link', 'picture']],
+            ['misc', ['undo', 'redo']],
+            ['fontsize', ['fontsize']],
+        ],
+        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Times New Roman', 'Verdana', 'sans-serif'],
+        fontNamesIgnoreCheck: ['FontAwesome'],
+        fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '32', '36', '40', '44', '48'],
+    });
+
+    $('#description2').summernote({
+        placeholder: 'Type Description',
+        tabsize: 2,
+        height: 200,
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript', 'fontname']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['color', ['color']],
+            ['view', ['codeview']],
+            ['insert', ['link', 'picture']],
+            ['misc', ['undo', 'redo']],
+            ['fontsize', ['fontsize']],
+        ],
+        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Times New Roman', 'Verdana', 'sans-serif'],
+        fontNamesIgnoreCheck: ['FontAwesome'],
+        fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '32', '36', '40', '44', '48'],
     });
 </script>
 
