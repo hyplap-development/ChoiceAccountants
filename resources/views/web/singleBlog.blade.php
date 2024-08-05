@@ -122,9 +122,8 @@
     <section class="section section--blog">
         <div class="container-blog-xs content">
             <p style="text-align: justify; white-space:pre-line;">
-                {{$blog->description1}}
-                <br>
-                {{$blog->description2}}
+                {!!$blog->description1!!}
+                {!!$blog->description2!!}
             </p>
         </div>
     </section>
