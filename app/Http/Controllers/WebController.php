@@ -13,11 +13,23 @@ use App\Models\Testimonial;
 use App\Models\Client;
 use App\Models\Enquiry;
 use App\Models\Faq;
+use App\Models\Log;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
+    function storeLog($action, $function, $data)
+    {
+        $log = new Log();
+        $log->userId = null;
+        $log->action = $action;
+        $log->function = $function;
+        $log->data = $data;
+        $log->ip = request()->ip();
+        $log->save();
+    }
+
     public function welcome(Request $request)
     {
         $departments = Department::where('status', 1)->where('deleteId', 0)->orderBy('id', 'ASC')->get();
@@ -239,8 +251,9 @@ class WebController extends Controller
 
     public function enquiryForm(Request $request)
     {
+        $ipAddresses = request()->ip();
 
-        $existingEnquiry = Enquiry::where('fname', $request->fname)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'ENQUIRE')->first();
+        $existingEnquiry = Enquiry::where('ipAddress', $ipAddresses)->where('fname', $request->fname)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'ENQUIRE')->first();
 
         if ($existingEnquiry) {
             return response()->json([
@@ -254,31 +267,32 @@ class WebController extends Controller
             $enquiryForm->serviceId = $request->serviceId;
             $enquiryForm->status = 'pending';
             $enquiryForm->type = 'ENQUIRE';
+            $enquiryForm->ipAddress = $ipAddresses;
             $enquiryForm->save();
 
-            $emailData = [
-                'fname' => $enquiryForm->fname,
-                'phone' => $enquiryForm->phone,
-                'email' => $enquiryForm->email,
-                'subject' => 'Enquire'
-            ];
+            // $emailData = [
+            //     'fname' => $enquiryForm->fname,
+            //     'phone' => $enquiryForm->phone,
+            //     'email' => $enquiryForm->email,
+            //     'subject' => 'Enquire'
+            // ];
 
-            Mail::to($enquiryForm->email)->send(new ContactUsMail($emailData, 'Enquire'));
+            // Mail::to($enquiryForm->email)->send(new ContactUsMail($emailData, 'Enquire'));
 
 
-            $emailDataAdmin = [
-                'fname' => $enquiryForm->fname,
-                'phone' => $enquiryForm->phone,
-                'email' => $enquiryForm->email,
-                'subject' => 'Enquire Admin'
-            ];
+            // $emailDataAdmin = [
+            //     'fname' => $enquiryForm->fname,
+            //     'phone' => $enquiryForm->phone,
+            //     'email' => $enquiryForm->email,
+            //     'subject' => 'Enquire Admin'
+            // ];
     
-            Mail::to(env('Sendinblue_mail'))->send(new ContactUsMail($emailDataAdmin, 'Enquire Admin'));
+            // Mail::to(env('Sendinblue_mail'))->send(new ContactUsMail($emailDataAdmin, 'Enquire Admin'));
     
 
-            // $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
-            // $this->sendEmail('Enquire Admin', 'shrutikap@hyplap.com', 'Choice Accountants', $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
-
+            $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
+            $this->sendEmail('Enquire Admin', env('Sendinblue_mail'), 'Choice Accountants', $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
+            $this->storeLog('Add', 'enquiryForm', $enquiryForm);
 
             return response()->json([
                 'status' => 1,
@@ -289,8 +303,9 @@ class WebController extends Controller
 
     public function contactusForm(Request $request)
     {
+        $ipAddresses = request()->ip();
 
-        $existingEnquiry = Enquiry::where('fname', $request->fname)->where('lname', $request->lname)->where('phone', $request->phone)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'CONTACT US')->first();
+        $existingEnquiry = Enquiry::where('ipAddress', $ipAddresses)->where('fname', $request->fname)->where('lname', $request->lname)->where('phone', $request->phone)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'CONTACT US')->first();
 
         if ($existingEnquiry) {
             return response()->json([
@@ -309,26 +324,31 @@ class WebController extends Controller
             $contactusForm->serviceId = $request->serviceId;
             $contactusForm->status = 'pending';
             $contactusForm->type = 'CONTACT US';
+            $contactusForm->ipAddress = $ipAddresses;
             $contactusForm->save();
 
-            $emailData = [
-                'fname' => $contactusForm->fname,
-                'phone' => $contactusForm->phone,
-                'email' => $contactusForm->email,
-                'subject' => 'Contact Us'
-            ];
+            // $emailData = [
+            //     'fname' => $contactusForm->fname,
+            //     'phone' => $contactusForm->phone,
+            //     'email' => $contactusForm->email,
+            //     'subject' => 'Contact Us'
+            // ];
 
-            Mail::to($contactusForm->email)->send(new ContactUsMail($emailData, 'Contact Us'));
+            // Mail::to($contactusForm->email)->send(new ContactUsMail($emailData, 'Contact Us'));
 
 
-            $emailDataAdmin = [
-                'fname' => $contactusForm->fname,
-                'phone' => $contactusForm->phone,
-                'email' => $contactusForm->email,
-                'subject' => 'Contact Us Admin'
-            ];
+            // $emailDataAdmin = [
+            //     'fname' => $contactusForm->fname,
+            //     'phone' => $contactusForm->phone,
+            //     'email' => $contactusForm->email,
+            //     'subject' => 'Contact Us Admin'
+            // ];
     
-            Mail::to(env('Sendinblue_mail'))->send(new ContactUSMail($emailDataAdmin, 'Contact Us Admin'));
+            // Mail::to(env('Sendinblue_mail'))->send(new ContactUSMail($emailDataAdmin, 'Contact Us Admin'));
+
+            $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
+            $this->sendEmail('Contact Us Admin', env('Sendinblue_mail'), 'Choice Accountants', $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
+            $this->storeLog('Add', 'contactusForm', $contactusForm);
 
             return response()->json([
                 'status' => 1,
