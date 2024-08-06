@@ -139,6 +139,19 @@ Add Blog
 @section('scripts')
 
 <script>
+    function inserted() {
+        var modal = $('.modal');
+        modal.css('display', 'none');
+
+        var backdrop = document.getElementsByClassName('modal-backdrop show');
+        if (backdrop.length > 0) {
+            backdrop[0].parentNode.removeChild(backdrop[0]);
+        }
+        document.body.style.overflow = '';
+    }
+</script>
+
+<script>
     $(document).ready(function() {
         $('#title').keyup(function(e) {
             var txtVal = $(this).val();
