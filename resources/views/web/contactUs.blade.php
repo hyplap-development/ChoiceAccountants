@@ -367,6 +367,7 @@ Contact Choice Accountants – Tahmoor CPA Firm
             "https://x.com/choiceaccnt",
             "https://www.instagram.com/choice.hyplap?igsh=ajA0ejEwd21lNXRi",
             "linkedin.com/in/choice-accountants-673349321",
+            "https://youtube.com/@choiceaccountants?si=NGE9R4tMty31KQ4N",
             "https://www.choice.accountants"
         ]
     }
@@ -399,9 +400,9 @@ Contact Choice Accountants – Tahmoor CPA Firm
             "https://x.com/choiceaccnt",
             "https://www.instagram.com/choice.hyplap?igsh=ajA0ejEwd21lNXRi",
             "linkedin.com/in/choice-accountants-673349321",
+            "https://youtube.com/@choiceaccountants?si=NGE9R4tMty31KQ4N",
             "https://www.choice.accountants"
         ]
     }
 </script>
-
 @endsection
