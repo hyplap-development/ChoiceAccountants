@@ -12,6 +12,9 @@
         @section('title')
         @show
     </title>
+
+
+
     @php
     $url = url()->current();
     @endphp
@@ -58,6 +61,9 @@
     @section('meta')
     @show
     <link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+    <!-- social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css" integrity="sha512-B46MVOJpI6RBsdcU307elYeStF2JKT87SsHZfRSkjVi4/iZ3912zXi45X5/CBr/GbCyLx6M1GQtTKYRd52Jxgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         @font-face {
@@ -85,6 +91,62 @@
         }
 
         /*# sourceMappingURL=fonts.css.map */
+    </style>
+
+    <!-- social media icons  -->
+    <style>
+        .socialFloating {
+            align-items: center;
+            border-radius: 50%;
+            top: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            justify-content: center;
+            position: fixed;
+            right: 15px;
+            z-index: 1000;  
+        }
+
+        @media (max-width:768px) {
+            .socialFloating {
+                align-items: center;
+                border-radius: 50%;
+                top: 55%;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                justify-content: center;
+                position: fixed;
+                right: 0;
+                z-index: 1000;
+            }
+        }
+
+
+        .socialIcons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #28a745;
+            border: 2px solid #28a745;
+            color: #fff !important;
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            border-radius: 50%;
+            
+        }
+
+        .socialIcons i {
+            font-size: 20px;
+        }
+
+        .socialIcons:hover {
+            background-color: #fff;
+            border: 2px solid #28a745;
+            color: #28a745 !important;
+        }
     </style>
 
     <style>
@@ -1015,6 +1077,8 @@
             .glightbox-modern .gclose {
                 right: 20px
             }
+
+
         }
 
         @media screen and (max-height: 420px) {
@@ -1219,6 +1283,31 @@
         </div>
     </div>
 
+    <!-- social media icons -->
+    <div class="floatIcons">
+        <ul class="list-unstyled socialFloating flex-column">
+            <li>
+                <a class="socialIcons px-2" href="https://www.facebook.com/profile.php?id=61564039915352">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a class="socialIcons px-2" href="https://www.instagram.com/choice.hyplap?igsh=ajA0ejEwd21lNXRi">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a class="socialIcons px-2" href="https://www.linkedin.com/in/choice-accountants-673349321/">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </li>
+            <li>
+                <a class="socialIcons px-2" href="https://x.com/choiceaccnt">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     @section('content')
     @show

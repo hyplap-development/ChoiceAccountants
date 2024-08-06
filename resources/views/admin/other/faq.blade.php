@@ -1,8 +1,19 @@
 @extends('layouts.admin')
 
 @section('title')
-FAQ's
+FAQs – Choice Accountants in Tahmoor
 @endsection
+
+
+@section('meta')
+<meta name="title" content=" FAQs – Choice Accountants | Tahmoor">
+<meta name="keywords" content=" FAQ, CPA services Tahmoor, accounting questions, Choice Accountants, CPA firm">
+<meta property="og:type" content="website"/>
+<meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.webp"/>
+<meta property="og:description" content="Find answers to common questions about our CPA services in Tahmoor. Contact Choice Accountants for more information at +61 2 8717 2200.">
+<meta name="description" content="Find answers to common questions about our CPA services in Tahmoor. Contact Choice Accountants for more information at +61 2 8717 2200.">
+@endsection
+
 
 @section('header')
 

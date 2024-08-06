@@ -1,20 +1,20 @@
 @extends('layouts.web')
 
 @section('title')
-Trusted partner for CPA services in Australia | Choice Accountants
+Choice Accountants – Top CPA Firm in Tahmoor
 @endsection
 
 @section('meta')
-<meta name="title" content="Trusted partner for CPA services in Australia | Choice Accountants">
-<meta name="description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions.">
-<meta name="keywords" content="Tax returns, Cpa, accounting, business advisory, Wealth management, top australian accounting firm">
+<meta name="title" content="Leading CPA Services in Tahmoor">
+<meta name="description" content="Trusted CPA services in Tahmoor. Choice Accountants offers tax planning, bookkeeping, and more. Call us today at +61 2 8717 2200.">
+<meta name="keywords" content="CPA services Tahmoor, tax planning, bookkeeping, financial advice, Choice Accountants">
 <meta property="og:type" content="website" />
 <meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.webp" />
-<meta property="og:description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions.">
+<meta property="og:description" content="Trusted CPA services in Tahmoor. Choice Accountants offers tax planning, bookkeeping, and more. Call us today at +61 2 8717 2200.">
 <meta name="twitter:site" content="@choiceacountants" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Trusted partner for CPA services in Australia | Choice Accountants" />
-<meta name="twitter:description" content="Achieve Financial Success with Australia's Leading CPA Firm | We offer Expert Accounting, Legal Compliance, Small Business Advisory, and Tailored Manufacturing & Logistics Solutions. Trust us for Comprehensive Business Solutions." />
+<meta name="twitter:title" content="Leading CPA Services in Tahmoor" />
+<meta name="twitter:description" content="Trusted CPA services in Tahmoor. Choice Accountants offers tax planning, bookkeeping, and more. Call us today at +61 2 8717 2200." />
 <meta property="twitter:url" content="https://choice.accountants/" />
 <meta name="msvalidate.01" content="E9B1D0E064B7E17C55DC6D0391FCC691" />
 <link rel="alternate" href="https://choice.accountants/" hreflang="en-IN" />
