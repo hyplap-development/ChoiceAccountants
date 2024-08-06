@@ -1,16 +1,16 @@
 @extends('layouts.web')
 
 @section('title')
-Expert Team for professional financial support | Choice Accountants
+Our Team – Experienced CPA Professionals in Tahmoor
 @endsection
 
 @section('meta')
-<meta name="title" content="Meet Experienced Our Team & Our People | Choice Accountants">
-<meta name="keywords" content="Our dedicated team,">
+<meta name="title" content="Our Team – Choice Accountants | Tahmoor">
+<meta name="keywords" content="our team, CPA professionals, Choice Accountants Tahmoor, expert accountants">
 <meta property="og:type" content="website"/>
 <meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.webp"/>
-<meta property="og:description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
-<meta name="description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
+<meta property="og:description" content="Meet the experienced CPA team at Choice Accountants in Tahmoor. Contact us at +61 2 8717 2200 to work with our expert accountants.">
+<meta name="description" content="Meet the experienced CPA team at Choice Accountants in Tahmoor. Contact us at +61 2 8717 2200 to work with our expert accountants.">
 @endsection
 
 @section('style')

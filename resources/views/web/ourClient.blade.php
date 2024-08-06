@@ -1,16 +1,16 @@
 @extends('layouts.web')
 
 @section('title')
-Valuable Clients of Choice Accountants | Australia
+Our Clients – Trusted CPA Services in Tahmoor
 @endsection
 
 @section('meta')
-<meta name="title" content="Valuable Clients of Choice Accountants | Australia">
-<meta name="keywords" content="">
+<meta name="title" content=" Our Clients – Choice Accountants | Tahmoor">
+<meta name="keywords" content="our clients, CPA services Tahmoor, Choice Accountants, client testimonials">
 <meta property="og:type" content="website"/>
 <meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.webp"/>
-<meta property="og:description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
-<meta name="description" content="Meet our dedicated professionals, driving our mission to success. Get to know our experienced team members today.">
+<meta property="og:description" content="Discover the businesses that trust Choice Accountants in Tahmoor. Contact us at +61 2 8717 2200 to learn more about our CPA services.">
+<meta name="description" content="Discover the businesses that trust Choice Accountants in Tahmoor. Contact us at +61 2 8717 2200 to learn more about our CPA services.">
 @endsection
 
 @section('style')

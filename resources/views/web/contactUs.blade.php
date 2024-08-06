@@ -1,11 +1,18 @@
 @extends('layouts.web')
 
 @section('title')
-Choice Accountant Contact Details | Australia
+Contact Choice Accountants – Tahmoor CPA Firm
 @endsection
 
 @section('meta')
+<meta name="title" content=" Contact Us – Choice Accountants | Tahmoor">
+<meta name="keywords" content=" contact Choice Accountants, CPA firm Tahmoor, accounting services, get in touch">
+<meta property="og:type" content="website"/>
+<meta property="og:image" itemprop="image" content="https://choice.accountants/web/images/logo.webp"/>
+<meta property="og:description" content=" Get in touch with Choice Accountants in Tahmoor for expert CPA services. Call +61 2 8717 2200 or email enquiry@choice.accountants.">
+<meta name="description" content="Get in touch with Choice Accountants in Tahmoor for expert CPA services. Call +61 2 8717 2200 or email enquiry@choice.accountants.">
 @endsection
+
 
 @section('style')
 <style>
