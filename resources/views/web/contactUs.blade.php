@@ -354,7 +354,6 @@ Contact Choice Accountants – Tahmoor CPA Firm
     });
 </script>
 
-
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",

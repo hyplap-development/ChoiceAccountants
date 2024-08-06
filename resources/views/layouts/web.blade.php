@@ -105,7 +105,7 @@
             justify-content: center;
             position: fixed;
             right: 15px;
-            z-index: 1000;  
+            z-index: 1000;
         }
 
         @media (max-width:768px) {
@@ -135,7 +135,7 @@
             height: 40px;
             padding: 5px;
             border-radius: 50%;
-            
+
         }
 
         .socialIcons i {
@@ -1304,6 +1304,12 @@
             <li>
                 <a class="socialIcons px-2" href="https://x.com/choiceaccnt">
                     <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </li>
+
+            <li>
+                <a class="socialIcons px-2" href="https://youtube.com/@choiceaccountants?si=NGE9R4tMty31KQ4N">
+                    <i class="fa-brands fa-youtube"></i>
                 </a>
             </li>
         </ul>
