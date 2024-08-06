@@ -351,7 +351,7 @@ Choice Accountants – Top CPA Firm in Tahmoor Australia
                                     <path id="Path_33" data-name="Path 33" d="M34.43,2.83l24.78,23.99-24.78,23.99" fill="none" stroke-linecap="round" stroke-linejoin="round" />
                                 </g>
                             </svg>
-                        </div> <time class="block_time small-text" datetime="2023-06-29 00:00:00"> {{ \Carbon\Carbon::parse($blog->created_at)->format('jS F Y') }} </time>
+                        </div> <time class="block_time small-text" datetime="2023-06-29 00:00:00"> {{date("jS F Y", strtotime("-2 days"))}} </time>
                     </a>
                     @endforeach
                 </div>

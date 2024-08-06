@@ -106,7 +106,7 @@
                             @endif
                             <div class="d-inline-flex align-items-center"> <svg class="fill-white" width="20" height="20" aria-label="Published at">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" href="/web/images/icons.svg#icon-date"> </use>
-                                </svg> <time class="ml-10em normal-text" datetime="2022-10-26 00:00:00"> {{ \Carbon\Carbon::parse($blog->created_at)->format('jS F Y') }} </time>
+                                </svg> <time class="ml-10em normal-text" datetime="2022-10-26 00:00:00"> {{date("jS F Y", strtotime("-2 days"))}} </time>
                             </div>
                         </div>
                     </div>
