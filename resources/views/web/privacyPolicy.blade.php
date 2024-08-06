@@ -201,8 +201,7 @@ Privacy Policy | Choice Accountants Australia
               limited to product updates, relevant events, information about complementary products and services.</p>
             <h3 class="headline-2"></h3>
             <h3 class="headline-2">Change your marketing preferences</h3>
-            <p>You can change marketing preferences at any time  via the following link: <a
-                href="{{url('/')}}">https://choiceaccountant/opt-in/become-a-britannic-insider</a></p>
+        
             <p>If your information has been passed to third parties you may need to contact them if you change your mind
               in relation to their continued use of your information.</p>
             <h3 class="headline-2"></h3>
@@ -218,8 +217,7 @@ Privacy Policy | Choice Accountants Australia
               Website are of particular interest and which pages are not being requested. It also tells us the number of
               'hits' on the Website. Information that is collected via Cookies is used in accordance with this Privacy
               Policy.</p>
-            <h3 class="headline-1 headline-2">Lead Forensics Policy</h3>
-            <p><a href="storage/uploads/terms/Guidance%20for%20Lead%20Forensics%20Cookie_v003.pdf">View PDF here</a></p>
+        
             <h3 class="headline-1 headline-2">Links to other websites</h3>
             <p>Choice Accountants websites may include links to other sites. We will make every effort to provide links
               to high quality, reputable sites but are not responsible for their privacy practices, site content, or the
@@ -228,7 +226,7 @@ Privacy Policy | Choice Accountants Australia
             <h3 class="headline-2">Changes to our Privacy Policy</h3>
             <p>We keep our privacy policy under regular review and any changes to our privacy policy in the future will
               be posted to the Website and, where appropriate, advised by email notification.</p>
-            <p>This privacy policy was last updated:<span> </span><strong>23/08/2021</strong></p>
+            <p>This privacy policy was last updated:<span> </span><strong>01/08/2024</strong></p>
             <h3 class="headline-2">How to contact us</h3>
             <p>For requests, complaints or queries relating to the use of your personal information please contact us
               at<span> </span><a href="mailto:enquiry@choice.accountants">enquiry@choice.accountants</a> or call us on<a href="tel:+61 2 8717 2200"> +61 2 8717 2200.</a>  
