@@ -1,7 +1,7 @@
 @extends('layouts.web')
 
 @section('title')
-Choice Accountants – Top CPA Firm in Tahmoor
+Choice Accountants – Top CPA Firm in Tahmoor Australia
 @endsection
 
 @section('meta')
@@ -388,5 +388,54 @@ Choice Accountants – Top CPA Firm in Tahmoor
 @endsection
 
 @section('scripts')
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Choice Accountants",
+        "alternateName": "Choice",
+        "url": "https://www.choice.accountants",
+        "logo": "https://www.choice.accountants/web/images/logo.webp",
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61564039915352",
+            "https://x.com/choiceaccnt",
+            "https://www.instagram.com/choice.hyplap?igsh=ajA0ejEwd21lNXRi",
+            "linkedin.com/in/choice-accountants-673349321",
+            "https://www.choice.accountants"
+        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "name": "Choice Accountants",
+        "image": "https://www.choice.accountants/web/images/choice.webp",
+        "@id": "",
+        "url": "https://www.choice.accountants",
+        "telephone": "+61 2 8717 2200",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "21 Remembrance Driveway",
+            "addressLocality": "Tahmoor, NSW",
+            "addressRegion": "NSW",
+            "postalCode": "2573",
+            "addressCountry": "AU"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -34.2127324,
+            "longitude": 150.596402
+        },
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61564039915352",
+            "https://x.com/choiceaccnt",
+            "https://www.instagram.com/choice.hyplap?igsh=ajA0ejEwd21lNXRi",
+            "linkedin.com/in/choice-accountants-673349321",
+            "https://www.choice.accountants"
+        ]
+    }
+</script>
 
 @endsection
