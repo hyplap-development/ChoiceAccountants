@@ -249,11 +249,69 @@ class WebController extends Controller
         return view('web.singleService', compact('departments', 'services', 'blogs', 'clients', 'faqs', 'teams', 'service', 'serviceblogs', 'allservices'));
     }
 
+    // public function enquiryForm(Request $request)
+    // {
+    //     $ipAddresses = request()->ip();
+
+    //     $existingEnquiry = Enquiry::where('ipAddress', $ipAddresses)->where('fname', $request->fname)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'ENQUIRE')->first();
+
+    //     if ($existingEnquiry) {
+    //         return response()->json([
+    //             'status' => 0,
+    //             'message' => 'An enquiry already exists'
+    //         ]);
+    //     } else {
+    //         $enquiryForm = new Enquiry();
+    //         $enquiryForm->fname = $request->fname;
+    //         $enquiryForm->email = $request->email;
+    //         $enquiryForm->serviceId = $request->serviceId;
+    //         $enquiryForm->status = 'pending';
+    //         $enquiryForm->type = 'ENQUIRE';
+    //         $enquiryForm->ipAddress = $ipAddresses;
+    //         $enquiryForm->save();
+
+    //         // $emailData = [
+    //         //     'fname' => $enquiryForm->fname,
+    //         //     'phone' => $enquiryForm->phone,
+    //         //     'email' => $enquiryForm->email,
+    //         //     'subject' => 'Enquire'
+    //         // ];
+
+    //         // Mail::to($enquiryForm->email)->send(new ContactUsMail($emailData, 'Enquire'));
+
+
+    //         // $emailDataAdmin = [
+    //         //     'fname' => $enquiryForm->fname,
+    //         //     'phone' => $enquiryForm->phone,
+    //         //     'email' => $enquiryForm->email,
+    //         //     'subject' => 'Enquire Admin'
+    //         // ];
+
+    //         // Mail::to(env('Sendinblue_mail'))->send(new ContactUsMail($emailDataAdmin, 'Enquire Admin'));
+
+
+    //         $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
+    //         $this->sendEmail('Enquire Admin', env('Sendinblue_mail'), 'Choice Accountants', $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
+    //         $this->storeLog('Add', 'enquiryForm', $enquiryForm);
+
+    //         return response()->json([
+    //             'status' => 1,
+    //             'message' => 'Send successfully'
+    //         ]);
+    //     }
+    // }
+
     public function enquiryForm(Request $request)
     {
-        $ipAddresses = request()->ip();
+        $validatedData = $request->validate([
+            'fname' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'serviceId' => 'required|integer',
+        ]);
 
-        $existingEnquiry = Enquiry::where('ipAddress', $ipAddresses)->where('fname', $request->fname)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'ENQUIRE')->first();
+        $ipAddresses = $request->ip();
+
+        $existingEnquiry = Enquiry::where('ipAddress', $ipAddresses)->where('fname', $validatedData['fname'])->where('email', $validatedData['email'])->where('serviceId', $validatedData['serviceId'])->where('type', 'ENQUIRE')->first();
 
         if ($existingEnquiry) {
             return response()->json([
@@ -262,36 +320,16 @@ class WebController extends Controller
             ]);
         } else {
             $enquiryForm = new Enquiry();
-            $enquiryForm->fname = $request->fname;
-            $enquiryForm->email = $request->email;
-            $enquiryForm->serviceId = $request->serviceId;
+            $enquiryForm->fname = $validatedData['fname'];
+            $enquiryForm->email = $validatedData['email'];
+            $enquiryForm->serviceId = $validatedData['serviceId'];
             $enquiryForm->status = 'pending';
             $enquiryForm->type = 'ENQUIRE';
             $enquiryForm->ipAddress = $ipAddresses;
             $enquiryForm->save();
 
-            // $emailData = [
-            //     'fname' => $enquiryForm->fname,
-            //     'phone' => $enquiryForm->phone,
-            //     'email' => $enquiryForm->email,
-            //     'subject' => 'Enquire'
-            // ];
-
-            // Mail::to($enquiryForm->email)->send(new ContactUsMail($emailData, 'Enquire'));
-
-
-            // $emailDataAdmin = [
-            //     'fname' => $enquiryForm->fname,
-            //     'phone' => $enquiryForm->phone,
-            //     'email' => $enquiryForm->email,
-            //     'subject' => 'Enquire Admin'
-            // ];
-    
-            // Mail::to(env('Sendinblue_mail'))->send(new ContactUsMail($emailDataAdmin, 'Enquire Admin'));
-    
-
-            $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
-            $this->sendEmail('Enquire Admin', env('Sendinblue_mail'), 'Choice Accountants', $enquiryForm->fname, $enquiryForm->phone, $enquiryForm->email);
+            $this->sendEmail('Enquire', $enquiryForm->email, $enquiryForm->fname, $enquiryForm->fname, $enquiryForm->phone ?? '', $enquiryForm->email);
+            $this->sendEmail('Enquire Admin', env('Sendinblue_mail'), 'Choice Accountants', $enquiryForm->fname, $enquiryForm->phone ?? '', $enquiryForm->email);
             $this->storeLog('Add', 'enquiryForm', $enquiryForm);
 
             return response()->json([
@@ -301,50 +339,96 @@ class WebController extends Controller
         }
     }
 
+
+    // public function contactusForm(Request $request)
+    // {
+    //     $ipAddresses = request()->ip();
+
+    //     $existingEnquiry = Enquiry::where('ipAddress', $ipAddresses)->where('fname', $request->fname)->where('lname', $request->lname)->where('phone', $request->phone)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'CONTACT US')->first();
+
+    //     if ($existingEnquiry) {
+    //         return response()->json([
+    //             'status' => 0,
+    //             'message' => 'An enquiry already exists'
+    //         ]);
+    //     } else {
+    //         $contactusForm = new Enquiry();
+    //         $contactusForm->fname = $request->fname;
+    //         $contactusForm->lname = $request->lname;
+    //         $contactusForm->email = $request->email;
+    //         $contactusForm->phone = $request->phone;
+    //         $contactusForm->companyName = $request->companyName;
+    //         $contactusForm->message = $request->message;
+    //         $contactusForm->serviceId = $request->serviceId;
+    //         $contactusForm->status = 'pending';
+    //         $contactusForm->type = 'CONTACT US';
+    //         $contactusForm->ipAddress = $ipAddresses;
+    //         $contactusForm->save();
+
+    //         // $emailData = [
+    //         //     'fname' => $contactusForm->fname,
+    //         //     'phone' => $contactusForm->phone,
+    //         //     'email' => $contactusForm->email,
+    //         //     'subject' => 'Contact Us'
+    //         // ];
+
+    //         // Mail::to($contactusForm->email)->send(new ContactUsMail($emailData, 'Contact Us'));
+
+
+    //         // $emailDataAdmin = [
+    //         //     'fname' => $contactusForm->fname,
+    //         //     'phone' => $contactusForm->phone,
+    //         //     'email' => $contactusForm->email,
+    //         //     'subject' => 'Contact Us Admin'
+    //         // ];
+
+    //         // Mail::to(env('Sendinblue_mail'))->send(new ContactUSMail($emailDataAdmin, 'Contact Us Admin'));
+
+    //         $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
+    //         $this->sendEmail('Contact Us Admin', env('Sendinblue_mail'), 'Choice Accountants', $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
+    //         $this->storeLog('Add', 'contactusForm', $contactusForm);
+
+    //         return response()->json([
+    //             'status' => 1,
+    //             'message' => 'Send successfully'
+    //         ]);
+    //     }
+    // }
+
     public function contactusForm(Request $request)
     {
-        $ipAddresses = request()->ip();
+        $validatedData = $request->validate([
+            'fname' => 'required|string|max:255',
+            'lname' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:20',
+            'serviceId' => 'required|integer',
+            'companyName' => 'nullable|string|max:255',
+            'message' => 'nullable|string',
+        ]);
 
-        $existingEnquiry = Enquiry::where('ipAddress', $ipAddresses)->where('fname', $request->fname)->where('lname', $request->lname)->where('phone', $request->phone)->where('email', $request->email)->where('serviceId', $request->serviceId)->where('type', 'CONTACT US')->first();
+        $ipAddresses = $request->ip();
+
+        $existingEnquiry = Enquiry::where('ipAddress', $ipAddresses)->where('fname', $validatedData['fname'])->where('lname', $validatedData['lname'])->where('phone', $validatedData['phone'])->where('email', $validatedData['email'])->where('serviceId', $validatedData['serviceId'])->where('type', 'CONTACT US')->first();
 
         if ($existingEnquiry) {
             return response()->json([
                 'status' => 0,
                 'message' => 'An enquiry already exists'
             ]);
-
         } else {
             $contactusForm = new Enquiry();
-            $contactusForm->fname = $request->fname;
-            $contactusForm->lname = $request->lname;
-            $contactusForm->email = $request->email;
-            $contactusForm->phone = $request->phone;
-            $contactusForm->companyName = $request->companyName;
-            $contactusForm->message = $request->message;
-            $contactusForm->serviceId = $request->serviceId;
+            $contactusForm->fname = $validatedData['fname'];
+            $contactusForm->lname = $validatedData['lname'];
+            $contactusForm->email = $validatedData['email'];
+            $contactusForm->phone = $validatedData['phone'];
+            $contactusForm->companyName = $validatedData['companyName'];
+            $contactusForm->message = $validatedData['message'];
+            $contactusForm->serviceId = $validatedData['serviceId'];
             $contactusForm->status = 'pending';
             $contactusForm->type = 'CONTACT US';
             $contactusForm->ipAddress = $ipAddresses;
             $contactusForm->save();
-
-            // $emailData = [
-            //     'fname' => $contactusForm->fname,
-            //     'phone' => $contactusForm->phone,
-            //     'email' => $contactusForm->email,
-            //     'subject' => 'Contact Us'
-            // ];
-
-            // Mail::to($contactusForm->email)->send(new ContactUsMail($emailData, 'Contact Us'));
-
-
-            // $emailDataAdmin = [
-            //     'fname' => $contactusForm->fname,
-            //     'phone' => $contactusForm->phone,
-            //     'email' => $contactusForm->email,
-            //     'subject' => 'Contact Us Admin'
-            // ];
-    
-            // Mail::to(env('Sendinblue_mail'))->send(new ContactUSMail($emailDataAdmin, 'Contact Us Admin'));
 
             $this->sendEmail('Contact Us', $contactusForm->email, $contactusForm->fname, $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
             $this->sendEmail('Contact Us Admin', env('Sendinblue_mail'), 'Choice Accountants', $contactusForm->fname, $contactusForm->phone, $contactusForm->email);
