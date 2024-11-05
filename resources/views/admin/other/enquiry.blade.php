@@ -94,8 +94,9 @@ All Enquiries
                     <th class="text-center min-w-125px">Name</th>
                     <th class="text-center min-w-125px">Email</th>
                     <th class="text-center min-w-125px">Service</th>
+                    <th class="text-center min-w-125px">Date Time</th>
                     <th class="text-center min-w-125px">Status</th>
-                    <th class="text-center min-w-70px">Actions</th>
+                    <th class="text-center min-w-125px">Actions</th>
                 </tr>
             </thead>
             <tbody class="fw-semibold text-gray-600">
@@ -120,6 +121,9 @@ All Enquiries
                         @else
                         <span class="text-danger">Not Found</span>
                         @endif
+                    </td>
+                    <td class="text-center">
+                        {{ \Carbon\Carbon::parse($data->created_at)->format('d-m-Y H:i a') }}
                     </td>
                     <td class="text-center">
                         @if($data->status == 'pending')
