@@ -1203,7 +1203,7 @@
                     </li>
                     <li> <a href="{{url('/about-choice/careers')}}" title="career Opportunities" class="l-navbar__list-link"> Career Opportunities </a></li>
                     <li> <a href="{{url('/get-in-touch')}}" title="Contact" class="l-navbar__list-link"> Contact </a> </li>
-                    <li> <a href="https://platinumaccountants.portal.accountants/login" title="Contact" class="l-navbar__list-link"> Login MYOB </a> </li>
+                    <li> <a href="https://documenthub.handisoft.com.au/ClientPortal/Account/Login/"  class="l-navbar__list-link">Access Portal </a> </li>
                 </ul>
             </div>
         </div>
@@ -1331,6 +1331,7 @@
             <div class="l-footer__newsletter-area bg-pink">
                 <div class="relative zindex-3">
                     <img src="/web/images/cpa.webp" alt="choice accountants- top cpa firm in Australia" style="width: 20%;outline: none;">
+                    <img src="/web/images/portrait_colour.png" alt="choice accountants- top cpa firm in Australia" style="width: 30%;outline: none;">
                     <div class="mt-20em mb-20em">
                         <p> </p>
                     </div>
@@ -1414,10 +1415,9 @@
                             <a href="{{url('/privacy-policy')}}" class="d-inline-block mr-30em color-white hover-pink" title="Privacy Policy"> Privacy Policy</a>
                         </div>
                         <div class=" mt-20em mb-20em">
-                            <p> Choice Accountants, 21 Remembrance Driveway, Tahmoor, NSW 2573<br />
-                                Copyright © Choice Accountants & Advisors Pty Ltd 2023
-
-                            </p>
+                            <p> Choice Accountants, 18/150-158 Argyle Street, Picton NSW 2571
+                            <br />
+                                Copyright © Choice Accountants & Advisors Pty Ltd 2023 </p>
                         </div>
                     </div>
                 </div>
